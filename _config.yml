@@ -1,14 +1,14 @@
 # Site settings
-title: Fe Blog  #你博客的标题
-SEOTitle: Fe的博客 | Fe Blog  #显示在浏览器上搜索的时候显示的标题
+title: 珊蒂斯·羽月💄  #你博客的标题
+SEOTitle: Shandris Feathermoon | 牛城虎妞  #显示在浏览器上搜索的时候显示的标题
 header-img: img/page-bg-keyboard.png #显示在首页的背景图片
-email: fe@fedemo.top
-description: "Hey，我是Fe，一只JAVA程序猿,这是我的利用 GitHub Pages 与 Jekyll 搭建的个人博客。内有搭建博客的详细教程,欢迎大家来玩。" #网站介绍
-keyword: "Fe的博客,fedemo,GitHub,Fe,博客,Blog,JAVA" #关键词
-url: "https://fedemo.top"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+email: info@tebangtech.com
+description: "Hey，我是霏💄，外貌协会, 这是我Fork他人的利用 GitHub Pages 与 Jekyll 搭建的个人博客。纯模板搭建，不会写代码,欢迎大家来玩。" #网站介绍
+keyword: "牛城虎妞,外贸,GitHub,个人日记,博客,Blog,WhatsApp" #关键词
+url: "https://tebangtech.com/"          # your host, for absolute URL
+baseurl: "https://medium.com/@huijingfei"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "blog" # you code repository
-author: Fe
+author: 霏💄
 
 # 是否托管在Coding_Pages
 Coding_Pages: true
@@ -24,11 +24,14 @@ sidebar-avatar: /img/avatar_p11179162.jpg      # use absolute URL, seeing it's u
 
 # SNS settings社交账号
 RSS: false
-# weibo_username:
-zhihu_username:    fedemo
-github_username:    FeDemo
-# facebook_username:
-twitter_username:   Fedemo10
+weibo_username:    huijingfei
+zhihu_username:    huijingfei
+github_username:    huijingfei
+facebook_username:    tebangtech
+twitter_username:   TebangTech
+pinterest: huijingfei
+email: info@tebangtech.com
+
 # coding_username: fedemo
 
 
@@ -66,8 +69,8 @@ gitalk:
   clientID: '75ef4c0ecfb2cd85a8f0'    #生成的clientID
   clientSecret: 'b51aa6b7351f3b3b7a0940714af8489fddb5f905'   #同上
   repo: img_gitalk    #仓库名称
-  owner: FeDemo    #github用户名
-  admin: FeDemo
+  owner: huijingfei    #github用户名
+  admin: huijingfei
 
 
 
@@ -100,13 +103,13 @@ service-worker: true
 # Friends好友链接
 friends: [
     {
-        title: "Fe Blog",
-        href: "https://fedemo.top/"
+        title: "Tebang Tech",
+        href: "https://tebangtech.com/"
     },{
-        title: "interview",
-        href: "https://fedemo.github.io/interview/"
+        title: "Creative Touch",
+        href: "https://www.creativetouchrotherham.co.uk/"
     },{
-        title: "Fe Coding",
-        href: "https://coding.net/u/fedemo/project"
+        title: "Messi Biology",
+        href: "https://meixi-mgo.com/"
     }
 ]
