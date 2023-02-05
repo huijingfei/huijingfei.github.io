@@ -32,7 +32,7 @@ twitter_username:   TebangTech
 pinterest: huijingfei
 email: info@tebangtech.com
 
-# coding_username: fedemo
+# coding_username: huijingfei
 
 
 
@@ -77,10 +77,10 @@ gitalk:
 
 # Analytics settings 百度统计track_id
 # Baidu Analytics
-ba_track_id: ced86d2ada092fb3a0d736f793d90120
+ba_track_id: 
 
 # Google Analytics
-# ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+# ga_track_id: 'G-FD2DYLPW01'            # Format: UA-xxxxxx-xx
 # ga_domain: auto
 
 
