@@ -66,9 +66,9 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: '75ef4c0ecfb2cd85a8f0'    #生成的clientID
-  clientSecret: 'b51aa6b7351f3b3b7a0940714af8489fddb5f905'   #同上
-  repo: img_gitalk    #仓库名称
+  clientID: 'e47b65b2519223baf50e'    #生成的clientID
+  clientSecret: '97c1f4e6977085d5017928087821059bc102325a'   #同上
+  repo: comment    #仓库名称
   owner: huijingfei    #github用户名
   admin: huijingfei
 
