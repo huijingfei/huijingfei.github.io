@@ -27,19 +27,12 @@
 
 >什么是github
 
-我们需要搭建的博客是搭在github上的,那么,这张图就不得不放出来了   
-
-![](https://raw.githubusercontent.com/FeDemo/img_gitalk/master/2017-12-08-blog_re0/3.png)  
-
-对,全球最大的同性交友平台 **github** ,你值得拥有  
-
-关于github以及git更为详细的介绍,可以看一下<a href="https://www.zhihu.com/question/20070065/answer/79557687" target="view_window">怎样使用 GitHub</a>这篇回答  
+我们需要搭建的博客是搭在github上的,  关于github以及git更为详细的介绍,可以看一下<a href="https://www.zhihu.com/question/20070065/answer/79557687" target="view_window">怎样使用 GitHub</a>这篇回答  
 
 >创建github账号
 
 接着我们需要先建一个github账号,细节略过
 
-![](https://raw.githubusercontent.com/FeDemo/img_gitalk/master/2017-12-08-blog_re0/4.png)
 <br>
 ## hello world
 #### Blog项目
