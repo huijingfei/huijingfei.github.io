@@ -68,7 +68,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 'e47b65b2519223baf50e'    #生成的clientID
   clientSecret: '97c1f4e6977085d5017928087821059bc102325a'   #同上
-  repo: comment    #仓库名称
+  repo: Blog_Gitalk    #仓库名称
   owner: huijingfei    #github用户名
   admin: huijingfei
 
