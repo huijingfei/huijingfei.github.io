@@ -6,7 +6,7 @@ email: info@tebangtech.com
 description: "Hey，我是霏💄，外貌协会, 这是我Fork他人的利用 GitHub Pages 与 Jekyll 搭建的个人博客。纯模板搭建，不会写代码,欢迎大家来玩。" #网站介绍
 keyword: "牛城虎妞,外贸,GitHub,个人日记,博客,Blog,WhatsApp" #关键词
 url: "https://tebangtech.com/"          # your host, for absolute URL
-baseurl: "https://medium.com/@huijingfei"      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "blog" # you code repository
 author: 霏💄
 
