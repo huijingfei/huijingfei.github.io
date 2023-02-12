@@ -3,7 +3,7 @@ title: 珊蒂斯·羽月💄  #你博客的标题
 SEOTitle: Shandris Feathermoon | 牛城虎妞  #显示在浏览器上搜索的时候显示的标题
 header-img: img/post-bg-swift.webp #显示在首页的背景图片
 email: info@tebangtech.com
-description: "Hey，我是霏💄，外貌协会, 这是我Fork他人的利用 GitHub Pages 与 Jekyll 搭建的个人博客。纯模板搭建，不会写代码,欢迎大家来玩。" #网站介绍
+description: "Hey，我是霏💄，外貌协会, 这是我Fork FeDemo的利用 GitHub Pages 与 Jekyll 搭建的个人博客。纯模板搭建，不会写代码,欢迎大家来玩。" #网站介绍
 keyword: "牛城虎妞,外贸,GitHub,个人日记,博客,Blog,WhatsApp" #关键词
 url: "https://tebangtech.com/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -29,6 +29,7 @@ zhihu_username:    huijingfei
 github_username:    huijingfei
 facebook_username:    tebangtech
 twitter_username:   TebangTech
+instagram_username:   rotherhamsalon
 email: info@tebangtech.com
 
 # coding_username: huijingfei
