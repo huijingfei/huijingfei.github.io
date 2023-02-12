@@ -98,6 +98,10 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 
+# 自动生成sitemap
+sitemap:
+    path: sitemap.xml
+
 
 # Friends好友链接
 friends: [
