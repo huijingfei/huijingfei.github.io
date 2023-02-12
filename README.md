@@ -79,3 +79,10 @@ ba_track_id: ef224c004e9c327ca58d50ed4501cb99  #统计账号id(不要用我的`b
   ```
 按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.  
 ![](https://raw.githubusercontent.com/FeDemo/img_gitalk/master/2017-12-08-blog_re0/17.png)  
+
+
+# 为GitHub Pages博客添加Facebook Messenger Chat Plugin聊天插件，支持访客对话。
+🛑在Meta Business Suite收件箱中点击小齿轮，查看所有设置。
+🛑选择Chat Plugin，点击Setup，选择Standard标准代码，复制代码。
+🛑将代码粘贴到_includes文件夹下的head.html文件中，这一步类似谷歌分析GA4代码设置。
+![](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/messenger.webp) 
