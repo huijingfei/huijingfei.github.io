@@ -25,6 +25,11 @@
 
 ![](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/site%20verification.webp) 
 
+上边的代码必须在Search Console中添加资源时，选择网址前缀。如果有自己购买的域名，则可以使用网域的方法添加。
+
+![](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/search%20console.webp) 
+
+
 > 一下为原作者模板百度分析部分：
 
 集成了<a href="https://tongji.baidu.com/web/welcome/login" target="view_window">Baidu Analytics</a> 和 <a href="http://www.google.cn/analytics/" target="view_window">Google Analytics</a>，到各个网站注册拿到track_id替换下面的就可以了.   
