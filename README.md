@@ -30,7 +30,7 @@
 ![](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/search%20console.webp) 
 
 
-> 一下为原作者模板百度分析部分：
+> 以下为原作者模板百度分析部分：
 
 集成了<a href="https://tongji.baidu.com/web/welcome/login" target="view_window">Baidu Analytics</a> 和 <a href="http://www.google.cn/analytics/" target="view_window">Google Analytics</a>，到各个网站注册拿到track_id替换下面的就可以了.   
 不要用我的`ba_track_id`!
@@ -40,7 +40,7 @@
 ba_track_id: ef224c004e9c327ca58d50ed4501cb99  #统计账号id(不要用我的`ba_track_id`!)
 
 # Google Analytics
-# ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+# ga_track_id: 'UA-90855596-1'  # UA字样的旧版Universal Analytics谷歌已不再支持，新版本为G开头的GA4， 添加方法见上文。
 # ga_domain: auto
 ```
 我用的是百度的统计网站,大概是这样  
