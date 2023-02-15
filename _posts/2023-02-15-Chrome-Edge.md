@@ -1,11 +1,11 @@
 ---
 layout: post
-title: ﻿如何禁用Microsoft Edge/Google Chrome在Windows 7上的系统升级提示条?
+title: ﻿如何禁用Microsoft Edge / Chrome在Windows 7上的系统升级提示条?
 tags:
     - Chrome
 
 ---
-# [干掉烦人的Chrome升级提示总共分几步？]
+# [干掉烦人的Edge/Chrome升级提示总共分几步？]
 ![Chrome/Edge升级提示](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/warning.webp)
 
 我分别搜索中英文互联网上的解决方法，有的需要需要到注册表里寻找到相关的路径，然后再新建项目写各种值。对于非技术人员来说确实难度有点高，即使是稍微懂那么一点的光是找注册表就是个大麻烦事。而有的则是给出了一段文本，改成注册表文件，再双击添加到注册表即可，我试了一下没有成功。
