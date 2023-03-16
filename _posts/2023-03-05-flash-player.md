@@ -83,7 +83,7 @@ Flash Player 目前有两个开源解决方案：
 
 有需要的可以从 [Release Page](https://gitlab.com/cleanflash/installer/-/releases) 下载最新版。
 
-或者从我的共享云盘中下载 34.0.0.267 版本：[下载链接](https://drive.sainnhe.dev/Flash/Windows/)
+或者从我的共享云盘中下载 34.0.0.277 版本：[下载链接](https://pan.huang1111.cn/s/PZ2ZTm)
 
 安装的时候一路点 “Next” 就行。
 
