@@ -4,11 +4,11 @@ title: 为WooCommerce产品编辑页面启用Gutenberg古腾堡编辑器
 tags:
     - WooCommerce
     - Gutenberg
+    - WordPress
 ---
-WooCommerce的产品描述页面也可以使用古腾堡编辑器Gutenberg Block Editor。不幸的是，不是作为默认或者选项，而是用一小段代码。
-在这里，我将向你展示两种使用代码的方法来启用古腾堡编辑器Gutenberg Block Editor/WordPress Block Editor.。
+WooCommerce的产品描述页面也可以使用古腾堡编辑器Gutenberg Block Editor。糟糕的是，不是作为默认或者选项，而是用一小段代码。在这里，我将向你展示两种使用代码的方法来启用古腾堡编辑器Gutenberg Block Editor/WordPress Block Editor。
 
-### 注意: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃.
+### 注意: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃。
 
 # 代码
 
@@ -31,7 +31,7 @@ WooCommerce的产品描述页面也可以使用古腾堡编辑器Gutenberg Block
     add_filter( 'woocommerce_taxonomy_args_product_cat', 'j0e_enable_taxonomy_rest' );
     add_filter( 'woocommerce_taxonomy_args_product_tag', 'j0e_enable_taxonomy_rest' );
     
-脚本的要点: https://gist.github.com/gmmedia/b895225d3eefb42bdfc573836b776b86
+脚本的要点: [https://gist.github.com/gmmedia/b895225d3eefb42bdfc573836b776b86](https://gist.github.com/gmmedia/b895225d3eefb42bdfc573836b776b86)
 
 # 插件Plugin
 
@@ -53,7 +53,7 @@ Gutenberg for WooCommerce – Insert code in Code Snippets plugin
 ![Advanced Scripts](https://github.com/huijingfei/huijingfei.github.io/blob/master/images/advanced-scripts.webp?raw=true)
 Advanced Scripts plugin
 
-步骤是一样的，只是外观不同。安装后，您可以在“工具”>“高级脚本”下找到该工具。
+步骤是一样的，只是外观不同。安装后，您可以在Tools > Advanced Scripts下找到该工具。
 
 # functions.php
 
@@ -66,3 +66,5 @@ Insert the code into the functions.php file
 # Gutenberg for WooCommerce
 
 即使[WooCommerce](https://bloggerpilot.com/en/tag/woocommerce/)有时更新缓慢，但最新的WordPress的功能也可以在一些额外的设置下使用。
+
+[网站示例](https://tibemag.com/)
