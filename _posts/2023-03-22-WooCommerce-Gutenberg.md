@@ -67,4 +67,4 @@ Insert the code into the functions.php file
 
 即使[WooCommerce](https://bloggerpilot.com/en/tag/woocommerce/)有时更新缓慢，但最新的WordPress的功能也可以在一些额外的设置下使用。
 
-[网站示例](https://tibemag.com/)
+[网站示例](https://tibetmag.com/)
