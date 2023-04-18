@@ -1,0 +1,150 @@
+// MIXINS
+//Dummy Variable
+$x = false;
+// The top, left, right, and bottom are optional
+setup(display, position, margin, top = null, right = null, bottom = null, left = null)  
+    display display
+    position position
+    margin margin
+    top top
+    left left
+    right right
+    bottom bottom
+        
+font(font-family, font-size, letter-spacing, font-weight, line-height = 1)
+    font-family font-family
+    font-size font-size
+    letter-spacing letter-spacing
+    font-weight font-weight
+    line-height line-height
+        
+// GENERAL FONTS AND CLASSES AND SETUP STUFF
+* {box-sizing: border-box; transition: 0.35s ease;}
+    
+.rela-block
+    setup(block, relative, auto)
+.rela-inline
+    setup(inline-block, relative, auto)
+.floated
+    setup(inline-block, relative, $x)
+    float left
+    
+.abs-center
+    setup($x, absolute, $x, 50%, $x, $x, 50%)
+    transform translate(-50%, -50%)
+    text-align center
+    width 88%
+    
+// --- COLORS ---
+
+// --- PAGE STYLINGS ---
+body
+    font('Open Sans',18px,0px,400,28px)
+    background: url('http://kingofwallpapers.com/leaves/leaves-016.jpg') right no-repeat
+    background-size: cover
+    &:before
+        content ""
+        setup($x,fixed,0,0,0,0,0)
+        background-color rgba(255,255,255,0.92)
+    
+.caps {text-transform: uppercase;}
+.justified {text-align: justify;}
+p.light {color: #777;}
+h2 {font('Open Sans',30px,5px,600,40px); color: black}
+h3 {font('Open Sans',21px,1px,600,28px); color: black}
+    
+.page
+    width 90%
+    max-width 1200px
+    margin 80px auto
+    background-color white
+    box-shadow 6px 10px 28px 0px rgba(0,0,0,0.4)
+    
+.top-bar
+    height 220px
+    background-color #848484
+    color white
+    
+.name
+    setup($x,absolute,$x,$x,0,0,calc(350px + 5%))
+    height 120px
+    text-align center
+    font('Raleway',58px,8px,100,60px)
+    & div {width: 94%}
+    
+.side-bar
+    setup($x,absolute,$x,60px,$x,0,5%)
+    width 350px
+    background-color #F7E0C1
+    padding 320px 30px 50px
+        
+.mugshot
+    setup($x,absolute,$x,50px,$x,$x,70px)
+    height 210px
+    width 210px
+    & .logo {margin: -23px;}
+    
+.logo
+    $midSize = 250px;    // Controls overall size
+    setup($x,absolute,$x,0,$x,$x,0)
+    z-index 100
+    margin 0
+    color black
+    height $midSize
+    width $midSize
+    & .logo-svg
+        height 100%
+        width 100%
+        stroke black
+        cursor pointer
+    & .logo-text
+        setup($x, absolute, $x, 58%, 16%)
+        cursor pointer
+        font("Montserrat", $midSize/5 + $midSize/50, 0px, 400, $midSize/5 + $midSize/30)
+
+.social
+    padding-left 60px
+    margin-bottom 20px
+    cursor pointer
+    &:before
+        content ""
+        setup($x,absolute,$x,-4px,$x,$x,10px)
+        height 35px
+        width 35px
+        background-size cover !important
+    &.twitter:before{background: url('https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_Twitter-07-128.png') center no-repeat}
+    &.pinterest:before{background: url('https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_Pinterest-23-128.png') center no-repeat}
+    &.linked-in:before{background: url('https://cdn3.iconfinder.com/data/icons/social-media-2026/60/Socialmedia_icons_LinkedIn-128.png') center no-repeat;}
+        
+.side-header
+    font('Open Sans',18px,4px,600,28px)
+    margin 60px auto 10px
+    padding-bottom 5px
+    border-bottom 1px solid #888
+    
+.list-thing {padding-left: 25px; margin-bottom: 10px}
+        
+.content-container
+    margin-right 0
+    width calc(95% - 350px)
+    padding 25px 40px 50px
+    & > * {margin: 0 auto 25px}
+    & > h3 {margin: 0 auto 5px}
+    & > p.long-margin {margin: 0 auto 50px}
+
+.title{width: 80%; text-align: center}
+
+.separator
+    width 240px
+    height 2px
+    background-color #999
+    
+.greyed
+    background-color #DDD
+    width 100%
+    max-width 580px
+    text-align center
+    font('Open Sans',18px,6px,600,28px)
+    
+@media screen and (max-width: 1150px)
+    .name {color: white; font('Raleway',38px,6px,100,48px)}
