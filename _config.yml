@@ -19,7 +19,7 @@ baidu_js_push: false
 # Sidebar settings侧边栏
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Elune be with you!"
-sidebar-avatar: /images/IMG_1211.webp      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /images/profile image.webp      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # SNS settings社交账号
