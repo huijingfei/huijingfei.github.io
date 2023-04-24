@@ -23,14 +23,13 @@ sidebar-avatar: /images/profile image.webp      # use absolute URL, seeing it's 
 
 
 # SNS settings社交账号
-RSS: false
+RSS: true
 weibo_username:    huijingfei
 zhihu_username:    huijingfei
 github_username:    huijingfei
 facebook_username:    tebangtech
 twitter_username:   TebangTech
-instagram_username:   rotherhamsalon
-email: info@tebangtech.com
+email: info@tigress.cc
 
 # coding_username: huijingfei
 
