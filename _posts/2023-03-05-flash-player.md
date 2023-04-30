@@ -3,6 +3,8 @@ layout: post
 title: 2023 年在 Windows/macOS/Linux 启用干净无广告的 Adobe Flash Player 的方法
 tags:
     - Flash Player
+    - Waterfox Classic
+    - Pale Moon
 
 ---
 # 介绍 
@@ -56,16 +58,17 @@ Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于�
 
 Flash Player 目前有两个开源解决方案：
 
-[Ruffle](https://ruffle.rs/): Rust 写的 Flash Player 替代品，可以正常播放视频，但是完成度还不高，尤其缺乏对 Action Script 3 的支持（也就没法玩游戏）
+[Ruffle](https://ruffle.rs/): Rust 写的 Flash Player 替代品，可以正常播放视频，但是对 Action Script 3 的支持还不完善，值得注意的一点是[Ruffle](https://ruffle.rs/)的开发非常活跃，后续可以关注下，[Ruffle](https://ruffle.rs/)作为插件可以在最新版 Chrome 和 Firefox 上使用。
 
 [Lightspark](http://lightspark.github.io/)：C/C++ 写的 Flash Player 替代品，同样完成度不高，播放视频足够了，但打游戏还差点意思。
 
 本文将会使用纯净构建的官方版 Flash Player，支持原版 Flash Player 的所有特性，并且没有广告和和中国特供版的各种恶意组件。
+
 ## Windows
 
 ### 使用低版本 Firefox
 
-虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是我们依然可以在较低的版本中使用它。
+虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是较低的版本中依然支持Flash，这里只作为一个可选项但是并不推荐（本文推荐使用Waterfox Classic/Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)）。
 
 [archive.org](https://archive.org/) 上面保留了支持 Flash Player 的最后一个版本的 Firefox 和 Chrome，有需要的可以从这里下载：[下载链接](https://archive.org/download/Firefox_Chrome_Adobe_Flash)
 
@@ -87,7 +90,7 @@ Flash Player 目前有两个开源解决方案：
 
 安装的时候一路点 “Next” 就行。
 
-## 使用 Waterfox
+## 使用 Waterfox 或者 Pale Moon
 
 低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
 
@@ -95,17 +98,23 @@ Waterfox 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费�
 
 Waterfox 有两个版本，Current 和 Classic，Current 基于最新版 Firefox 构建，我个人测试无法使用 Flash Player，另外一个 Classic 基于老版本 Firefox 构建，可以用 Flash Player，并且相比于旧版 Firefox 还修复了很多安全漏洞和 Bug。
 
-首先下载并安装 Waterfox Classic：[官方下载地址](https://classic.waterfox.net/)
+# Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
+
+Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎。
+
+[Pale Moon](https://www.palemoon.org/download.shtml)和Waterfox Classic一样开源跨平台支持Windows、Mac、Linux，并且支持Fire IE插件；Waterfox Classic支持flash但是已经不支持Fire IE。
+
+首先下载并安装 Waterfox Classic 或者 Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
 或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
-Waterfox 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
+Waterfox/Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
 
 ### macOS
 
 本文在 Apple Silicon 系列芯片的 Mac 上测试通过，理论上 Intel 芯片的 Mac 应该也可行，因为安装的程序都是 X86 架构的。
 
-首先下载并安装 Waterfox Classic：[官方下载地址](https://classic.waterfox.net/)
+首先下载并安装 Waterfox Classic 或者 Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
 或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
@@ -143,7 +152,7 @@ Debian 11稳定版用户可以使用以下源安装[Pale Moon](https://www.palem
 
 也可以从我的共享云盘中下载：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
-把解压后得到的 libflashplayer.so 放到 ~/.waterfox/plugins 目录下。
+把解压后得到的 libflashplayer.so 放到 ~/.waterfox/yourown.default/plugins 目录下，Pale Moon则是在这个目录下~/.moonchild productions/pale moon/yourown.default/plugins
 
 或者执行以下命令一键安装:
 
@@ -152,7 +161,3 @@ Debian 11稳定版用户可以使用以下源安装[Pale Moon](https://www.palem
 本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 
 
 ![Flash Player](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvo2s5Mki4MSJfWgoK0uv8NN4zLKEcaO4HiZwCy85tkY-7pOblGDJtH6v4dYVFgE8mGA_a0zWwcWZRyndpZzmcKIFqKeFlRsm6ijojrnoCziNnQre5Zd1Bc0265MXlEhcCiYp_Od48ZjTliMtdo-S4ONczRscEaeVkwm0I7qbAd2Yfnsn6PyTdZ9fX/w640-h400/flash%20player%202023-2.webp)
-
-# 使用[Pale Moon](https://www.palemoon.org/)
-
-[Pale Moon](https://www.palemoon.org/download.shtml)和Waterfox一样支持Windows、Mac、Linux，并且支持Fire IE插件，Waterfox支持flash但是已经不支持Fire IE。[Pale Moon](https://www.palemoon.org/download.shtml)使用Flash Player的方法和Waterfox的方法一样。
