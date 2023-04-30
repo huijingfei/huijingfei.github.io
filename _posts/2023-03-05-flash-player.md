@@ -83,7 +83,7 @@ Flash Player 目前有两个开源解决方案：
 
 有需要的可以从 [Release Page](https://gitlab.com/cleanflash/installer/-/releases) 下载最新版。
 
-或者从我的共享云盘中下载 34.0.0.277 版本：[下载链接](https://pan.huang1111.cn/s/AgPvSB)
+或者从我的共享云盘中下载 34.0.0.277 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 安装的时候一路点 “Next” 就行。
 
@@ -97,7 +97,7 @@ Waterfox 有两个版本，Current 和 Classic，Current 基于最新版 Firefox
 
 首先下载并安装 Waterfox Classic：[官方下载地址](https://classic.waterfox.net/)
 
-或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/AgPvSB)
+或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 Waterfox 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
 
@@ -107,11 +107,11 @@ Waterfox 没有内置 Flash Player，所以安装完后还需要安装 Flash Pla
 
 首先下载并安装 Waterfox Classic：[官方下载地址](https://classic.waterfox.net/)
 
-或者你也可以从我的共享云盘中下载 2022.08 版本：[下载链接](https://drive.sainnhe.dev/Flash/macOS/)
+或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 然后下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，这是一个开源构建的纯净版 Flash Player，下载的时候选最新版 Mac NPAPI 版本。
 
-或者从我的共享云盘中下载 34.0.0.267 版本：[下载链接](https://pan.huang1111.cn/s/AgPvSB)
+或者从我的共享云盘中下载 34.0.0.267 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 下载完成之后解压，然后打开访达，按下 Command+Shift+G ，输入 “~/Library/Internet Plug-Ins/” 并回车。
 
@@ -120,8 +120,6 @@ Waterfox 没有内置 Flash Player，所以安装完后还需要安装 Flash Pla
 ### Linux
 
 首先安装 Waterfox Classic: [官方下载地址](https://classic.waterfox.net/)
-
-或者你也可以从我的共享云盘中下载 2022.08 版本：[下载链接](https://drive.sainnhe.dev/Flash/Linux/)
 
 Arch Linux 用户也可以从 AUR 安装：[waterfox-classic-bin](https://aur.archlinux.org/packages/waterfox-classic-bin)
 
@@ -143,7 +141,7 @@ Debian 11稳定版用户可以使用以下源安装[Pale Moon](https://www.palem
 
 接下来下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，选 Linux 版 64 位 NPAPI：[下载链接](https://github.com/darktohka/clean-flash-builds/releases/tag/v1.7)
 
-也可以从我的共享云盘中下载：[下载链接](https://pan.huang1111.cn/s/AgPvSB)
+也可以从我的共享云盘中下载：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 把解压后得到的 libflashplayer.so 放到 ~/.waterfox/plugins 目录下。
 
