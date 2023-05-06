@@ -2,10 +2,10 @@
 title: 珊蒂斯·羽月💄  #你博客的标题
 SEOTitle: Shandris Feathermoon | 牛城虎妞  #显示在浏览器上搜索的时候显示的标题
 header-img: img/post-bg-swift.webp #显示在首页的背景图片
-email: info@tebangtech.com
+email: info@tigress.cc
 description: "Hey，我是霏💄，外貌协会, 这是我Fork FeDemo的利用 GitHub Pages 与 Jekyll 搭建的个人博客。纯模板搭建，不会写代码,欢迎大家来玩。" #网站介绍
 keyword: "牛城虎妞,外贸,GitHub,个人日记,博客,Blog,WhatsApp" #关键词
-url: "https://huijingfei.github.io"          # your host, for absolute URL
+url: "https://tigress.cc/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "blog" # you code repository
 author: 霏💄
