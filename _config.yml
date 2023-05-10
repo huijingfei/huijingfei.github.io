@@ -80,8 +80,8 @@ gitalk:
 ba_track_id: 
 
 # Google Analytics
-# ga_track_id: ''            # Format: UA-xxxxxx-xx
-# ga_domain: auto
+ga_track_id: 'G-FD2DYLPW01'            # Format: UA-xxxxxx-xx
+ga_domain: auto
 
 
 
@@ -130,5 +130,8 @@ friends: [
     },{
         title: "Majing Carpet",
         href: "https://majcarpet.com/"
+    },{
+        title: "Asari Bike",
+        href: "https://asaribike.com/"
     }
 ]
