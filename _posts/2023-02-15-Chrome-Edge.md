@@ -27,7 +27,7 @@ tags:
 3: 粘贴刚才复制的命令，回车后看到提示：The operation completed successfully. 恭喜你，chrome的升级提示已被成功干掉。
 ![禁用Chrome升级提示](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/operation.webp)
 
-# [其他基于Chromium的浏览器的命令如下]
+## [其他基于Chromium的浏览器的命令如下]
 
 Edge用户复制这条命令：
 
