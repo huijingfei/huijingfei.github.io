@@ -16,9 +16,9 @@ Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流�
 
 然而 Flash Player 的缺失也给部分用户带来了不便（比如我这种想要玩经典页游的人），本文将会介绍在三大主流桌面平台 Windows/macOS/Linux 安装纯净版 Flash Player 的方法。
 
-# 现有的解决方案及其不足之处
+## 现有的解决方案及其不足之处
 
-## 国产浏览器
+### 国产浏览器
 
 为了迎合部分用户的需求，一些国产浏览器保留了对 Flash Player 的支持。
 
@@ -36,9 +36,9 @@ Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流�
 
 你的首选应该是开源浏览器（例如 Firefox, Chromium），其次是国际化的闭源浏览器（例如 Safari, Chrome）。
 
-# 本文所使用的所有浏览器都是开源浏览器。
+## 本文所使用的所有浏览器都是开源浏览器。
 
-## 中国特供版 Flash Player
+### 中国特供版 Flash Player
 
 Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于国内的网络环境比较特殊，时至今日依然有部分网站死守 Flash Player 绝不松手（而你还往往拿它们没办法），于是 Adobe 在 2020 年宣布停止对 Flash Player 的支持后又将它交给了国内的重橙网络代理，使其依然能够在大陆地区使用。
 
@@ -54,7 +54,7 @@ Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于�
 
 因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，不建议除了从事网络空间安全以外的任何人尝试。
 
-## 开源 Flash Player 替代品
+### 开源 Flash Player 替代品
 
 Flash Player 目前有两个开源解决方案：
 
@@ -64,9 +64,9 @@ Flash Player 目前有两个开源解决方案：
 
 本文将会使用纯净构建的官方版 Flash Player，支持原版 Flash Player 的所有特性，并且没有广告和和中国特供版的各种恶意组件。
 
-## Windows
+### Windows
 
-### 使用低版本 Firefox
+#### 使用低版本 Firefox
 
 虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是较低的版本中依然支持Flash，这里只作为一个可选项但是并不推荐（本文推荐使用Waterfox Classic/Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)）。
 
@@ -78,7 +78,7 @@ Flash Player 目前有两个开源解决方案：
 
 这个便携版内置了 Flash，所以你也无需安装 Flash Player，直接访问你想访问的网站即可。
 
-### 安装 Flash Player 独立运行组件
+#### 安装 Flash Player 独立运行组件
 
 某些游戏辅助器可能不会在浏览器里运行，而是会直接使用系统中安装的 Flash Player 独立运行组件，这种情况下你需要安装 Flash Player。
 
@@ -90,7 +90,7 @@ Flash Player 目前有两个开源解决方案：
 
 安装的时候一路点 “Next” 就行。
 
-## 使用 Waterfox 或者 Pale Moon
+### 使用 Waterfox 或者 Pale Moon
 
 低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
 
@@ -98,7 +98,7 @@ Waterfox 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费�
 
 Waterfox 有两个版本，Current 和 Classic，Current 基于最新版 Firefox 构建，我个人测试无法使用 Flash Player，另外一个 Classic 基于老版本 Firefox 构建，可以用 Flash Player，并且相比于旧版 Firefox 还修复了很多安全漏洞和 Bug。
 
-# Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
+#### Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
 
 Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎。
 
@@ -110,7 +110,7 @@ Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎�
 
 Waterfox/Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
 
-### macOS
+#### macOS
 
 本文在 Apple Silicon 系列芯片的 Mac 上测试通过，理论上 Intel 芯片的 Mac 应该也可行，因为安装的程序都是 X86 架构的。
 
@@ -126,7 +126,7 @@ Waterfox/Pale Moon 没有内置 Flash Player，所以安装完后还需要安装
 
 把解压后得到的 “FlashPlayer-10.6.plugin” 和 “flashplayer.xpt” 复制到这个文件夹下。
 
-### Linux
+#### Linux
 
 首先安装 Waterfox Classic: [官方下载地址](https://classic.waterfox.net/)
 
