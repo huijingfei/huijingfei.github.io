@@ -18,6 +18,8 @@ Google Blogger 自定义域名相对 GitHub 博客自定义域名简单一些；
 
 第二步：在 Blogger 设置-自定义域名 选项里填入子域名：可以是 www 开头，也可以 blog， news 等开头。
 
+![Google Blogger Custom Domain](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/Google%20Blogger%20Custom%20Domain.webp)
+
 第三步：在 Google Search Console 中完成对域名的验证，添加 CNAME 记录指向 ghs.google.com, 值可以是 www，也可以是 blog， news 等等。
 
 ![添加 CNAME 记录 指向 Google Blogger](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/Custom-Domain-on-Blogger-CNAME-DNS-Records%20Blogger%20%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%B7%BB%E5%8A%A0%20CNAME%20%E8%AE%B0%E5%BD%95.webp)
