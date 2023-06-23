@@ -24,7 +24,7 @@ sidebar-avatar: /img/tigress.webp      # use absolute URL, seeing it's used in b
 
 # SNS settings社交账号
 RSS: false
-weibo_username:    huijingfei
+weibo_username:    tangyan
 zhihu_username:    huijingfei
 github_username:    ruffle-rs
 facebook_username:    bikingbeauty
