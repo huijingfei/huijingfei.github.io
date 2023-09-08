@@ -77,7 +77,7 @@ gitalk:
 
 # Analytics settings 百度统计track_id
 # Baidu Analytics
-ba_track_id: 7d1a4b5a848c3319c3604742615a8336
+ba_track_id: 
 
 # Google Analytics
 ga_track_id: 'G-FD2DYLPW01'            # Format: UA-xxxxxx-xx
@@ -119,11 +119,8 @@ friends: [
         title: "Messi Biology",
         href: "https://meixi-mgo.com/"
     },{
-        title: "Dr. Magnesia",
-        href: "https://messi-mgo.com/"
-    },{
         title: "Blogger post",
-        href: "https://huijingfei.blogspot.com/"
+        href: "https://biz.tigress.cc/"
     },{
         title: "Tibet Mag",
         href: "https://tibetmag.com/"
