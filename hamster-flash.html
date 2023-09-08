@@ -24,14 +24,19 @@ head_padding: "55px"
 <p> 一款来自 aBowman 的很有意思的 flash：仓鼠 hamster。鼠标在 flash 上移动，仓鼠 hamster 会跟着跑，盯着鼠标。点击跑轮，仓鼠会进去跑动，点击 flash 可以喂食仓鼠 hamster，累了渴了，小仓鼠 hamster 还会跑去喝水，非常可爱。</p>
 	
 <p>最新安装flash的方法查看这篇博文 <a href="https://tigress.cc/2023/03/05/flash-player/">2023 年在 Windows/macOS/Linux 启用干净无广告的 Adobe Flash Player 的方法</a>.</p>
-
-<object type="application/x-shockwave-flash
-data="https://cdn.abowman.com/widgets/hamster/hamster.swf?"
-width="550" height="400">
-<param name="movie"
-value="https://cdn.abowman.com/widgets/hamster/hamster.swf?" />
-<img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/getflashplayer.gif"
-width="200" height="100" alt="" />
+	
+<object id="myId" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="550" height="400">
+    <param name="movie" value="https://cdn.abowman.com/widgets/hamster/hamster.swf?" />
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="https://cdn.abowman.com/widgets/hamster/hamster.swf?" width="550" height="400">
+    <!--<![endif]-->
+    <div>
+        <h1>Alternative content</h1>
+        <p><a href="https://pan.huang1111.cn/s/EBmqSb"><img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/getflashplayer.gif" alt="Get Adobe Flash player" /></a></p>
+    </div>
+    <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
 </object>
 
 </body>
