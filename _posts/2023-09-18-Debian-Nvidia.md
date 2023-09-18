@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ﻿如何禁用Microsoft Edge / Chrome在Windows 7上的系统升级提示条?
+title: ﻿Debian 12 Bookworm 安装 Nvidia 独立显卡驱动以及显卡模式切换
 tags:
     - Debian
     - Bookworm
@@ -9,7 +9,6 @@ tags:
     - Driver
 
 ---
-# [Debian 12 Bookworm 安装 Nvidia 独立显卡驱动以及显卡模式切换]
 
 ## 一：安装 Nvidia Linux 驱动
 
