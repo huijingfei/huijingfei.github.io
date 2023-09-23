@@ -3,7 +3,7 @@ layout: post
 title: 2023 年在 Windows/macOS/Linux 启用干净无广告的 Adobe Flash Player 的方法
 tags:
     - Flash Player
-    - Waterfox Classic
+    - Clean Flash
     - Pale Moon
 
 ---
@@ -152,15 +152,13 @@ Ubuntu 22.04 用户可以使用以下源安装[Pale Moon](https://www.palemoon.o
     
     sudo apt install palemoon
 
+Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon) 添加对应的源。
+
 接下来下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，选 Linux 版 64 位 NPAPI：[下载链接](https://github.com/darktohka/clean-flash-builds/releases/tag/v1.7)
 
 也可以从我的共享云盘中下载：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
-把解压后得到的 libflashplayer.so 放到 ~/.waterfox/yourown.default/plugins 目录下，Pale Moon则是在这个目录下~/.moonchild productions/pale moon/yourown.default/plugins
-
-或者执行以下命令一键安装:
-
-    $ mkdir -p ~/.waterfox/plugins && wget https://download.fastgit.org/darktohka/clean-flash-builds/releases/download/v1.7/flash_player_patched_npapi_linux.$( (( $(getconf LONG_BIT) == 32 )) && echo "i386" || echo "x86_64").tar.gz -O - | tar -zxf - -C ~/.waterfox/plugins libflashplayer.so
+把解压后得到的 libflashplayer.so 放到 ~/.moonchild productions/pale moon/yourown.default/plugins 目录下。
 
 本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 
 
