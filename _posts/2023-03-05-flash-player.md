@@ -90,13 +90,11 @@ Flash Player 目前有两个开源解决方案：
 
 安装的时候一路点 “Next” 就行。
 
-### 使用 Waterfox 或者 Pale Moon
+### 使用 Pale Moon
 
 低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
 
-Waterfox 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
-
-Waterfox 有两个版本，Current 和 Classic，Current 基于最新版 Firefox 构建，我个人测试无法使用 Flash Player，另外一个 Classic 基于老版本 Firefox 构建，可以用 Flash Player，并且相比于旧版 Firefox 还修复了很多安全漏洞和 Bug。
+Pale Moon 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
 
 #### Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
 
@@ -104,17 +102,17 @@ Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎�
 
 [Pale Moon](https://www.palemoon.org/download.shtml)和Waterfox Classic一样开源跨平台支持Windows、Mac、Linux，并且支持Fire IE插件；Waterfox Classic支持flash但是已经不支持Fire IE。
 
-首先下载并安装 Waterfox Classic 或者 Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
+[Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
-或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
+或者你也可以从我的共享云盘中下载 Pale Moon：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
-Waterfox/Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
+Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
 
 #### macOS
 
 本文在 Apple Silicon 系列芯片的 Mac 上测试通过，理论上 Intel 芯片的 Mac 应该也可行，因为安装的程序都是 X86 架构的。
 
-首先下载并安装 Waterfox Classic 或者 Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
+首先下载并安装 Pale Moon：[Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
 或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
@@ -128,23 +126,29 @@ Waterfox/Pale Moon 没有内置 Flash Player，所以安装完后还需要安装
 
 #### Linux
 
-首先安装 Waterfox Classic: [官方下载地址](https://classic.waterfox.net/)
+首先安装 Pale Moon: [官方下载地址](https://www.palemoon.org/download.shtml)
 
-Arch Linux 用户也可以从 AUR 安装：[waterfox-classic-bin](https://aur.archlinux.org/packages/waterfox-classic-bin)
-
-Debian 11稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)或者[Waterfox Classic](https://classic.waterfox.net/)
+Debian 11 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)
 
     echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
     
     curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
 
-    echo 'deb https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:hawkeye116477:waterfox.list
+
+Debian 12 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
+
+    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
     
-    curl -fsSL https://download.opensuse.org/repositories/home:hawkeye116477:waterfox/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_hawkeye116477_waterfox.gpg > /dev/null
+    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
+
+Ubuntu 22.04 用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
+
+    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
     
+    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
+
+   
     sudo apt update
-    
-    sudo apt install waterfox-classic-kpe
     
     sudo apt install palemoon
 
