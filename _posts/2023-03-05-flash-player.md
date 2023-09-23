@@ -8,7 +8,7 @@ tags:
 
 ---
 # 介绍 
-![Flash Player](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvo2s5Mki4MSJfWgoK0uv8NN4zLKEcaO4HiZwCy85tkY-7pOblGDJtH6v4dYVFgE8mGA_a0zWwcWZRyndpZzmcKIFqKeFlRsm6ijojrnoCziNnQre5Zd1Bc0265MXlEhcCiYp_Od48ZjTliMtdo-S4ONczRscEaeVkwm0I7qbAd2Yfnsn6PyTdZ9fX/w640-h400/flash%20player%202023-2.webp)
+![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/QQ%20farm.webp)
 
 Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流浏览器（Chrome, Firefox, Safari 等）也开始纷纷移除 Flash Player 的相关代码。目前在这些浏览器的最新版本中，即使你的电脑上安装了 Flash Player 也无法正常使用它。
 
@@ -162,4 +162,4 @@ Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://so
 
 本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 
 
-![Flash Player](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvo2s5Mki4MSJfWgoK0uv8NN4zLKEcaO4HiZwCy85tkY-7pOblGDJtH6v4dYVFgE8mGA_a0zWwcWZRyndpZzmcKIFqKeFlRsm6ijojrnoCziNnQre5Zd1Bc0265MXlEhcCiYp_Od48ZjTliMtdo-S4ONczRscEaeVkwm0I7qbAd2Yfnsn6PyTdZ9fX/w640-h400/flash%20player%202023-2.webp)
+![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/Qzone%20farm.webp)
