@@ -29,7 +29,7 @@ tags:
 
 3. 安装 Nvidia 驱动 sudo apt install nvidia-driver, 一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
 
-4. 使用命令 nvidia-smi 检查驱动是否正常工作，如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者
+4. 使用命令 nvidia-smi 检查驱动是否正常工作，如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者使用 mokutil 更新 Nvidia UEFI 安全启动签名。
 
    若 nvidia-smi 提示以下信息，那么说明 Nvidia 驱动安装成功了。
    
@@ -44,7 +44,7 @@ tags:
 
 ## 二：在 Intel/AMD 和 NVIDIA GPU 之间切换。
 
-   与 Ubuntu 不同，Debian 没有用于在台式机/笔记本电脑中的集成显卡和 NVIDIA GPU 之间切换的 nvidia-prime 软件包。然而，有一个免费的开源工具 “envycontrol” 可以让切换显卡轻而易举。
+   与 Ubuntu 不同，Debian 没有用于在台式机/笔记本电脑中的集成显卡和 NVIDIA GPU 之间切换的 nvidia-prime 软件包。然而，有一个免费的开源工具 “envycontrol” 可以让切换显卡非常轻松。
 
 1. 首先，从其发布页面下载软件包（其“python3-envycontrol_xxx_all.deb”）：[Download Envycontrol](https://github.com/bayasdev/envycontrol/releases)
 
