@@ -130,5 +130,11 @@ friends: [
     },{
         title: "Asari Bike",
         href: "https://asaribike.com/"
+    },{
+        title: "Organic Maps",
+        href: "https://organicmaps.app/"
+    },{
+        title: "Ungoogled-Chromium",
+        href: "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
     }
 ]
