@@ -136,5 +136,14 @@ friends: [
     },{
         title: "Ungoogled-Chromium",
         href: "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
+    },{
+        title: "Firefox Ftp",
+        href: "https://ftp.mozilla.org/pub/firefox/releases/"
+    },{
+        title: "Aurora Store",
+        href: "https://auroraoss.com/AuroraStore/Stable/"
+    },{
+        title: "Skype for Linux",
+        href: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     }
 ]
