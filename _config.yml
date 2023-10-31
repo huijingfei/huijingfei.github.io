@@ -134,6 +134,9 @@ friends: [
         title: "Organic Maps",
         href: "https://organicmaps.app/"
     },{
+        title: "果核剥壳",
+        href: "https://www.ghxi.com/"
+    },{
         title: "Ungoogled-Chromium",
         href: "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
     },{
@@ -145,5 +148,8 @@ friends: [
     },{
         title: "Skype for Linux",
         href: "https://repo.skype.com/latest/skypeforlinux-64.deb"
+    },{
+        title: "Private File Sharing",
+        href: "https://send.vis.ee/"
     }
 ]
