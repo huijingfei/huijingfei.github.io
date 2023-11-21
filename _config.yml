@@ -137,11 +137,14 @@ friends: [
         title: "果核剥壳",
         href: "https://www.ghxi.com/"
     },{
-        title: "Ungoogled-Chromium",
+        title: "Chromium",
         href: "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
     },{
         title: "Firefox Ftp",
         href: "https://ftp.mozilla.org/pub/firefox/releases/"
+    },{
+        title: "Midori Browser",
+        href: "https://astian.org/midori-browser/download/"
     },{
         title: "Aurora Store",
         href: "https://auroraoss.com/AuroraStore/Stable/"
@@ -149,7 +152,7 @@ friends: [
         title: "Skype for Linux",
         href: "https://repo.skype.com/latest/skypeforlinux-64.deb"
     },{
-        title: "Private File Sharing",
+        title: "File Sharing",
         href: "https://send.vis.ee/"
     }
 ]
