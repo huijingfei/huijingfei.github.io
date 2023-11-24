@@ -16,29 +16,23 @@ Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流�
 
 然而 Flash Player 的缺失也给部分用户带来了不便（比如我这种想要玩经典页游的人），本文将会介绍在三大主流桌面平台 Windows/macOS/Linux 安装纯净版 Flash Player 的方法。
 
+So how to enable Adobe flash player in Firefox and Chromium?
+
 ## 现有的解决方案及其不足之处
 
 ### 国产浏览器
 
 为了迎合部分用户的需求，一些国产浏览器保留了对 Flash Player 的支持。
 
-但是我要说的是，这些国产浏览器（百度、360、QQ 等），有一个算一个，全都是垃圾。原因如下：
+但是这些国产浏览器（百度、360、QQ 等），明面山推送各种广告，背地里窃取隐私，而且对于访问给国外网站不太友好。
 
-1.没什么技术上的创新。它们都是基于 [Chromium](https://www.chromium.org/chromium-projects/) 开发的，这是 Google Chrome 的前身，免费开源无广告。如果说它们真的有什么创新，那可能就是在 Chromium 的基础上加了广告和隐私追踪器。
-
-2.这些浏览器通常会在后台起一个进程，名字一般含有 Safe / Security 之类的字眼，但如果你真以为它们是为了保护你的上网安全那就大错特错了，这些东西的唯一作用就是收集你的隐私数据，然后向你定向推送广告。
-
-3.内置各种垃圾根证书。这些东西做过的恶太多了，使用它们将会带来极大的安全隐患。
-
-4.最恶心的一点，你想要访问的网站可能会突然因为各种原因而无法访问（例如当年的 996.ICU）。浏览器只不过是一个工具，它不应该也没有任何资格来干涉用户想要访问什么网站。
-
-我的建议是，不要使用任何国产浏览器。如果你的电脑上安装了什么国产浏览器，你应该立马卸载掉它们，因为即使你不启动它们，第 2 点所提到的那些进程也会在后台自动运行。
+我的建议是，不要使用任何国产浏览器。如果你的电脑上安装了什么国产浏览器，你应该立马卸载掉它们，因为即使你不启动它们，他们也会在后台窃取隐私。
 
 你的首选应该是开源浏览器（例如 Firefox, Chromium），其次是国际化的闭源浏览器（例如 Safari, Chrome）。
 
 ## 本文所使用的所有浏览器都是开源浏览器。
 
-### 中国特供版 Flash Player
+### 不要使用中国特供版 Flash Player
 
 Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于国内的网络环境比较特殊，时至今日依然有部分网站死守 Flash Player 绝不松手（而你还往往拿它们没办法），于是 Adobe 在 2020 年宣布停止对 Flash Player 的支持后又将它交给了国内的重橙网络代理，使其依然能够在大陆地区使用。
 
@@ -52,7 +46,7 @@ Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于�
 
 4.如果这些信息遭到了泄露，重橙公司无需承担任何责任（明文写在用户协议里）
 
-因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，不建议除了从事网络空间安全以外的任何人尝试。
+因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，千万不要从 www.flash.cn 下载特供版。
 
 ### 开源 Flash Player 替代品
 
@@ -61,10 +55,6 @@ Flash Player 目前有两个开源解决方案：
 [Ruffle](https://ruffle.rs/): Rust 写的 Flash Player 替代品，可以正常播放视频，但是对 Action Script 3 的支持还不完善，值得注意的一点是[Ruffle](https://ruffle.rs/)的开发非常活跃，后续可以关注下，[Ruffle](https://ruffle.rs/)作为插件可以在最新版 Chrome 和 Firefox 上使用。
 
 [Lightspark](http://lightspark.github.io/)：C/C++ 写的 Flash Player 替代品，同样完成度不高，播放视频足够了，但打游戏还差点意思。
-
-本文将会使用纯净构建的官方版 Flash Player，支持原版 Flash Player 的所有特性，并且没有广告和和中国特供版的各种恶意组件。
-
-### Windows
 
 #### 使用低版本 Firefox
 
@@ -78,9 +68,7 @@ Flash Player 目前有两个开源解决方案：
 
 这个便携版内置了 Flash，所以你也无需安装 Flash Player，直接访问你想访问的网站即可。
 
-#### 安装 Flash Player 独立运行组件
-
-某些游戏辅助器可能不会在浏览器里运行，而是会直接使用系统中安装的 Flash Player 独立运行组件，这种情况下你需要安装 Flash Player。
+### 使用 Pale Moon 和去广告版 Flash Player 独立运行组件
 
 有人在 GitLab 上开发了一个项目 [Clean Flash Player](https://gitlab.com/cleanflash/installer)，它在中国特供版 Flash Player 的基础上进行了魔改，移除了各种限制，删除了和收集隐私与推送广告相关的文件。
 
@@ -88,15 +76,11 @@ Flash Player 目前有两个开源解决方案：
 
 或者从我的共享云盘中下载 34.0.0.277 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
-安装的时候一路点 “Next” 就行。
-
-### 使用 Pale Moon
-
 低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
 
 Pale Moon 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
 
-#### Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
+##### Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
 
 Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎。
 
@@ -110,11 +94,9 @@ Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Pl
 
 #### macOS
 
-本文在 Apple Silicon 系列芯片的 Mac 上测试通过，理论上 Intel 芯片的 Mac 应该也可行，因为安装的程序都是 X86 架构的。
-
 首先下载并安装 Pale Moon：[Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
-或者你也可以从我的共享云盘中下载 2022.11 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
+或者你也可以从我的共享云盘中下载 X86 版本和 Arm 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 然后下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，这是一个开源构建的纯净版 Flash Player，下载的时候选最新版 Mac NPAPI 版本。
 
