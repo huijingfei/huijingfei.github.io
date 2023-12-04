@@ -154,5 +154,8 @@ friends: [
     },{
         title: "File Sharing",
         href: "https://send.vis.ee/"
+    },{
+        title: "Affinity Photo",
+        href: "https://store.serif.com/en-us/update/windows/photo/1/"
     }
 ]
