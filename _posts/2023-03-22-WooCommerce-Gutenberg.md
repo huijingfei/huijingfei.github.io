@@ -8,7 +8,7 @@ tags:
 ---
 WooCommerce 的产品描述页面也可以使用古腾堡编辑器 Gutenberg Block Editor。糟糕的是，不是作为默认或者选项，而是用一小段代码。在这里，我将向你展示两种使用代码的方法来启用古腾堡编辑器 Gutenberg Block Editor/WordPress Block Editor。
 
-# 注意: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃。
+### 注意: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃。
 
 ## 代码
 
