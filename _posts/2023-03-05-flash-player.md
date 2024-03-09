@@ -7,7 +7,7 @@ tags:
     - Pale Moon
 
 ---
-# 介绍 
+## 介绍 
 ![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/QQ%20farm.webp)
 
 Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流浏览器（Chrome, Firefox, Safari 等）也开始纷纷移除 Flash Player 的相关代码。目前在这些浏览器的最新版本中，即使你的电脑上安装了 Flash Player 也无法正常使用它。
