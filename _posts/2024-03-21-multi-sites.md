@@ -25,43 +25,43 @@ tags:
 
 第一个网站的默认安装路径为 /data/wwwroot/wordpress，那么我们连接到服务器后，首先为新网站创建一个文件夹。
 
-  mkdir /data/wwwroot/site2/
+    mkdir /data/wwwroot/site2/
 
 然后下载 WordPress。
 
-  cd /data/wwwroot/site2/
+    cd /data/wwwroot/site2/
 
-  wget https://wordpress.org/latest.tar.gz
+    wget https://wordpress.org/latest.tar.gz
 
 解压 WordPress 安装包。
 
-  tar -xzvf latest.tar.gz
+    tar -xzvf latest.tar.gz
 
 此时在 site2 路径下，有一个 WordPress 安装包 latest.tar.gz 和 解压好的 WordPress 目录； 先删掉安装包 latest.tar.gz，再进入 WordPress 目录。 
 
-  rm latest.tar.gz
+    rm latest.tar.gz
 
-  cd wordpress/
+    cd wordpress/
   
 ## 三：配置数据库
 
-  mysql -u root -p
+    mysql -u root -p
 
 数据库密码可以使用 sudo cat /root/ReadMe 命令查看；输入密码后配置数据库。
 
-  create database wp_site2 default character set utf8 collate utf8_unicode_ci;
+    create database wp_site2 default character set utf8 collate utf8_unicode_ci;
 
-  grant all on wp_site2.* to 'user_site2'@'localhost' identified by 'password';
+    grant all on wp_site2.* to 'user_site2'@'localhost' identified by 'password';
 
-  flush privileges;
+    flush privileges;
 
-  exit
+    exit
 
 复制一份 WordPress 配置文件并编辑。
 
-  cp wp-config-sample.php wp-config.php
+    cp wp-config-sample.php wp-config.php
 
-  vim wp-config.php
+    vim wp-config.php
   
 依次修改数据库名称，用户名以及密码。
 
@@ -77,9 +77,9 @@ tags:
 
 Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录下已经有一个 wordpress.conf 文件；首先我们编辑这个文件。
 
-  cd /usr/local/nginx/conf/vhost/
+    cd /usr/local/nginx/conf/vhost/
 
-  vim wordpress.conf
+    vim wordpress.conf
 
 默认的配置文件 Server 为空，把他修改为  server_name site1.com www.site1.com; 这里的 site1 应该是你搭建的第一个网站的域名。
 
@@ -88,15 +88,15 @@ Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录�
 
 默认的路径不用改；然后复制一份配置文件并编辑。
 
-  cp wordpress.conf site2.conf
+    cp wordpress.conf site2.conf
 
-  vim site2.conf
+    vim site2.conf
 
 这里的 server_name 后边改为 site2.com www.site2.com; 这里的 site2 是你搭建的第二个网站的域名。这里的路径修改为：   root /data/wwwroot/site2/wordpress;
 
 修改完成测试一下：
 
-  nginx -t
+    nginx -t
 
 如图，如果提示 successful，那就没问题了。
 
@@ -104,7 +104,7 @@ Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录�
 
 重启 Nginx 服务。
 
-  systemctl restart nginx
+    systemctl restart nginx
 
 最后就可以在浏览器中输入 site2.com 来完成 WordPress 的安装了。
 
@@ -112,8 +112,6 @@ Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录�
 
 ## 五：安装插件错误提示 Failed to connect to FTP server
 
-
-
 执行以下命令可以解决：
 
-  chown -R www /data/wwwroot/tibetmag/wordpress
+    chown -R www /data/wwwroot/site2/wordpress
