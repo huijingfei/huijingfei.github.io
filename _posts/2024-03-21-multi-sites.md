@@ -57,13 +57,15 @@ tags:
 
     exit
 
+上文的 identified by 'password' 最好设置一个复杂一点的密码，并随手记下来。
+
 复制一份 WordPress 配置文件并编辑。
 
     cp wp-config-sample.php wp-config.php
 
     vim wp-config.php
   
-依次修改数据库名称，用户名以及密码。
+依次修改数据库名称，用户名以及密码（此处的 Password 为上文中设置好的密码）。
 
   ![DB name](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/DB%20name.webp)
 
