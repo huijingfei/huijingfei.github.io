@@ -142,6 +142,10 @@ Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://so
 
 把解压后得到的 libflashplayer.so 放到 ~/.moonchild productions/pale moon/yourown.default/plugins 目录下。
 
-本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 
+### 推荐使用 [Basilisk web browser](https://www.basilisk-browser.org/)
+
+[Basilisk web browser](https://www.basilisk-browser.org/) 最初由 Palemoon 开发，外观更加现代化，现在由另外一个开发团队独立开发，使用方法同 Palemoon。
+
+本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 并做了部分修改。
 
 ![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/Qzone%20farm.webp)
