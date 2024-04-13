@@ -84,7 +84,7 @@ The following types of storage are available:
 
 ### 翻译设置
 
-模板支持以下语言的默认翻译:
+模板支持多语言翻译:
 
 - [English - en](src/resources/translations/en.json)
 - [Czech - cs](src/resources/translations/cs.json)
