@@ -102,15 +102,15 @@ vi /etc/systemd/system/aria2.service
       
 ### 本文参考了以下配置
 
-    [aira2.conf](https://github.com/P3TERX/aria2.conf)
+[aira2.conf](https://github.com/P3TERX/aria2.conf)
 
-    [Install Web Based Download Utility with Aria2 WebUI on Debian/Ubuntu](https://i12bretro.github.io/tutorials/0254.html)
+[Install Web Based Download Utility with Aria2 WebUI on Debian/Ubuntu](https://i12bretro.github.io/tutorials/0254.html)
 
 本文为个人备份设置，仅供参考。另推荐使用以下项目部署以获得最佳使用体验
 
-    [Aria2 Pro (Docker)](https://github.com/P3TERX/docker-aria2-pro)
+[Aria2 Pro (Docker)](https://github.com/P3TERX/docker-aria2-pro)
     
-    [Aria2 一键安装管理脚本 增强版 (GNU/Linux)](https://github.com/P3TERX/aria2.sh)
+[Aria2 一键安装管理脚本 增强版 (GNU/Linux)](https://github.com/P3TERX/aria2.sh)
 
 ### 通过浏览器扩展
 
