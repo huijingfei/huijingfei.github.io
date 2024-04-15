@@ -112,5 +112,12 @@ vi /etc/systemd/system/aria2.service
     
     [Aria2 一键安装管理脚本 增强版 (GNU/Linux)](https://github.com/P3TERX/aria2.sh)
 
-      
+### 通过浏览器扩展
+
+取代内置下载管理器。开启后，将检测下载链接，直接通过插件把链接发送到 Aria2；
+
+[火狐 aria2 插件 Aria2 Download Manager Integration](https://addons.mozilla.org/en-US/firefox/addon/aria2-integration/)
+
+[Aria2-Explorer for Chrome](https://chromewebstore.google.com/detail/aria2-explorer/mpkodccbngfoacfalldjimigbofkhgjn?hl=en-US&utm_source=ext_sidebar)
+
 Welcome to our [website](https://blog.tigress.cc/)
