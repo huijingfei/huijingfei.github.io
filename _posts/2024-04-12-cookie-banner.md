@@ -105,4 +105,10 @@ The following types of storage are available:
 - [Swedish - sv](src/resources/translations/se.json)
 - [Ukrainian - uk](src/resources/translations/ua.json)
 
+### 其他版本 cookie banner 推荐
+
+[Google Tag Manager Consent Mode Examples](https://github.com/googleanalytics/gtm-consent-mode-examples)
+
+[Consent Mode (Google tags)](https://github.com/gtm-templates-simo-ahava/consent-mode)
+
 Welcome to our [website](https://blog.tigress.cc/)
