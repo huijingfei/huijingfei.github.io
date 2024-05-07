@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ﻿让你的 Gnome 桌面看起来想 Mac OS 一样
+title: ﻿让你的 Gnome 桌面看起来像 Mac OS 一样
 tags:
     - Gnome
     - Linux
@@ -12,29 +12,29 @@ tags:
 
 根据不同的发行版，从软件源安装 Timeshift 并创建快照备份：
 
-      apt install timeshift
+    apt install timeshift
       
-      dnf install timeshift
+    dnf install timeshift
 
 ## 安装 gnome-tweaks git
 
-      dnf install gnome-tweaks git
+    dnf install gnome-tweaks git
       
-      apt install gnome-tweaks git
+    apt install gnome-tweaks git
 
 ## 安装 flatpak （可选，主要是用来安装 dynamicwallpaper）
 
-      dnf install flatpak
+    dnf install flatpak
       
-      apt install flatpak
+    apt install flatpak
       
 ## 配置 Flathub
 
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
       
 ## 安装 extensionmanager dynamicwallpaper 
 
-      flatpak install extensionmanager dynamicwallpaper
+    flatpak install extensionmanager dynamicwallpaper
       
 部分发行版软件源包含以上软件，个人使用的是 Debian 12，如果不安装 flatpak，可以在不安装 dynamicwallpaper 包的情况下安装桌面背景，方法见本文最后；以上可根据发行版自行选择。
 
@@ -50,19 +50,19 @@ tags:
 
 [WhiteSur-gtk-theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
 
-      git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+    git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
       
-      cd WhiteSur-gtk-theme/
+    cd WhiteSur-gtk-theme/
       
-      ./install.sh -t all -s 220 -l --round --darker --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
+    ./install.sh -t all -s 220 -l --round --darker --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
       
-      sudo ./tweaks.sh -g        (GDM 主题)
+    sudo ./tweaks.sh -g        (GDM 主题)
       
-      sudo ./tweaks.sh -f         (Firefox 主题)
+    sudo ./tweaks.sh -f         (Firefox 主题)
       
 更多用法可以使用以下命令查看帮助
       
-      ./install.sh --help
+    ./install.sh --help
 
 ## 打开 Extension Manager 安装插件
       
@@ -104,7 +104,7 @@ tags:
 
 [WhiteSur-cursors](https://github.com/vinceliuice/WhiteSur-cursors)
 
-安装方法同 gtk 主题的安装，其中背景图分为 whitesur|monterey|ventura 几个主题，默认为安装所有主题背景。
+安装方法同 gtk 主题的安装，其中背景图分为 whitesur/monterey/ventura 几个主题，默认为安装所有主题背景。
 
 ## 钉钉微信 QQ 图标
 
@@ -112,11 +112,11 @@ tags:
 
 分别复制到如下路径：
 
-      cp wechat.png /opt/wechat-beta/icons/
+    cp wechat.png /opt/wechat-beta/icons/
 
-      cp qq.png /usr/share/icons/hicolor/512x512/apps/
+    cp qq.png /usr/share/icons/hicolor/512x512/apps/
 
-      cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
+    cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
       
 其中微信使用的是绕过登录检测的 wechat-beta：[wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux)
 
