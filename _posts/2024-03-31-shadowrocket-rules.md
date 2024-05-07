@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / v2rayN 规则 / v2rayA 规则 (白名单规则) 
+title: 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / 白名单规则
 tags:
     - 小火箭分流规则
     - Shadowrocket 配置规则
