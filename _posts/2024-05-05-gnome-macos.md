@@ -122,6 +122,8 @@ tags:
 
 另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)
 
-微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版本。
+微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版；AppImage 版需要自己设置绕登录检测。最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，然后下载 [WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage) 版的 .tar.xz 压缩包，解压后复制 wechat 文件到 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb 的安装目录。目前我测试的 1.0.0.241 AppImage 版本替换到 wechat-beta_1.0.0.145_amd64.fixed.deb 是可以使用的。
+
+    cp wechat /opt/wechat-beta/
       
 Welcome to our [website](https://blog.tigress.cc/)
