@@ -117,8 +117,10 @@ tags:
     cp qq.png /usr/share/icons/hicolor/512x512/apps/
 
     cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
+
+### Debian/Ubuntu 如何安装 WeChat for Linux 微信 Linux 原生版本
       
-其中微信使用的是绕过登录检测的 wechat-beta：[wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux)
+其中微信使用的是绕过登录检测的 deb 安装包：[wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux)
 
 另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)
 
