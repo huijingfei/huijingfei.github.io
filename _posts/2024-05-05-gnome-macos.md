@@ -1,12 +1,16 @@
 ---
 layout: post
-title: ﻿让你的 Gnome 桌面看起来像 Mac OS 一样
+title: ﻿让你的 Gnome Desktop 桌面看起来像 Mac OS 一样
+subtitle: linux 桌面美化，使 Debian/Ubuntu/Fedora 等 Linux 发行版变成 MacOS 风格
 tags:
     - Gnome
-    - Linux
+    - Linux 桌面美化
     - Mac OS
     - Gnome Extensions
     - Gnome Look
+    - Debian
+    - Ubuntu
+    - Fedora
 ---
 ## 安装 Timeshift
 
@@ -124,7 +128,7 @@ tags:
 
 另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)
 
-微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版；AppImage 版需要自己设置绕登录检测。最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，然后下载 [WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage) 版的 .tar.xz 压缩包，解压后更改文件夹名称为 wechat-beat 然后复制整个目录到 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb 的安装目录。
+微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版；AppImage 版需要自己设置绕登录检测。最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，然后下载 [WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage) 版的 .tar.xz 压缩包，解压后更改文件夹名称为 wechat-beta 然后复制整个目录到 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb 的安装目录。
 
     cp -r wechat-beta /opt/
 
