@@ -118,6 +118,10 @@ Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录�
 
     chown -R www /data/wwwroot/site2/wordpress
 
+安装完差见后，可以把文件拥有者改回 root：
+
+    chown -R root:root /data/wwwroot/site2/wordpress
+
 ## 六：本文参考了以下 YouTube 视频，并根据阿里云轻量应用服务器 WordPress 镜像环境做了部分修改。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P7W4iYkFaOU?si=pShkDj1KSxIYRyr9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
