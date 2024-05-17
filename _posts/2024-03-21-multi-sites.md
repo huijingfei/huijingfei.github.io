@@ -116,9 +116,9 @@ Nginx 配置文件默认在 /usr/local/nginx/conf/vhost/ 路径下，此目录�
 
 执行以下命令可以解决：
 
-    chown -R www /data/wwwroot/site2/wordpress
+    chown -R www:www /data/wwwroot/site2/wordpress
 
-安装完差见后，可以把文件拥有者改回 root：
+安装完插件后，可以把文件拥有者改回 root：
 
     chown -R root:root /data/wwwroot/site2/wordpress
 
