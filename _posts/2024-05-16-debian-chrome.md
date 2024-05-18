@@ -58,7 +58,7 @@ tags:
 
 该命令确保成功导入 GPG 密钥，这是安装过程的前提条件。缺少这一步骤会导致安装不完整。
 
-出现错误：sudo: unable to resolve host hp（hp 是我本机电脑的名称）: Name or service not known 的解决方法
+***出现错误：sudo: unable to resolve host hp（hp 是我本机电脑的名称）: Name or service not known 的解决方法***
 
     cat /etc/hostname
     hp
