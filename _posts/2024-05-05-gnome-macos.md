@@ -108,6 +108,8 @@ tags:
 
 [WhiteSur-cursors](https://github.com/vinceliuice/WhiteSur-cursors)
 
+[Grub2themes](https://github.com/vinceliuice/grub2-themes)
+
 安装方法同 gtk 主题的安装，其中背景图分为 whitesur/monterey/ventura 几个主题，默认为安装所有主题背景。
 
 ## 钉钉微信 QQ 图标
