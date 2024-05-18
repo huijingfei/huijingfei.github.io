@@ -58,6 +58,29 @@ tags:
 
 该命令确保成功导入 GPG 密钥，这是安装过程的前提条件。缺少这一步骤会导致安装不完整。
 
+出现错误：sudo: unable to resolve host hp（hp 是我本机电脑的名称）: Name or service not known 的解决方法
+
+    cat /etc/hostname
+    hp
+
+然后再查看 hosts 文件
+
+    cat /etc/hosts
+    # Standard host addresses
+    127.0.0.1  localhost
+    ::1        localhost ip6-localhost ip6-loopback
+    ff02::1    ip6-allnodes
+    ff02::2    ip6-allrouters
+
+在第一行 localhost 后边加上 hostsname 文件中的 hp（对应 hp 应为你的电脑上查看 hostsname 的名称）
+
+    vim /etc/hosts
+    # Standard host addresses
+    127.0.0.1  localhost hp
+    ::1        localhost ip6-localhost ip6-loopback
+    ff02::1    ip6-allnodes
+    ff02::2    ip6-allrouters
+
 成功导入 GPG 密钥后，执行以下命令导入 Google Chrome 浏览器软件源：
 
     echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
