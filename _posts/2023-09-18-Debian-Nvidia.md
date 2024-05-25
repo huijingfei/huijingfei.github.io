@@ -25,17 +25,26 @@ tags:
     deb https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
     deb-src https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
 
-2. 执行 sudo apt-get update
+2. 更新下系统
 
-3. 安装 Nvidia 驱动 sudo apt install nvidia-driver, 一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
+   apt update && apt upgrade
 
-4. 使用命令 nvidia-smi 检查驱动是否正常工作，如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者使用 mokutil 更新 Nvidia UEFI 安全启动签名。
+4. 安装 Nvidia 驱动
+   apt install nvidia-driver nvidia-smi
 
-   若 nvidia-smi 提示以下信息，那么说明 Nvidia 驱动安装成功了。
+一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
+   
+5. 检查驱动是否正常工作:
+
+   nvidia-smi 
+
+如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者使用 mokutil 更新 Nvidia UEFI 安全启动签名。
+   
+若 nvidia-smi 提示以下信息，那么说明 Nvidia 驱动安装成功了。
    
    ![nvidia-smi](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/nvidia-smi.webp)
    
-5. 禁用开源驱动
+6. 禁用开源驱动
 
        sudo echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
        sudo update-initramfs -u
