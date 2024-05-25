@@ -98,10 +98,7 @@ tags:
 
 ![APP开屏视频广告](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/APP%20VIDEO%20AD.webp)
 
-![CLOUD VIDEO AD](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/CLOUD%20VIDEO%20AD.webp)
-
-
-<iframe width="1560" height="720" src="https://youtube.com/shorts/s0n1DC52FsE?si=LQ3duG_upPmsRAPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+![淘宝系飞猪开屏广告](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/CLOUD%20VIDEO%20AD.webp)
 
 ### 开启 https 解密
 
