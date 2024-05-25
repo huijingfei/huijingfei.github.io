@@ -100,6 +100,9 @@ tags:
 
 ![CLOUD VIDEO AD](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/CLOUD%20VIDEO%20AD.webp)
 
+
+<iframe width="1560" height="720" src="https://youtube.com/shorts/s0n1DC52FsE?si=LQ3duG_upPmsRAPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### 开启 https 解密
 
 注意⚠️：开启 https 解密后，尽量不要直接使用更新配置，这会导致已信任的证书被覆盖，可采用复制粘贴的方法替换规则列表。
@@ -119,6 +122,10 @@ tags:
 ![Trust setting](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/Trust%20setting.webp)
 
 4️⃣最后回到小火箭开启。
+
+### 视频广告
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/cZGwcOBh318?si=tr7F9wdWF15tWMds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### v2rayN 自定义规则
 
