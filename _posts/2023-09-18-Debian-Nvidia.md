@@ -27,16 +27,17 @@ tags:
 
 ***2. 更新下系统***
 
-   apt update && apt upgrade
+    apt update && apt upgrade
 
 ***3. 安装 Nvidia 驱动***
-   apt install nvidia-driver nvidia-smi
+
+    apt install nvidia-driver nvidia-smi
 
 一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
    
 ***4. 检查驱动是否正常工作:***
 
-   nvidia-smi 
+    nvidia-smi 
 
 如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者使用 mokutil 更新 Nvidia UEFI 安全启动签名。
    
@@ -46,59 +47,58 @@ tags:
    
 ***5. 禁用开源驱动***
 
-       sudo echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
-       sudo update-initramfs -u
+    sudo echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+    sudo update-initramfs -u
    
 ***6. 安装 nvidia-driver 包后，重新启动计算机。***
 
 ## 二：在 Intel/AMD 和 NVIDIA GPU 之间切换。
 
-   与 Ubuntu 不同，Debian 没有用于在台式机/笔记本电脑中的集成显卡和 NVIDIA GPU 之间切换的 nvidia-prime 软件包。然而，有一个免费的开源工具 “envycontrol” 可以让切换显卡非常轻松。
+与 Ubuntu 不同，Debian 没有用于在台式机/笔记本电脑中的集成显卡和 NVIDIA GPU 之间切换的 nvidia-prime 软件包。然而，有一个免费的开源工具 “envycontrol” 可以让切换显卡非常轻松。
 
-1. 首先，从其发布页面下载软件包（其“python3-envycontrol_xxx_all.deb”）：[Download Envycontrol](https://github.com/bayasdev/envycontrol/releases)
+1️⃣ 首先，从其发布页面下载软件包（其“python3-envycontrol_xxx_all.deb”）：[Download Envycontrol](https://github.com/bayasdev/envycontrol/releases)
 
-   ![python3-envycontrol](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/python3-envycontrol.webp)
+![python3-envycontrol](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/python3-envycontrol.webp)
 
-2. 下载软件包后，打开终端并运行命令来安装它：
+2️⃣ 下载软件包后，打开终端并运行命令来安装它：
 
-       sudo dpkg -i python3-envycontrol*.deb
+    sudo dpkg -i python3-envycontrol*.deb
 
-3. 安装 envycontrol 后，您可以运行以下命令之一来切换 GPU 模式：
-
+3️⃣ 安装 envycontrol 后，您可以运行以下命令之一来切换 GPU 模式：
    
-    切换到集成显卡 (Intel 或者 AMD):
+切换到集成显卡 (Intel 或者 AMD):
 
-       sudo envycontrol -s integrated
+    sudo envycontrol -s integrated
 
-    切换到混合模式，平衡性能和功耗:
+切换到混合模式，平衡性能和功耗:
 
-       sudo envycontrol -s hybrid --rtd3
+    sudo envycontrol -s hybrid --rtd3
 
-    切换到 NVIDIA 独立显卡模式，:
+切换到 NVIDIA 独立显卡模式，:
 
-       sudo envycontrol -s nvidia --force-comp
+    sudo envycontrol -s nvidia --force-comp
+    
+4️⃣ 完成 GPU 模式切换后，请记住重新启动计算机以应用更改。
 
-4. 完成 GPU 模式切换后，请记住重新启动计算机以应用更改。
+5️⃣ 对于gnome 桌面用户，可以安装 [GPU profile selector](https://extensions.gnome.org/extension/5009/gpu-profile-selector/) 插件，可以更好的切换 GPU 模式。
 
-5. 对于gnome 桌面用户，可以安装 [GPU profile selector](https://extensions.gnome.org/extension/5009/gpu-profile-selector/) 插件，可以更好的切换 GPU 模式。
+![GPU profile selector](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/GPU%20profile%20selector.webp)
 
-   ![GPU profile selector](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/GPU%20profile%20selector.webp)
+6️⃣ 完成后，您应该能够通过右上角的系统菜单（又名“快速设置”）切换 GPU。
 
-   完成后，您应该能够通过右上角的系统菜单（又名“快速设置”）切换 GPU。
+![GPU profile selector](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/Debian%20GPU%20profile%20selector.webp)
 
-   ![GPU profile selector](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/Debian%20GPU%20profile%20selector.webp)
+点击切换模式后，会提示输入密码确认，完成后稍等一会系统会重新启动。笔记本直接选择混合模式平衡性能与功耗，台式机则选择 Nvidia 独立显卡。
 
-   点击切换模式后，会提示输入密码确认，完成后稍等一会系统会重新启动。笔记本直接选择混合模式平衡性能与功耗，台式机则选择 Nvidia 独立显卡。
+![envycontrol Switch GPU verify](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/envycontrol%20Switch%20GPU%20verify.webp)
 
-   ![envycontrol Switch GPU verify](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/envycontrol%20Switch%20GPU%20verify.webp)
+7️⃣ 要验证哪个显卡处于活动状态，请运行命令：
 
-   要验证哪个显卡处于活动状态，请运行命令：
-
-         glxinfo |grep -E "OpenGL vendor|OpenGL renderer"
+    glxinfo |grep -E "OpenGL vendor|OpenGL renderer"
 
    或者
 
-         envycontrol --query
+    envycontrol --query
 
    ![envycontrol --query](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/envycontrol%20--query.webp)
 
