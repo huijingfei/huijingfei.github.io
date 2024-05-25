@@ -12,7 +12,7 @@ tags:
 
 ## 一：安装 Nvidia Linux 驱动
 
-1. 使用 vi/nano 或者其他文本编辑器编辑 /etc/apt/sources.list 这个文件，替换为以下镜像或者国内其他的镜像站点。
+***1. 使用 vi/nano 或者其他文本编辑器编辑 /etc/apt/sources.list 这个文件，替换为以下镜像或者国内其他的镜像站点。***
 
 阿里云镜像站
 
@@ -25,16 +25,16 @@ tags:
     deb https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
     deb-src https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
 
-2. 更新下系统
+***2. 更新下系统***
 
    apt update && apt upgrade
 
-4. 安装 Nvidia 驱动
+***3. 安装 Nvidia 驱动***
    apt install nvidia-driver nvidia-smi
 
 一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
    
-5. 检查驱动是否正常工作:
+***4. 检查驱动是否正常工作:***
 
    nvidia-smi 
 
@@ -44,12 +44,12 @@ tags:
    
    ![nvidia-smi](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/nvidia-smi.webp)
    
-6. 禁用开源驱动
+***5. 禁用开源驱动***
 
        sudo echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
        sudo update-initramfs -u
    
-7. 安装 nvidia-driver 包后，重新启动计算机。
+***6. 安装 nvidia-driver 包后，重新启动计算机。***
 
 ## 二：在 Intel/AMD 和 NVIDIA GPU 之间切换。
 
