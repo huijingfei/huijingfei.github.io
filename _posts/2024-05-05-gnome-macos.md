@@ -72,7 +72,7 @@ tags:
       
 个人使用的是基于 Debian 的发行版 [Spiral Linux](https://spirallinux.github.io/)，这个发行版内置了大部分插件。
 
-安装 User Themes、Dash to Dock、Dash to Dock Animator(Dash2Dock Animated)、Compiz alike magic lamp effect、Quick Settings Tweaker、Blur my Shell、Gnome 4x UI Improvements 等插件。其中 Dash to Dock 与 Dash2Dock Animated 选择启用一个即可，两种风格不同，互相冲突。
+安装 User Themes、Dash to Dock、Dash to Dock Animator(Dash2Dock Animated)、Compiz alike magic lamp effect、Quick Settings Tweaker、Blur my Shell、Gnome 4x UI Improvements、gnome-shell-extension-appindicator gnome-shell-extension-arc-menu 等插件。其中 Dash to Dock 与 Dash2Dock Animated 选择启用一个即可，两种风格不同，互相冲突。
 
 ![Extension Manager](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/img/gnome%20extensions.webp)
 
