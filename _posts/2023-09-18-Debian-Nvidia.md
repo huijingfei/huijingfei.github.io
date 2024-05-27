@@ -40,6 +40,18 @@ tags:
     nvidia-smi 
 
 如果提示错误 NVIDIA-SMI has failed because it could not communicate with the NVIDIA driver. 那么是因为你的电脑或者笔记本启用了安全启动，解决方法为进 BIOS 关闭安全启动，或者使用 mokutil 更新 Nvidia UEFI 安全启动签名。
+
+**使用 mokutil 导入密钥的方法:**
+
+安装 nvidia 官方仓库的包，所以密钥都已经帮我们生成好了，只需要我们手动导入即可；生成的密钥在 /var/lib/dkms 下，后缀名为 der 的就是你要的密钥文件。
+
+    mokutil --import /var/lib/dkms/mok.pub
+
+输入，回车之后，系统会让你输入密码，随意，尽量简单，输完还会让你重输一次确认，该密码主要是用来确认证书是由“自然人”安装的，不是恶意程序导入的，在你待会儿重启的时候，甚至在grub都没加载之前，主板就会开始问你是否导入证书以用来安全启动认证，到时候你就输入这个密码，确认即可。
+
+    reboot
+
+重启之后选择 Enrool MOK ➡️ Continue ➡️ Yes，输入上文设置的简单易输的密码，回车 ➡️ Reboot。
    
 若 nvidia-smi 提示以下信息，那么说明 Nvidia 驱动安装成功了。
    
