@@ -20,7 +20,7 @@ So how to enable Adobe flash player in Firefox and Chromium?
 
 ## 现有的解决方案及其不足之处
 
-### 国产浏览器
+**国产浏览器**
 
 为了迎合部分用户的需求，一些国产浏览器保留了对 Flash Player 的支持。
 
@@ -32,7 +32,7 @@ So how to enable Adobe flash player in Firefox and Chromium?
 
 ## 本文所使用的所有浏览器都是开源浏览器。
 
-### 不要使用中国特供版 Flash Player
+**中国特供版 Flash Player**
 
 Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于国内的网络环境比较特殊，时至今日依然有部分网站死守 Flash Player 绝不松手（而你还往往拿它们没办法），于是 Adobe 在 2020 年宣布停止对 Flash Player 的支持后又将它交给了国内的重橙网络代理，使其依然能够在大陆地区使用。
 
@@ -48,7 +48,7 @@ Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于�
 
 因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，千万不要从 www.flash.cn 下载特供版。
 
-### 开源 Flash Player 替代品
+**开源 Flash Player 替代品**
 
 Flash Player 目前有两个开源解决方案：
 
@@ -56,9 +56,9 @@ Flash Player 目前有两个开源解决方案：
 
 [Lightspark](http://lightspark.github.io/)：C/C++ 写的 Flash Player 替代品，同样完成度不高，播放视频足够了，但打游戏还差点意思。
 
-#### 使用低版本 Firefox
+### 使用低版本 Firefox
 
-虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是较低的版本中依然支持Flash，这里只作为一个可选项但是并不推荐（本文推荐使用Waterfox Classic/Pale Moon：[Waterfox官方下载地址](https://classic.waterfox.net/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)）。
+虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是较低的版本中依然支持Flash，这里只作为一个可选项但是并不推荐（本文推荐使用 Basilisk/Pale Moon：[Basilisk web browser](https://www.basilisk-browser.org/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)）。
 
 [archive.org](https://archive.org/) 上面保留了支持 Flash Player 的最后一个版本的 Firefox 和 Chrome，有需要的可以从这里下载：[下载链接](https://archive.org/download/Firefox_Chrome_Adobe_Flash)
 
@@ -80,11 +80,11 @@ Flash Player 目前有两个开源解决方案：
 
 Pale Moon 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
 
-##### Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!
+**Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!**
 
-Goanna fork 自 Gecko，Goanna 是 Pale Moon, Basilisk 浏览器的排版引擎。
+Goanna fork 自 Gecko，Goanna 是 [Pale Moon](https://www.palemoon.org/), [Basilisk web browser](https://www.basilisk-browser.org/) 浏览器的排版引擎。
 
-[Pale Moon](https://www.palemoon.org/download.shtml)和Waterfox Classic一样开源跨平台支持Windows、Mac、Linux，并且支持Fire IE插件；Waterfox Classic支持flash但是已经不支持Fire IE。
+[Pale Moon](https://www.palemoon.org/download.shtml)和 [Basilisk web browser](https://www.basilisk-browser.org/) 一样开源跨平台支持 Windows、Mac、Linux，并且支持 Fire IE 插件；[Basilisk web browser](https://www.basilisk-browser.org/) 支持 flash 但是已经不支持 Fire IE。
 
 [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
@@ -112,23 +112,14 @@ Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Pl
 
 Debian 11 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)
 
-    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
-    
-    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
-
+    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
+    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
 
 Debian 12 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
 
-    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
+    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
     
-    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
-
-Ubuntu 22.04 用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
-
-    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
-    
-    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
-
+    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
    
     sudo apt update
     
