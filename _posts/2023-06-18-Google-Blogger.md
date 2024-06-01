@@ -16,15 +16,17 @@ Google Blogger 自定义域名相对 GitHub 博客自定义域名简单一些；
 
 ![Dynadot 域名注册](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/Dynadot%20%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.webp)
 
-第二步：在 Blogger 设置-自定义域名 选项里填入子域名：可以是 www 开头，也可以 blog， news 等开头。
+第二步：在 Blogger 设置-自定义域名 选项里填入子域名：可以是 www 开头，也可以 blog， news 等开头; 我在这里填的是 blog.tigress.cc。
 
 ![Google Blogger Custom Domain](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/Google%20Blogger%20Custom%20Domain.webp)
 
-第三步：在 Google Search Console 中完成对域名的验证，添加 CNAME 记录指向 ghs.google.com, 值可以是 www，也可以是 blog， news 等等。
+第三步：在 Google Search Console 中完成对域名的验证，然后在 DNS 后台添加 CNAME 记录指向 ghs.google.com, 值可以是 www，也可以是 blog， news 等等；例如我的记录是 blog.tigress.cc 指向 ghs.google.com。
 
 ![添加 CNAME 记录 指向 Google Blogger](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/Custom-Domain-on-Blogger-CNAME-DNS-Records%20Blogger%20%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E6%B7%BB%E5%8A%A0%20CNAME%20%E8%AE%B0%E5%BD%95.webp)
 
-以上三步完成后就可以耐心等待了，我的 Google Blogger 地址为 [biz.tigress.cc](https://biz.tigress.cc/)。
+![域名后台添加 CNAME 记录指向 Google Blogger](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/%E5%9F%9F%E5%90%8D%E5%90%8E%E5%8F%B0%E6%B7%BB%E5%8A%A0%20CNAME%20%E8%AE%B0%E5%BD%95%E6%8C%87%E5%90%91%20Google%20Blogger.webp)
+
+以上三步完成后就可以耐心等待了，务必等待一个小时以上，不要做删除等动作；我的 Google Blogger 地址为 [blog.tigress.cc](https://blog.tigress.cc/)。
 
 ## 需要注意的几点
 
