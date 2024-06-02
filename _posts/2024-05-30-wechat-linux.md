@@ -30,6 +30,26 @@ cp -r wechat-beta /opt/
 ```
 这样做是为了通过安装 deb 包在系统中配置好绕登录检测，然后替换微信安装后的文件达到手动更新版本的目的。
 
+**注意：先对比一下 Deb 安装完成后的目录与 .tar.xz 压缩包解压后的目录的区别：**
+
+![wechat-beta Linux](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/wechat-beta%20Linux.webp)
+
+![Linux WeChat Appimage](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/Linux%20WeChat%20Appimage.webp)
+
+可以看到 wechat-beta for Linux 目录下有个 icons 文件夹，这个是显示微信图标用的；而 .tar.xz 压缩包解压后的目录有个 licence 文件夹，这个手动设置绕登录检测用的，这个不用管，因为安装 Deb 包的时候已经设置好绕登录检测了。
+
+为了保险起见，把 icons 文件夹先复制到 .tar.xz 压缩包解压后的目录，然后删除 /opt 下 wechat-beta 的目录：
+```
+rm -r /opt/wechat-beta
+```
+然后再把 .tar.xz 压缩包解压后的目录改名为 wechat-beta，并移动或复制到 /opt 目录下
+```
+mv -r wechat-beta /opt/
+```
+此时，到微信关于可以看到是最新版的， dpkg -l 命令其实还是老版本，这个不影响使用。如果有强迫症，可以修改以下文件中的 wechat-beta 版本信息。
+```
+/var/lib/dpkg/status
+```
 ![linux 微信](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/wechat%20linux.webp)
 
 Welcome to our [website](https://blog.tigress.cc/)
