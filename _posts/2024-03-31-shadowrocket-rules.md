@@ -6,7 +6,7 @@ tags:
     - 小火箭分流规则
     - Shadowrocket 配置规则
     - Shadowrocket Rules
-    - Shadowrocket去开屏广告
+    - 小火箭去开屏广告
     - Shadowrocket https 解密
     - Shadowrocket 配置文件
     - shadowrocket geolite2 数据库
@@ -29,6 +29,8 @@ tags:
 🛑 更改小火箭 Shadowrocket 默认 DNS 设置为支持 DOH/DOT 的国际大厂 DNS。
 
 🛑 添加常用 SSL 证书域名。
+
+注意⚠️：最近一段时期阿里 DNS 不太稳定，暂时移除了阿里 DNS；（从去年公司的邮箱用的阿里云 DNS 解析出问题，到今年偶尔不能正常解析微博网页版，目前公司的以及个人的都换成了其他 DNS）
 
 ------------------------------------------------------
 
