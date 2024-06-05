@@ -133,8 +133,10 @@ tags:
 [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)可代替 V2Ray 官方 geoip.dat 和 geosite.dat。
 
 ### v2rayA 防止 DNS 污染 ➡️ 自定义高级设置
-
-    https://dns.alidns.com:443/dns-query->direct
-    https://doh.pub:443/dns-query->direct
-    https://doh.opendns.com:443/dns-query->direct
-    https://rubyfish.cn:443/dns-query->direct
+```
+tcp://dns.opendns.com:5353 -> proxy
+https://cloudflare-dns.com:443/dns-query->proxy
+https://dns.google:443/dns-query->proxy
+https://doh.pub:443/dns-query->direct
+https://rubyfish.cn:443/dns-query->direct
+```
