@@ -58,7 +58,7 @@ tags:
       
     cd WhiteSur-gtk-theme/
       
-    ./install.sh -t all -s 220 -l --round --darker --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
+    ./install.sh -t all -s 220 -i apple -t blue -l --round --darker --normal --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
       
     sudo ./tweaks.sh -g        (GDM 主题)
       
