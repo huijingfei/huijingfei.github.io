@@ -15,31 +15,31 @@ tags:
 ## 安装 Timeshift
 
 根据不同的发行版，从软件源安装 Timeshift 并创建快照备份：
-
-    apt install timeshift
+```
+apt install timeshift
       
-    dnf install timeshift
-
+dnf install timeshift
+```
 ## 安装 gnome-tweaks git
-
-    dnf install gnome-tweaks git
+```
+dnf install gnome-tweaks git
       
-    apt install gnome-tweaks git
-
+apt install gnome-tweaks git
+```
 ## 安装 flatpak （可选，主要是用来安装 dynamicwallpaper）
-
-    dnf install flatpak
+```
+dnf install flatpak
       
-    apt install flatpak
-      
+apt install flatpak
+```     
 ## 配置 Flathub
-
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-      
+```
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```    
 ## 安装 extensionmanager dynamicwallpaper 
-
-    flatpak install extensionmanager dynamicwallpaper
-      
+```
+flatpak install extensionmanager dynamicwallpaper
+```
 部分发行版软件源包含以上软件，个人使用的是 Debian 12，如果不安装 flatpak，可以在不安装 dynamicwallpaper 包的情况下安装桌面背景，方法见本文最后；以上可根据发行版自行选择。
 
 ## 下载图标主题
@@ -53,21 +53,21 @@ tags:
 ## 下载安装 gtk 主题
 
 [WhiteSur-gtk-theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
-
-    git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+```
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
       
-    cd WhiteSur-gtk-theme/
+cd WhiteSur-gtk-theme/
       
-    ./install.sh -t all -s 220 -i apple -t blue -l --round --darker --normal --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
+./install.sh -t all -s 220 -i apple -t blue -l --round --darker --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
       
-    sudo ./tweaks.sh -g        (GDM 主题)
+sudo ./tweaks.sh -g        (GDM 主题)
       
-    sudo ./tweaks.sh -f         (Firefox 主题)
-      
+sudo ./tweaks.sh -f         (Firefox 主题)
+```
 更多用法可以使用以下命令查看帮助
-      
-    ./install.sh --help
-
+```      
+./install.sh --help
+```
 ## 打开 Extension Manager 安装插件
       
 个人使用的是基于 Debian 的发行版 [Spiral Linux](https://spirallinux.github.io/)，这个发行版内置了大部分插件。
@@ -102,13 +102,13 @@ tags:
 
 上文提到了下载图标包到 .icons 文件夹的方法，以及使用 flatpak 安装 dynamic wallpaper 来设置桌面背景；对于不愿意使用 flatpak 或者 snap 包的可以采用以下方法：
 
-[WhiteSur-icon-theme ](https://github.com/vinceliuice/WhiteSur-icon-theme)
+[WhiteSur-icon-theme ](https://github.com/vinceliuice/WhiteSur-icon-theme) （图标主题）
 
-[WhiteSur-wallpapers ](https://github.com/vinceliuice/WhiteSur-wallpapers)
+[WhiteSur-wallpapers ](https://github.com/vinceliuice/WhiteSur-wallpapers) （桌面背景）
 
-[WhiteSur-cursors](https://github.com/vinceliuice/WhiteSur-cursors)
+[WhiteSur-cursors](https://github.com/vinceliuice/WhiteSur-cursors) （鼠标指针主题）
 
-[Grub2themes](https://github.com/vinceliuice/grub2-themes)
+[Grub2themes](https://github.com/vinceliuice/grub2-themes) （系统启动时的 Grub 主题）
 
 安装方法同 gtk 主题的安装，其中背景图分为 whitesur/monterey/ventura 几个主题，默认为安装所有主题背景。
 
@@ -117,13 +117,13 @@ tags:
 下载我制作好的图标 [QQ 微信钉钉图标](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/icon.zip)，图标均提取自 WhiteSur 图标包，这几个图标需要单独设置。
 
 分别复制到如下路径：
+```
+cp wechat.png /opt/wechat-beta/icons/
 
-    cp wechat.png /opt/wechat-beta/icons/
+cp qq.png /usr/share/icons/hicolor/512x512/apps/
 
-    cp qq.png /usr/share/icons/hicolor/512x512/apps/
-
-    cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
-
+cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
+```
 ### Debian/Ubuntu 如何安装 WeChat for Linux 微信 Linux 原生版本
       
 其中微信使用的是绕过登录检测的 deb 安装包：[wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux)
@@ -131,9 +131,9 @@ tags:
 另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)
 
 微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版；AppImage 版需要自己设置绕登录检测。最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，然后下载 [WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage) 版的 .tar.xz 压缩包，解压后更改文件夹名称为 wechat-beta 然后复制整个目录到 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb 的安装目录。
-
-    cp -r wechat-beta /opt/
-
+```
+cp -r wechat-beta /opt/
+```
 这样做是为了通过安装 deb 包在系统中配置好绕登录检测，然后替换微信安装后的文件达到手动更新版本的目的。
       
 Welcome to our [website](https://blog.tigress.cc/)
