@@ -32,6 +32,27 @@ tags:
 
 注意⚠️：最近一段时期阿里 DNS 不太稳定，暂时移除了阿里 DNS；（从去年公司的邮箱用的阿里云 DNS 解析出问题，到今年偶尔不能正常解析微博网页版，目前公司的以及个人的都换成了其他 DNS）
 
+**局域网无法使用国际大厂 DNS，如果你的网络较好或者能够忍受较高的网络延迟，请使用 Google 和 Cloudflare DNS，否则请使用以下 DNS备用**
+
+阿里 DNS
+```
+https://223.5.5.5/dns-query
+https://223.6.6.6/dns-query
+https://dns.alidns.com/dns-query
+dns.alidns.com
+```
+腾讯 DNS
+```
+https://1.12.12.12/dns-query
+https://120.53.53.53/dns-query
+https://doh.pub/dns-query
+dot.pub
+```
+360 DNS
+```
+https://doh.360.cn/dns-query
+dot.360.cn
+```
 ------------------------------------------------------
 
 ### 自用小火箭规则：
