@@ -1,16 +1,9 @@
 ---
 layout: post
 title: ﻿让你的 Gnome Desktop 桌面看起来像 Mac OS 一样
-subtitle: linux 桌面美化，使 Debian/Ubuntu/Fedora 等 Linux 发行版变成 MacOS 风格
+subtitle: linux 桌面美化，使 Debian/Ubuntu/Fedora 等 Linux 发行版变成 Mac OS 风格
 tags:
-    - Gnome
-    - Linux 桌面美化
-    - Mac OS
-    - Gnome Extensions
-    - Gnome Look
-    - Debian
-    - Ubuntu
-    - Fedora
+    - Linux Gnome 桌面美化
 ---
 ## 安装 Timeshift
 
@@ -70,7 +63,7 @@ sudo ./tweaks.sh -f         (Firefox 主题)
 ```
 ## 打开 Extension Manager 安装插件
       
-个人使用的是基于 Debian 的发行版 [Spiral Linux](https://spirallinux.github.io/)，这个发行版内置了大部分插件。
+个人使用的是基于 Debian 的发行版 [Spiral Linux](https://spirallinux.github.io/)，这个发行版内置了大部分插件 [Gnome Extensions](https://extensions.gnome.org/)。
 
 安装 User Themes、Dash to Dock、Dash to Dock Animator(Dash2Dock Animated)、Compiz alike magic lamp effect、Quick Settings Tweaker、Blur my Shell、Gnome 4x UI Improvements、gnome-shell-extension-appindicator gnome-shell-extension-arc-menu 等插件。其中 Dash to Dock 与 Dash2Dock Animated 选择启用一个即可，两种风格不同，互相冲突。
 
