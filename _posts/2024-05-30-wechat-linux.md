@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Debian/Ubuntu 如何安装微信 Linux 原生版本
-subtitle: Debian/Ubuntu/Mint 如何安装 WeChat for Linux 微信 Linux 原生重构版本；(非Electron，非wine 版)
+subtitle: Debian/Ubuntu/Mint 如何安装 WeChat for Linux 微信 Linux 原生重构版本；(非Electron，非 wine 版)
 tags:
     - WeChat for Linux
     - 微信 Linux 原生版
+    - Linux 微信
+    - 微信 Linux 原生重构版
 ---
 
 ## wechat_for_linux；weixin_for_linux；wechat-beta；微信；linux原生微信
