@@ -3,63 +3,58 @@ layout: post
 title: ﻿在 Debian/Ubuntu 中安装配置 aria2 并使用 AriaNG Web-UI
 tags:
     - AriaNG
-    - aria2-ui
-    - aria2-webui
-    - aria2-config
-    - aria2 安装配置
 ---
 ## 安装 aria2
 
 在 Debian/Ubuntu 中可以直接通过软件源安装：
-
-      apt install aria2 -y
-
+```
+apt install aria2 -y
+```
 ## 配置 aria2
 
-新建文件夹
-
-      mkdir /etc/aria2
-
-新建 session 文件
-
-      touch /etc/aria2/aria2.session
-      
-设置 aria2.session 可写
-
-      chmod 777 /etc/aria2/aria2.session
-      
-创建 aria2 配置文件
-
-      vi /etc/aria2/aria2.conf
-      
+**新建 aria2 文件夹**
+```
+mkdir /etc/aria2
+```
+**新建 session 文件**
+```
+touch /etc/aria2/aria2.session
+```
+**设置 aria2.session 可写**
+```
+chmod 777 /etc/aria2/aria2.session
+```
+**创建 aria2 配置文件**
+```
+vi /etc/aria2/aria2.conf
+```   
 把下面的aria2配置文件模板写入“aria2.conf”，需要修改的有下载目录“dir”以及连接秘钥“rpc-secret”。
 
 [aria2.conf](https://github.com/huijingfei/AriaNg/releases/download/1.0/aria2.conf)
 
-创建服务文件
-
+**创建服务文件**
+```
 vi /etc/systemd/system/aria2.service
-
+```
 复制粘贴以下内容到 aria2.service 文件中
+```
+[Unit]
+Description=Aria2c
+Requires=network.target
+After=dhcpcd.service
 
-      [Unit]
-      Description=Aria2c
-      Requires=network.target
-      After=dhcpcd.service
+[Service]
+ExecStart=/usr/bin/aria2c --conf-path=/etc/aria2/aria2.conf
 
-      [Service]
-      ExecStart=/usr/bin/aria2c --conf-path=/etc/aria2/aria2.conf
+[Install]
+WantedBy=default.target
+```      
+**然后输入以下命令设置开机启动**
+```
+sudo systemctl enable aria2
 
-      [Install]
-      WantedBy=default.target
-      
-然后输入以下命令
-
-
-      sudo systemctl enable aria2
-
-      sudo systemctl start aria2
-
+sudo systemctl start aria2
+```
 最后重启系统
 
 ## 使用 Web-UI
@@ -77,29 +72,29 @@ vi /etc/systemd/system/aria2.service
 ## 更新 tracker 列表
 
 在 Aria2 配置文件 (aria2.conf) 所在目录执行以下命令即可获取最新 tracker 列表并自动添加到配置文件中。
-
-      bash <(curl -fsSL git.io/tracker.sh)
-
+```
+bash <(curl -fsSL git.io/tracker.sh)
+```
 ## 下载 DHT 文件
+```
+mkdir /root/.cache/aria2
 
-      mkdir /root/.cache/aria2
+cd /root/.cache/aria2
 
-      cd /root/.cache/aria2
-
-      wget https://github.com/P3TERX/aria2.conf/raw/master/dht.dat
-
+wget https://github.com/P3TERX/aria2.conf/raw/master/dht.dat
+```
 ## 下载脚本
-
-      cd /etc/aria2
+```
+cd /etc/aria2
       
-      wget https://github.com/P3TERX/aria2.conf/raw/master/script.conf
+wget https://github.com/P3TERX/aria2.conf/raw/master/script.conf
 
-      wget https://github.com/P3TERX/aria2.conf/raw/master/core
+wget https://github.com/P3TERX/aria2.conf/raw/master/core
 
-      wget https://github.com/P3TERX/aria2.conf/raw/master/clean.sh
+wget https://github.com/P3TERX/aria2.conf/raw/master/clean.sh
 
-      wget https://github.com/P3TERX/aria2.conf/raw/master/delete.sh
-      
+wget https://github.com/P3TERX/aria2.conf/raw/master/delete.sh
+```      
 ### 本文参考了以下配置
 
 [aira2.conf](https://github.com/P3TERX/aria2.conf)
