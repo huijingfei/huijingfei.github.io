@@ -12,9 +12,13 @@ WordPress 是内容管理系统中的一盏明灯，代表着多功能性和以�
 **为什么 WordPress 占据 CMS 领域的主导地位：**
 
 ⭐以用户为中心的设计： WordPress 的直观界面既适合精通技术的用户，也适合初学者，简化了网站创建和管理的过程。
+
 ⭐无限定制： WordPress 拥有丰富的模板、插件和主题库，用户可以根据自己的独特构想和品牌形象创建网站。
+
 ⭐充满活力的社区： WordPress的核心在于其充满激情的社区。这个由开发人员和爱好者组成的庞大网络推动着平台的发展，并为用户提供宝贵的支持。
+
 ⭐成本效益： 作为开源软件，WordPress 可以免费使用。再加上可从众多托管服务提供商中灵活选择，WordPress 成为网站开发的高性价比解决方案。
+
 ⭐市场领先： 虽然 Drupal 和 Joomla 等内容管理系统各有千秋，但 WordPress 无与伦比的易用性和适应性已巩固了其作为大部分网络首选的地位。
 
 随着我们对本指南的深入研究，您将了解到如何在您的 Debian 系统上充分发挥 WordPress 的潜力，为建立一个强大、动态的网站铺平道路。
@@ -81,7 +85,9 @@ sudo ufw app list
 从输出结果中，你会注意到
 
 ⭐Nginx 使用 80 端口（HTTP）
+
 ⭐Nginx Secure 使用 443 端口（HTTPS）
+
 ⭐Nginx Full包含两个端口
 
 ***为 Nginx 配置 UFW：***
@@ -138,8 +144,11 @@ sudo mysql_secure_installation
 该脚本会引导你完成几项安全配置：
 
 ⭐设置 root 密码或选择 unix_socket，以防止未经授权的访问。
+
 ⭐删除匿名用户账户，限制授权用户访问数据库。
+
 ⭐限制根用户账户的远程登录。
+
 ⭐删除测试数据库，以避免未经授权的访问和潜在的数据泄漏。
 
 认真回答每个提示；这些设置会对数据库的安全性产生深远影响。完成上述步骤后，您的 MariaDB 设置就可以安全运行了。
@@ -434,38 +443,55 @@ server {
 ***基本服务器设置：***
 
 这些设置定义了服务器块的基本方面，如IP地址、Nginx监听端口和服务器名称。
+
 根指令指向包含网站文件的主目录。
+
 索引指令指示 Nginx 在为网站提供服务时如何识别索引文件。
 
 ***位置设置：***
 
 这些设置包括各种位置块，决定了Nginx如何处理对不同URL的请求。
+
 初始位置块利用 try_files 指令管理对网站根 URL 的请求。
+
 随后的位置块专门处理对 WordPress sitemap.xml 文件的请求。
 
 ***PHP 处理设置：***
 
 这些设置决定了 Nginx 处理 PHP 文件的方式。
+
 fastcgi_pass指令指向PHP-FPM套接字文件的位置。
+
 fastcgi_param指令将SCRIPT_FILENAME参数值分配给请求的PHP文件位置。
+
 include 指令为 FastCGI 模块调入额外的配置文件。
+
 fastcgi_buffer_size 和 fastcgi_buffers 等指令指定了 Nginx 和 PHP-FPM 之间数据传输的缓冲区大小。
+
 fastcgi_intercept_errors 指令授权 Nginx 捕捉和管理 PHP 错误。
 
 ***Gzip压缩设置：***
 
 这些设置用于配置 Gzip 压缩，以减少发送到客户端的文件大小。
+
 gzip指令激活Gzip压缩。
+
 gzip_comp_level 和 gzip_min_length 等指令分别决定压缩级别和压缩的最小文件大小。
+
 gzip_proxied 指令确定哪些请求类型需要压缩。
+
 gzip_types 指令枚举了符合压缩条件的 MIME 类型。
 
 ***文件缓存设置：***
 
 这些设置可优化静态文件的缓存，提高网站速度。
+
 初始位置块可确定资产和媒体文件的过期时间。
+
 随后的位置块为字体和 SVG 文件设置过期时间。
+
 access_log 和 log_not_found 等指令管理请求日志。
+
 add_header 指令附加了 Access-Control-Allow-Origin 标头，允许从外部域加载字体和 SVG。
 
 ***.htaccess 文件阻止：***
@@ -666,6 +692,7 @@ if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 下面是每一行的详细说明：
 
 ✨第一行将 FORCE_SSL_ADMIN 常量设为 true，确保所有管理页面都使用 HTTPS。
+
 ✨随后的代码会检查 HTTP_X_FORWARDED_PROTO 头是否包含 "https"。如果发现匹配，就会将 HTTPS 服务器变量指定为 "on"。这一操作会告知 WordPress 连接是安全的。
 
 将这几行整合到 wp-config.php 文件中，你就能摆脱 HTTPS 重定向循环，并确保 WordPress 网站通过新的安全连接顺利运行。
