@@ -1,20 +1,19 @@
 ---
 layout: post
 title: 2023 年在 Windows/macOS/Linux 启用干净无广告的 Adobe Flash Player 的方法
+subtitle: Adobe Flash Player 去广告版
 tags:
     - Flash Player
-    - Clean Flash
-    - Pale Moon
-
+    - Clean Flash Player
 ---
 ## 介绍 
 ![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/QQ%20farm.webp)
 
 Adobe 在 2020 年彻底终止了对 Flash Player 的支持, 随后各大主流浏览器（Chrome, Firefox, Safari 等）也开始纷纷移除 Flash Player 的相关代码。目前在这些浏览器的最新版本中，即使你的电脑上安装了 Flash Player 也无法正常使用它。
 
-这对整个 Web 3.0 的发展毫无疑问是一件好事，垃圾就应该滚出历史的舞台，如果说这件事对整个行业而言有什么不好的地方，那可能就是它发生得太晚了。
+尽管 Adobe 停止了对 Flash Player 的支持，但在某些特定场景下，用户和企业可能仍需要使用 Flash，这时他们可能需要采取额外的措施，如使用仍支持 Flash 的浏览器插件或寻找替代技术解决方案。然而，考虑到 Flash 的安全风险和浏览器的逐渐淘汰，最推荐的做法是转向现代 Web 标准，以确保内容的长期可访问性和安全性。
 
-然而 Flash Player 的缺失也给部分用户带来了不便（比如我这种想要玩经典页游的人），本文将会介绍在三大主流桌面平台 Windows/macOS/Linux 安装纯净版 Flash Player 的方法。
+所以 Flash Player 的缺失也给部分用户带来了不便（比如我这种想要玩经典页游的人），本文将会介绍在三大主流桌面平台 Windows/macOS/Linux 安装纯净版 Flash Player 的方法。
 
 So how to enable Adobe flash player in Firefox and Chromium?
 
@@ -36,17 +35,19 @@ So how to enable Adobe flash player in Firefox and Chromium?
 
 Flash Player 由美国的 [Adobe](https://www.adobe.com/) 公司开发，由于国内的网络环境比较特殊，时至今日依然有部分网站死守 Flash Player 绝不松手（而你还往往拿它们没办法），于是 Adobe 在 2020 年宣布停止对 Flash Player 的支持后又将它交给了国内的重橙网络代理，使其依然能够在大陆地区使用。
 
-然而该公司是业内有名的毒瘤，在代理了 Flash Player 后它所做的事情包括但不限于：
+中国特供版 Flash，主要指的是 Adobe 与重橙网络合作在国内发行的版本，存在以下几个显著风险：
 
-1.使用各种手段，阻止大陆用户使用国际版 Flash Player, 让大家只能用“中国特供版”
+1. 隐私收集：有报道指出，该版本的用户协议中明确表示会收集用户隐私信息，包括但不限于用户计算机的基本信息、使用习惯等，这引发了用户对个人隐私泄露的担忧。
 
-2.收集你的大量隐私信息，包括但不限于你的 IP 地址、你访问的链接、你电脑上安装的软件等等
+2. 安全漏洞：相较于国际版，中国特供版 Flash 被曝存在严重的安全问题，可能容易遭受黑客攻击，安装广告软件或恶意代码，给用户的电脑系统安全带来威胁。
 
-3.根据收集到的信息推送个性化广告，且无法关闭
+3. 广告和弹窗：用户反映，特供版 Flash 在运行过程中会推送广告和弹窗，这些额外的功能不仅干扰正常使用，还可能成为潜在的安全隐患点。
 
-4.如果这些信息遭到了泄露，重橙公司无需承担任何责任（明文写在用户协议里）
+4. 服务依赖：安装中国特供版 Flash 后，会伴随一个名为 FlashHelperService 的服务，该服务与 Flash 紧密绑定，如果服务停止，Flash 可能无法正常工作。这限制了用户对软件的控制权。
 
-因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，千万不要从 www.flash.cn 下载特供版。
+5. 规避措施难度：即便用户尝试通过安装国际版 Flash 来避免上述问题，但由于一些技术限制和策略，国内用户可能面临安装和使用的障碍。
+
+因此，直接安装中国特供版 Flash Player 是一个极其冒险的行为，请参考本文教程安装使用去广告版本的 Flash Player。
 
 **开源 Flash Player 替代品**
 
@@ -56,7 +57,7 @@ Flash Player 目前有两个开源解决方案：
 
 [Lightspark](http://lightspark.github.io/)：C/C++ 写的 Flash Player 替代品，同样完成度不高，播放视频足够了，但打游戏还差点意思。
 
-### 使用低版本 Firefox
+### 使用低版本 Firefox 和 Chrome
 
 虽然最新版的 Chrome 和 Firefox 移除了 Flash Player 的相关代码，但是较低的版本中依然支持Flash，这里只作为一个可选项但是并不推荐（本文推荐使用 Basilisk/Pale Moon：[Basilisk web browser](https://www.basilisk-browser.org/) / [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)）。
 
@@ -73,8 +74,6 @@ Flash Player 目前有两个开源解决方案：
 有人在 GitLab 上开发了一个项目 [Clean Flash Player](https://gitlab.com/cleanflash/installer)，它在中国特供版 Flash Player 的基础上进行了魔改，移除了各种限制，删除了和收集隐私与推送广告相关的文件。
 
 有需要的可以从 [Release Page](https://gitlab.com/cleanflash/installer/-/releases) 下载最新版。
-
-或者从我的共享云盘中下载 34.0.0.277 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
 
@@ -111,20 +110,20 @@ Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Pl
 首先安装 Pale Moon: [官方下载地址](https://www.palemoon.org/download.shtml)
 
 Debian 11 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)
-
-    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
-    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
-
+```
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
+curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
+```
 Debian 12 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
-
-    echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
+```
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
     
-    curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
-   
-    sudo apt update
-    
-    sudo apt install palemoon
-
+curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
+```
+```   
+sudo apt update
+sudo apt install palemoon
+```
 Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon) 添加对应的源。
 
 接下来下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，选 Linux 版 64 位 NPAPI：[下载链接](https://github.com/darktohka/clean-flash-builds/releases/tag/v1.7)
