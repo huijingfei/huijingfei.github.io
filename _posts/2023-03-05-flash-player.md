@@ -69,15 +69,13 @@ Flash Player 目前有两个开源解决方案：
 
 这个便携版内置了 Flash，所以你也无需安装 Flash Player，直接访问你想访问的网站即可。
 
-### 使用 Pale Moon 和去广告版 Flash Player 独立运行组件
+### 在 Windows 上使用 Pale Moon 和去广告版 Flash Player 独立运行组件
 
 有人在 GitLab 上开发了一个项目 [Clean Flash Player](https://gitlab.com/cleanflash/installer)，它在中国特供版 Flash Player 的基础上进行了魔改，移除了各种限制，删除了和收集隐私与推送广告相关的文件。
 
 有需要的可以从 [Release Page](https://gitlab.com/cleanflash/installer/-/releases) 下载最新版。
 
-低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。
-
-Pale Moon 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
+低版本的 Firefox 虽然能用 Flash，但是由于长期未更新，它也同样存在各种安全漏洞和 Bug。 Pale Moon 是一个基于 Firefox 开发的浏览器，和 Firefox 一样免费开源无广告。
 
 **Pale Moon is an Open Source, Goanna-based web browser focused on efficiency and customization. Make sure to get the most out of your browser!**
 
@@ -87,25 +85,19 @@ Goanna fork 自 Gecko，Goanna 是 [Pale Moon](https://www.palemoon.org/), [Basi
 
 [Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
-或者你也可以从我的共享云盘中下载 Pale Moon：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
+Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 [Flash Player](https://gitlab.com/cleanflash/installer/-/releases) 独立运行组件。
 
-Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 Flash Player 独立运行组件，参考上一节进行安装。
-
-#### macOS
+### 在 macOS 上安装 Pale Moon 和 Flash 去广告版
 
 首先下载并安装 Pale Moon：[Pale Moon官方下载地址](https://www.palemoon.org/download.shtml)
 
-或者你也可以从我的共享云盘中下载 X86 版本和 Arm 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
-
 然后下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，这是一个开源构建的纯净版 Flash Player，下载的时候选最新版 Mac NPAPI 版本。
-
-或者从我的共享云盘中下载 34.0.0.267 版本：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 下载完成之后解压，然后打开访达，按下 Command+Shift+G ，输入 “~/Library/Internet Plug-Ins/” 并回车。
 
 把解压后得到的 “FlashPlayer-10.6.plugin” 和 “flashplayer.xpt” 复制到这个文件夹下。
 
-#### Linux
+### 在 Linux 上安装 Pale Moon 和 Flash 去广告版
 
 首先安装 Pale Moon: [官方下载地址](https://www.palemoon.org/download.shtml)
 
@@ -136,6 +128,6 @@ Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://so
 
 [Basilisk web browser](https://www.basilisk-browser.org/) 最初由 Palemoon 开发，外观更加现代化，现在由另外一个开发团队独立开发，使用方法同 Palemoon。
 
-本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 并做了部分修改。
+本文转自：[sainnhe's blog](https://www.sainnhe.dev/post/enable-flash-player-in-2022/) 并做了部分修改。推荐博文 [Pale Moon 浏览器安装使用(Fire IE)解雇 IE 插件，实现双核浏览器功能](https://tigress.cc/2023/01/30/Pale-Moon/)
 
 ![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/Qzone%20farm.webp)
