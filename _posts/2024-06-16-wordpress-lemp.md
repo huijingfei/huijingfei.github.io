@@ -383,6 +383,8 @@ sudo nano /etc/nginx/sites-available/example.com.conf
 server {
   listen 80;
   listen [::]:80;
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
   server_name www.example.com example.com;
   root /var/www/html/wordpress;
   index index.php index.html index.htm index.nginx-debian.html;
