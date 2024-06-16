@@ -21,7 +21,7 @@ WordPress 是内容管理系统中的一盏明灯，代表着多功能性和以�
 
 ⭐市场领先： 虽然 Drupal 和 Joomla 等内容管理系统各有千秋，但 WordPress 无与伦比的易用性和适应性已巩固了其作为大部分网络首选的地位。
 
-随着我们对本指南的深入研究，您将了解到如何在您的 Debian 系统上充分发挥 WordPress 的潜力，为建立一个强大、动态的网站铺平道路。
+随着我们对本教程的深入研究，您将了解到如何在您的 Debian 系统上充分发挥 WordPress 的潜力，为建立一个强大、动态的网站铺平道路。
 
 ## 在 Debian 12、11 或 10 上安装适用于 WordPress 的 LEMP
 
@@ -715,6 +715,6 @@ define('WP_SITEURL','http://example.com');
 
 ## 总结
 
-WordPress 是一款功能强大、适应性强的内容管理系统，设置和微调都非常简单。遵守本指南中详述的程序，可以在你的 Debian 系统上建立一个强化、精简的 WordPress 设置。从微调 Nginx 到部署和增强 WordPress，你已经获得了制作一个安全、可运行的 WordPress 网站的真知灼见。坚持不懈地备份网站和刷新软件以确保最高性能和安全性至关重要。有了正确的工具和见解，使用 WordPress 创建一个精致迷人的网站就成为任何人都可以实现的目标。
+WordPress 是一款功能强大、适应性强的内容管理系统，设置和微调都非常简单。遵守本教程中详述的程序，可以在你的 Debian 系统上建立一个强化、精简的 WordPress 设置。从微调 Nginx 到部署和增强 WordPress，你已经获得了制作一个安全、可运行的 WordPress 网站的真知灼见。坚持不懈地备份网站和刷新软件以确保最高性能和安全性至关重要。有了正确的工具和见解，使用 WordPress 创建一个精致迷人的网站就成为任何人都可以实现的目标。
 
 Welcome to our [website](https://blog.tigress.cc/)
