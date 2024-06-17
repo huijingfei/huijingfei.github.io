@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 如何在 Debian 12、11 或 10 上使用 LEMP 安装 WordPress
+title: 如何在 Debian 12、11 或 10 上搭建使用 LEMP 环境安装 WordPress
+subtitle: Linux 保姆级教程部署 LEMP 环境安装 WordPress 网站
 tags:
     - WordPress
     - LEMP
