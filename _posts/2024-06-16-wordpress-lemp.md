@@ -253,6 +253,14 @@ wget https://wordpress.org/latest.zip
 ```
 sudo unzip latest.zip -d /var/www/html/
 ```
+注意⚠️：目前国内外大部分教程都是把 WordPress 安装在 var 目录下，var 目录为系统关键目录，著名的宝塔面板已明确提示请不要将网站根目录设置到关键目录中。可以把网站放在 data 目录中，如果没有就先创建。（经实际验证，如果把网站放在 var 目录下会造成缓存插件无法使用）
+```
+mkdir -p /data/wwwroot/site1/
+```
+```
+sudo unzip latest.zip -d /data/wwwroot/site1/
+```
+
 接下来，通过将目录所有者权限设置为网络服务器用户，确保 WordPress 拥有正确的写入权限。
 
 可以使用以下命令完成此操作：
