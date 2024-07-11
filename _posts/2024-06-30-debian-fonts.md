@@ -102,6 +102,27 @@ sudo apt remove ttf-mscorefonts-installer
 
 请记住，卸载 ttf-mscorefonts-installer 软件包不会改变之前使用过这些字体的文档。文档将保留其格式。不过，如果系统中不再有特定的 Microsoft 字体，那么在打开文档时可能会看到不同的字体。
 
+## 手动安装字体
+
+首先创建目录 win_fonts
+```
+mkdir /usr/share/fonts/win_fonts
+```
+然后把微软 Windows 的字体复制到 Linux 系统下。（Windows 字体位置在 C:\Windows\Fonts）
+```
+cp *.ttf /usr/share/fonts/win_fonts
+cp *.otf /usr/share/fonts/win_fonts
+cp *.ttc /usr/share/fonts/win_fonts
+cp *.TTF /usr/share/fonts/win_fonts
+```
+最后更新字体缓存
+```
+cd /usr/share/fonts/win_fonts
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache
+```
+
 ## 最终总结
 
 总之，通过使用该软件包，我们在 Debian 系统上安装、验证甚至卸载 Microsoft TrueType 核心字体的过程既全面又富有启发性。本教程旨在让您掌握增强 Debian 系统排版能力的知识，为您的应用程序带来更丰富的文本体验。我们将详细介绍整个过程的每一个步骤，揭开命令行指令的神秘面纱，确保您牢固掌握操作步骤。请记住，管理您系统的排版不仅仅是为了美观--它也是改进个性化使用体验的一步。
