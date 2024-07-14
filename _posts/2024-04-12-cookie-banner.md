@@ -1,12 +1,9 @@
 ---
 layout: post
 title: ﻿为你的外贸网站添加 Cookie Banner
+subtitle: 通过 Google Tag Manager 为网站设置 Consent Mode（意见征求模式）
 tags:
-    - 用户意见征求设置
-    - 谷歌分析
-    - Google Tag Manager
-    - 广告意见个性化征求信号
-    - 欧盟地区用户意见征求政策
+    - 外贸
 ---
 ## 外贸商家的网站如何添加用户意见征求设置？
 
