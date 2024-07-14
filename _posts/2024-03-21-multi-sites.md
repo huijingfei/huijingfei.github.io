@@ -2,12 +2,7 @@
 layout: post
 title: ﻿在阿里云轻量应用服务器上搭建多个 WordPress 网站
 tags:
-    - Linux
     - WordPress
-    - Nginx
-    - Websites
-    - 阿里云轻量应用服务器
-
 ---
 ## 一：前言
 
