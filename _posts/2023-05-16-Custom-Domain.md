@@ -1,10 +1,9 @@
 ---
 layout: post
 title: GitHub 博客如何绑定自定义域名？
+subtitle: Github Pages 绑定个人域名
 tags:
     - Blog
-    - Custom Domain
-    - GitHub Pages
 ---
 个人的 GitHub 博客已经搭建好久了，一直使用的是 username.github.io 默认域名，前不久终于在 Dynadot 以不到300块的价格买了10年的域名；在网上搜索了部分GitHub自定义域名文章后，在自己的实践下，绑定自定义域名成功，决定把自己的心得写下来。
 
