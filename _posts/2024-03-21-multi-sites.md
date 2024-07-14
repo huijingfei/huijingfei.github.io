@@ -12,7 +12,10 @@ tags:
 ## 一：前言
 
 首先阿里云轻量应用服务器分为不同的应用镜像和系统镜像，本文的镜像环境是 WordPress 镜像，系统默认为 Alibaba Cloud Linux，如果选择其他系统镜像那么需要自己手动安装 WordPress 环境。
-应用镜像(13款)提供WordPress、LAMP、Docker和Node.js等选择，减少了应用的上传、安装等环节，实现应用的开箱即用。
+应用镜像(13款)提供 WordPress、LAMP、Docker 和 Node.js 等选择，减少了应用的上传、安装等环节，实现应用的开箱即用。
+
+注意⚠️：本文教程仅供参考思路，不建议使用默认为 Alibaba Cloud Linux 的 WordPress 镜像，建议参考这篇文章[使用 Debian 系统搭建 WordPress 网站](https://tigress.cc/2024/06/16/wordpress-lemp/)。
+
 系统镜像(8款)适用于熟悉操作系统和应用环境配置的用户，系统镜像提供一个纯净的操作系统初始环境，您可以根据需要自行安装应用。
 
 也就是说本文是在已有一个 WordPress 网站的情况下搭建第二个 WordPress 网站，其他系统环境仅供参考；使用此方法可以依次搭建第三第四个 WordPress 网站，只要服务器配置允许。
