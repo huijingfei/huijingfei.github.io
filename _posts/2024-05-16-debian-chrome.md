@@ -1,12 +1,9 @@
 ---
 layout: post
 title: ﻿如何在 Debian 12、11 或 10 上安装 Google Chrome 浏览器
+subtitle: 在基于 Debian 的 Linux 发行版上安装谷歌浏览器
 tags:
     - Debian
-    - Linux
-    - Chrome Browser
-    - 谷歌浏览器
-    - Debian 12
 ---
 
 ![ ﻿如何在 Debian 12、11 或 10 上安装 Google Chrome 浏览器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/chrome/Install%20Google%20Chrome%20on%20Debian%2012.avif)
