@@ -3,8 +3,7 @@ layout: post
 title: 如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx
 subtitle: 如何在 Debian 服务器上开启网站 HTTPS 加密访问
 tags:
-    - 网站 HTTPS 加密
-    - Let's Encrypt
+    - Debian
 ---
 
 ![如何在 Debian 服务器上开启网站 HTTPS 加密访问](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/How-to-Secure-Nginx-with-Lets-Encrypt-on-Debian.webp)
