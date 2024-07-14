@@ -16,18 +16,19 @@ tags:
 
 阿里云镜像站
 ```
-deb https://mirrors.aliyun.com/debian/ bookworm main non-free non-free-firmware contrib
-# deb-src https://mirrors.aliyun.com/debian/ bookworm main non-free non-free-firmware contrib
-deb https://mirrors.aliyun.com/debian-security/ bookworm-security main
-# deb-src https://mirrors.aliyun.com/debian-security/ bookworm-security main
-deb https://mirrors.aliyun.com/debian/ bookworm-updates main non-free non-free-firmware contrib
-# deb-src https://mirrors.aliyun.com/debian/ bookworm-updates main non-free non-free-firmware contrib
-deb https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
-# deb-src https://mirrors.aliyun.com/debian/ bookworm-backports main non-free non-free-firmware contrib
+deb https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+
+deb https://mirrors.ustc.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+
+deb https://mirrors.ustc.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+
+deb https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
+#deb-src https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
 ```
 清华大学镜像源地址[https://mirrors.tuna.tsinghua.edu.cn/help/debian/](https://mirrors.tuna.tsinghua.edu.cn/help/debian/)
-
-中科大镜像源地址[https://mirrors.ustc.edu.cn/help/debian.html](https://mirrors.ustc.edu.cn/help/debian.html)
 
 ***2. 更新下系统***
 ```
