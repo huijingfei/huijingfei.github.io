@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Google Blogger 博客如何绑定自定义域名？
+subtitle: 为你的 Blogger 添加自己的域名并启用 HTTPS 访问
 tags:
     - Blog
-    - Google Blogger
-    - 谷歌 博客
 ---
 Google Blogger 自定义域名相对 GitHub 博客自定义域名简单一些；不同的是 Google Blogger 只能绑定子域名, 而 GitHub Blog 主域名子域名都可以绑定；Google Blogger 设置完成后需要等待的时间更长一些。
 
@@ -49,3 +48,26 @@ Google Blogger 自定义域名相对 GitHub 博客自定义域名简单一些；
 ![域名后台添加 CNAME 记录指向 Google Blogger](https://github.com/huijingfei/huijingfei.github.io/raw/master/images/%E5%9F%9F%E5%90%8D%E5%90%8E%E5%8F%B0%E6%B7%BB%E5%8A%A0%20CNAME%20%E8%AE%B0%E5%BD%95%E6%8C%87%E5%90%91%20Google%20Blogger.webp)
 
 写在最后，在完成所有的设置以后请耐心等待一个小时以上，切勿做任何删除操作以免造成不必要的麻烦。
+
+## 启用 HTTPS 访问
+
+首先需要在 Blogger 设置开启HTTPS
+```
+HTTPS 可用性
+状态：可用
+HTTPS 重定向
+状态：可用
+```
+然后在 Cloudflare 后台开启
+```
+有四种模式可以选择，分别是
+        Off (not secure)
+        不开启
+        Flexible
+        开启 浏览器到<->Cloudflare
+        Full
+        开启 浏览器<->Cloudflare<->服务器
+        Full (strict)
+        开启 浏览器<->Cloudflare<->服务器 信任证书，更加严格
+```
+DNS 解析确保 PROXY STATUS 为 PROXIED，看到小云朵而不是 DNS Only 则表明开启了 CDN 加速。
