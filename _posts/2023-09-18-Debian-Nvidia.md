@@ -1,20 +1,16 @@
 ---
 layout: post
 title: ﻿Debian 12 Bookworm 安装 Nvidia 独立显卡驱动以及显卡模式切换
+subtitle: 基于 Debian 的 Linux 发行版安装英伟达 GPU Driver 显卡驱动
 tags:
     - Debian
-    - Bookworm
-    - Nvidia
-    - Linux
-    - Driver
-
 ---
 
-## 一：安装 Nvidia Linux 驱动
+## 一：安装 Nvidia Linux 显卡驱动
 
 ***1. 使用 vi/nano 或者其他文本编辑器编辑 /etc/apt/sources.list 这个文件，替换为以下镜像或者国内其他的镜像站点。***
 
-阿里云镜像站
+中科大镜像站
 ```
 deb https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
 #deb-src https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
