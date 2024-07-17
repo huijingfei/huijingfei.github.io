@@ -1,12 +1,9 @@
 ---
 layout: post
 title: ﻿如何在 Debian 12、11 或 10 上安装 Opera Browser 浏览器
+subtitle: 在基于 Debian 的 Linux 发行版上安装 Opera 浏览器
 tags:
     - Debian
-    - Linux
-    - Opera Browser
-    - Opera 浏览器
-    - Debian 12
 ---
 
 ![ ﻿如何在 Debian 12、11 或 10 上安装 Opera 浏览器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/opera/How-to-Install-Opera-Browser-on-Debian-Linux.avif)
