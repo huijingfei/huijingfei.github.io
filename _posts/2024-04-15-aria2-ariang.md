@@ -1,8 +1,9 @@
 ---
 layout: post
 title: ﻿在 Debian/Ubuntu 中安装配置 aria2 并使用 AriaNG Web-UI
+subtitle: 在基于 Debian 的 Linux 发行版中安装使用 Aria2+AriaNG
 tags:
-    - AriaNG
+    - Linux
 ---
 ## 安装 aria2
 
