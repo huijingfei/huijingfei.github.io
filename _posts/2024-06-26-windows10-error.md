@@ -3,7 +3,7 @@ layout: post
 title: 如何在 Windows 10 和 Windows 11 上修复错误代码 0x80004005
 subtitle: 如何修复在 Windows 10 和 Windows 11 无法链接局域网的电脑和打印机
 tags:
-    - Windows 10 0x80004005 错误
+    - Windows
 ---
 
 ## 主要提示：
