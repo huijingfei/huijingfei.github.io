@@ -1,19 +1,18 @@
 ---
 layout: post
 title: 为 WooCommerce 产品编辑页面启用 Gutenberg 古腾堡编辑器
+subtitle: WooCommerce 产品发布页启用古腾堡编辑器的方法
 tags:
-    - WooCommerce
-    - Gutenberg
     - WordPress
 ---
 WooCommerce 的产品描述页面也可以使用古腾堡编辑器 Gutenberg Block Editor。糟糕的是，不是作为默认或者选项，而是用一小段代码。在这里，我将向你展示两种使用代码的方法来启用古腾堡编辑器 Gutenberg Block Editor/WordPress Block Editor。
 
-### 注意: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃。
+**注意⚠️: 在操作前一定要先备份! 一个小小的错误也可能使你的网站崩溃。**
 
 ## 代码
 
 这是可以使 WooCommerce 产品页面使用古腾堡编辑器 Gutenberg Block Editor 的代码。
-
+    
     // Enable Gutenberg editor for WooCommerce
     function j0e_activate_gutenberg_product( $can_edit, $post_type ) {
      if ( $post_type == 'product' ) {
@@ -53,10 +52,21 @@ Gutenberg for WooCommerce – Insert code in Code Snippets plugin
 ![Advanced Scripts](https://github.com/huijingfei/huijingfei.github.io/blob/master/images/advanced-scripts.webp?raw=true)
 Advanced Scripts plugin
 
-步骤是一样的，只是外观不同。安装后，您可以在Tools > Advanced Scripts下找到该工具。
+步骤是一样的，只是外观不同。安装后，您可以在 Tools > Advanced Scripts 下找到该工具。
+
+**推荐使用 WPCode Lite 插件添加代码**
+
+首先安装好 WPCode Lite 后，点击 + Add Snippet ➡️ + Add Custom Snippet
+
+![Add Snippet](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/wp%20code%20lite.webp)
+
+代码类型选择 PHP Snippet，粘贴代码，右上角确定是启用状态。
+
+![使用 WPCode Lite 插件添加代码](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/add%20snippet.webp)
+
+WPCode Lite 插件不仅可以添加自定义代码，也可以使用预置的代码：比如屏蔽 XML-RPC 增强安全性。
 
 ## functions.php
-
 
 ![functions.php](https://github.com/huijingfei/huijingfei.github.io/blob/master/images/functions.webp?raw=true)
 Insert the code into the functions.php file
