@@ -1,8 +1,9 @@
 ---
 layout: post
-title: 如何在 Debian 12、11 或 10 上向 Sudoers 添加新用户
+title: 如何在 Debian 12、11 或 10 上添加新用户并配置 sudo 权限
+subtitle: 如何在 Debian 12 Linux 中向 sudo 组添加用户
 tags:
-    - Debian 用户权限
+    - Debian
 ---
 
 ![如何在 Debian 12、11 或 10 上向 Sudoers 添加新用户](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/sudoer/How-to-Add-a-New-User-to-Sudoers-on-Debian.webp)
