@@ -3,33 +3,35 @@ layout: post
 title: ﻿让你的 Gnome Desktop 桌面看起来像 Mac OS 一样
 subtitle: linux 桌面美化，使 Debian/Ubuntu/Fedora 等 Linux 发行版变成 Mac OS 风格
 tags:
-    - Linux Gnome 桌面美化
+    - Linux
 ---
 ## 安装 Timeshift
 
-根据不同的发行版，从软件源安装 Timeshift 并创建快照备份：
+首先备份一下系统以防万一；根据不同的发行版，从软件源安装 Timeshift 并创建快照备份：
 ```
 apt install timeshift
       
 dnf install timeshift
 ```
-## 安装 gnome-tweaks git
+## 安装 gnome-tweaks git 等工具
+
+然后我们需要安装一些工具来定制我们的 gnome 桌面。这些工具众所周知，它使我们能够调整 gnome 的外观。
 ```
 dnf install gnome-tweaks git
       
 apt install gnome-tweaks git
 ```
-## 安装 flatpak （可选，主要是用来安装 dynamicwallpaper）
+**安装 flatpak （可选，主要是用来安装 dynamicwallpaper）**
 ```
 dnf install flatpak
       
 apt install flatpak
 ```     
-## 配置 Flathub
+**配置 Flathub**
 ```
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```    
-## 安装 extensionmanager dynamicwallpaper 
+**安装 extensionmanager dynamicwallpaper**
 ```
 flatpak install extensionmanager dynamicwallpaper
 ```
