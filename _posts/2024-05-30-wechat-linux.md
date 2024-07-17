@@ -3,13 +3,10 @@ layout: post
 title: Debian/Ubuntu 如何安装微信 Linux 原生版本
 subtitle: Debian/Ubuntu/Mint 如何安装 WeChat for Linux 微信 Linux 原生重构版本；(非Electron，非 wine 版)
 tags:
-    - WeChat for Linux
-    - 微信 Linux 原生版
-    - Linux 微信
-    - 微信 Linux 原生重构版
+    - Debian
 ---
 
-## wechat_for_linux；weixin_for_linux；wechat-beta；微信；linux原生微信
+## wechat_for_linux；weixin_for_linux；wechat-beta；微信；Linux 原生版微信支持看一看，搜一搜，朋友圈，小程序，视频号等功能
 
 ![linux原生微信](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/Linux%20WeChat.webp)
 
@@ -54,5 +51,19 @@ mv -r wechat-beta /opt/
 /var/lib/dpkg/status
 ```
 ![linux 微信](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/wechat%20linux.webp)
+
+## 原生版微信支持的功能
+
+🐧 可收发：文本消息、小黄脸表情、添加表情、商店表情、语音消息、公众号内容转发消息、小程序消息、视频号内容消息、引用的消息。
+
+🐧 可响应其他人撤回消息。
+
+🐧 可跟企业微信联系人发送和接收消息。
+
+🐧 复制、删除、转发、保存（已下载的图片、文件、视频）、语音转文字（语音）、在文件夹中显示（文件）。
+
+🐧 收发 1G 内文件，收发图片和视频（100M 内按图片发，100M~1G 按文件发）。
+
+🐧 双人音频通话、双人视频通话、视频通话过程中可以随时开启和关闭摄像头。
 
 Welcome to our [website](https://blog.tigress.cc/)
