@@ -3,7 +3,7 @@ layout: post
 title: 如何在 Debian 12、11 或 10 上安装 Microsoft 字体
 subtitle: 在 Debian/Ubuntu 等 Linux 发行版上安装微软字体
 tags:
-    - Debian 字体
+    - Debian
 ---
 
 ![如何在 Debian 12、11 或 10 上安装 Microsoft 字体](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/fonts/How-to-Install-Microsoft-Fonts-on-Debian.webp)
