@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 2023 年在 Windows/macOS/Linux 启用干净无广告的 Adobe Flash Player 的方法
-subtitle: AdAdobe Flash Player 永久去广告去限制特别版
+subtitle: Adobe Flash Player 永久去广告去限制特别版下载
 tags:
-    - Flash Player
+    - Windows
 ---
 ## 介绍 
 ![Flash Player](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/QQ%20farm.webp)
