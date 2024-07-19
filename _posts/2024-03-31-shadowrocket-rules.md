@@ -1,18 +1,11 @@
 ---
 layout: post
 title: 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / 白名单规则
-subtitle: 小火箭去开屏广告规则，小火箭 https 解密规则，Shadowrocket Ad Block Rules
+subtitle: 小火箭去开屏广告配置文件规则，https 解密规则；Shadowrocket Ad Block Rules Geolite2
 tags:
-    - 小火箭分流规则
-    - Shadowrocket 配置规则
-    - Shadowrocket Rules
-    - 小火箭去开屏广告
-    - Shadowrocket https 解密
-    - Shadowrocket 配置文件
-    - shadowrocket geolite2 数据库
-
+    - Shadowrocket
 ---
-## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / v2rayN 规则 / v2rayA 规则 (白名单规则) / 去广告规则
+## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 Geolite2 数据库 (白名单规则) / 去广告规则
 
 小火箭配置文件指的是访问网站需要直连还是代理的分流规则，例如访问腾讯阿里抖音等网站直连，访问谷歌脸书等走代理。网上一些自动生成的规则具有局限性，例如一些图片视频链接不在规则内，导致一些国内网站或者 APP 访问速度慢，错误的走了代理，在代理线路不好的时候尤其明显，所以才有了这个手动更新的规则。本白名单规则手动更新，时间不固定，专注于改善 APP 体验的小火箭分流去广告规则。
 
@@ -53,25 +46,26 @@ dot.360.cn
 ```
 ------------------------------------------------------
 
-### 自用小火箭规则：
-
-
-    https://raw.githubusercontent.com/huijingfei/Shadowrocket-Rules/main/sr_app_ad.conf
-
+**自用小火箭规则：**
+```
+https://raw.githubusercontent.com/huijingfei/Shadowrocket-Rules/main/sr_app_ad.conf
+```
     
 直连：top500 网站中可直连的境外网站、中国网站
     
 代理：默认代理其余的所有境外网站
 
-### 去广告规则模块：
+**去广告规则模块：**
 
 本规则专注于去除 APP 开屏广告，如需去除网页广告，可搭配使用模块使用屏蔽列表。
-
-    https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_list.module
-    
+```
+https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_list.module
+```
 ------------------------------------------------------
 
-### ShadowRocket GeoLite2 数据库：
+**ShadowRocket GeoLite2 数据库：**
+
+设置页 ➡️ 下拉找到 GeoLite2 数据库 ➡️ 以下两个建议选择 Country-only-cn-private.mmdb ➡️ 复制地址后粘贴到 URL 处，点击更新即可
 
 [https://git.io/GeoLite2-Country.mmdb](https://git.io/GeoLite2-Country.mmdb) 数据比较全，文件较大。
 
@@ -79,7 +73,7 @@ dot.360.cn
 
 如果没有特殊需求，使用 [Country-only-cn-private.mmdb](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) 即可。
 
-### 规则使用方法
+**规则使用方法**
 
 方法一：用 ShadowRocket 扫描二维码即可。
 
@@ -123,9 +117,9 @@ dot.360.cn
 
 ### 开启 https 解密
 
-注意⚠️：开启 https 解密后，尽量不要直接使用更新配置，这会导致已信任的证书被覆盖，可采用复制粘贴的方法替换规则列表。
+注意⚠️：开启 https 解密后，尽量不要直接使用更新配置，这会导致已信任的证书被覆盖，可采用复制粘贴的方法替换规则列表。部分 APP 广告需要开启解密，这部分 APP 不能通过简单的把域名加入屏蔽列表屏蔽广告，否则会屏蔽应用内正常图片的显示，必须解密后对单独对广告图片地址进行屏蔽。
 
-部分广告规则需要开启 Shadowrocket https 解密，点击使用的配置文件后的感叹号 i → HTTPS 解密 → 开启 HTTPS 解密 → 点击允许 → 前往手机的设置，不是 Shadowrocket 的 → 看到已下载描述文件 → 安装 → 输入手机的解锁密码 → 安装 → 安装 → 前往手机的设置 → 通用 → 关于本机 → 证书信任设置 → 找到 Shadowrocket 点绿它以信任该根证书 → 继续
+点击使用的配置文件后的感叹号 i → HTTPS 解密 → 开启 HTTPS 解密 → 点击允许 → 前往手机的设置，不是 Shadowrocket 的 → 看到已下载描述文件 → 安装 → 输入手机的解锁密码 → 安装 → 安装 → 前往手机的设置 → 通用 → 关于本机 → 证书信任设置 → 找到 Shadowrocket 点绿它以信任该根证书 → 继续
 
 1️⃣去小火箭点击配置文件后的感叹号 i → HTTPS 解密 → 开启 HTTPS 解密安装证书，会提示下载描述文件。
 
@@ -159,5 +153,4 @@ tcp://dns.opendns.com:5353 -> proxy
 https://cloudflare-dns.com:443/dns-query->proxy
 https://dns.google:443/dns-query->proxy
 https://doh.pub:443/dns-query->direct
-https://rubyfish.cn:443/dns-query->direct
 ```
