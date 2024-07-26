@@ -135,6 +135,14 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 
 4️⃣最后回到小火箭开启。
 
+## 付费机场推荐
+
+“可乐云”机场，成立于2020年，是一款快速、稳定的网络加速器。本产品特点支持主流电脑端一键app加速，可免去第三方客户端的复杂配置问题, 并支持 Clash、v2ray、Shadowrocket 小火箭等第三方客户端。游戏、软件全时段享用、流媒体当地全解锁，畅游网络世界。“可乐云”机场稳定经营，持续更新，致力于创造更好的云机场服务。
+
+“可乐云”专线机场提供小杯、中杯、大杯三种不同的套餐，个人购买小杯即可，外贸公司团队可购买中杯或者大杯。
+ 
+购买链接：[https://52.cola52.site/#/register?code=EIYihGZw](https://52.cola52.site/#/register?code=EIYihGZw)
+
 ### 视频广告
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/cZGwcOBh318?si=tr7F9wdWF15tWMds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
