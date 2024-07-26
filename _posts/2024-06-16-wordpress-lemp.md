@@ -453,7 +453,7 @@ server {
   }
 }
 ```
-注意⚠️：/usr/local/nginx/conf/ssl/目录下没有 www.example.com.key www.example.com.crt 这两个文件，Nginx 会测试不通过，这两个文件在阿里云 WordPress 映像下有，可以复制该文件中的内容，然后使用 Cloudflare 证书认证。另可以参考这篇文章在 Debian 服务器上设置 HTTPS 认证：[如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx](https://tigress.cc/2024/07/02/nginx-https/)
+注意⚠️：/usr/local/nginx/conf/ssl/目录下没有 www.example.com.key www.example.com.crt 这两个文件，Nginx 会测试不通过，这两个文件在阿里云 WordPress 映像下有（或者到我的网盘下载[谷歌网盘](https://drive.google.com/drive/folders/1W7hvxRmSSPpSx9g6Gb6nz13_dODqFRSj)），可以复制该文件中的内容，然后使用 Cloudflare 证书认证。另可以参考这篇文章在 Debian 服务器上设置 HTTPS 认证：[如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx](https://tigress.cc/2024/07/02/nginx-https/)
 
 记住，如果你安装了不同的 PHP 或 PHP-FPM 版本，或者你的 Debian 版本默认使用另一个 PHP 版本，请相应调整 Nginx 配置文件。
 
