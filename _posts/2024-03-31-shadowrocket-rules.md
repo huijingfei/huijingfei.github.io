@@ -5,6 +5,8 @@ subtitle: 小火箭去开屏广告配置文件规则，https 解密规则；Shad
 tags:
     - Shadowrocket
 ---
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://52.cola52.site/#/register?code=EIYihGZw)
+
 ## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 Geolite2 数据库 (白名单规则) / 去广告规则
 
 小火箭配置文件指的是访问网站需要直连还是代理的分流规则，例如访问腾讯阿里抖音等网站直连，访问谷歌脸书等走代理。网上一些自动生成的规则具有局限性，例如一些图片视频链接不在规则内，导致一些国内网站或者 APP 访问速度慢，错误的走了代理，在代理线路不好的时候尤其明显，所以才有了这个手动更新的规则。本白名单规则手动更新，时间不固定，专注于改善 APP 体验的小火箭分流去广告规则。
@@ -70,6 +72,8 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 “可乐云”专线机场提供小杯、中杯、大杯三种不同的套餐，个人购买小杯即可，外贸公司团队可购买中杯或者大杯。
  
 购买链接：[https://52.cola52.site/#/register?code=EIYihGZw](https://52.cola52.site/#/register?code=EIYihGZw)
+
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://52.cola52.site/#/register?code=EIYihGZw)
 
 **ShadowRocket GeoLite2 数据库：**
 
