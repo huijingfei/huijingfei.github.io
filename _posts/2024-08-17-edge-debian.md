@@ -6,7 +6,7 @@ tags:
     - Debian
 ---
 ![如何在 Debian 12、11 或 10 上安装 Microsoft Edge](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/edge/How-to-Install-Microsoft-Edge-on-Debian-Linux.webp)
-Microsoft Edge 最初是为 Windows 开发的，如今已扩展到 Linux，提供了以速度、安全性和效率著称的另一种浏览体验。这种可访问性标志着在弥合 Windows 与 Linux 环境之间的差距方面迈出了重要一步，满足了从休闲冲浪者到专业开发人员等不同用户群的需求。
+Microsoft Edge 最初是为 Windows 开发的，如今已扩展到 Linux，提供了以速度、安全性和效率著称的另一种浏览体验。Microsoft Edge 在 Linux 上的可用性标志着在弥合 Windows 与 Linux 环境之间的差距方面迈出了重要一步，满足了从休闲冲浪者到专业开发人员等不同用户群的需求。
 
 Microsoft Edge 为 Debian 带来的功能：
 
@@ -16,13 +16,13 @@ Microsoft Edge 为 Debian 带来的功能：
 
 🌐增强的浏览功能： 针对 Linux 系统的独特需求，对速度和安全性进行了优化。
 
-🌐用户友好界面： 为 Windows 用户提供熟悉的体验，简化向 Linux 的过渡。
+🌐友好的用户界面： 为 Windows 用户提供熟悉的体验，简化向 Linux 的过渡。
 
 🌐开发者友好：包括访问微软网络开发工具，提高 Linux 平台的生产力。
 
-🌐资源效率： 旨在消耗更少的系统资源，有利于硬件能力有限的系统。
+🌐资源效率： 旨在消耗更少的系统资源，有利于硬件配置较低的系统。
 
-🌐定制和扩展： 支持多种扩展，允许用户定制自己的浏览体验。
+🌐定制和扩展： 支持多种扩展，允许用户定制自己的浏览器。
 
 🌐隐私控制： 提供强大的隐私设置，让用户控制自己的网络足迹。
 
@@ -34,7 +34,7 @@ Microsoft Edge 为 Debian 带来的功能：
 
 ## 在安装 Microsoft Edge 之前更新 Debian
 
-在安装 Microsoft Edge 之前，更新 Debian 系统以确保所有现有软件包都是最新的至关重要。这将确保您的系统拥有顺利安装所需的最新安全补丁和依赖程序。要更新系统，请执行以下命令：
+在安装 Microsoft Edge 之前，更新 Debian 系统以确保所有现有软件包都是最新的至关重要。这将确保您的系统拥有顺利安装 Edge 所需的最新安全补丁和依赖程序。要更新系统，请执行以下命令：
 ```
 sudo apt update && sudo apt upgrade
 ```
@@ -63,13 +63,13 @@ sudo apt update
 ```
 ## 通过 APT 命令完成 Microsoft Edge 浏览器安装
 
-现在您可以继续安装 Microsoft Edge 浏览器。目前有三个分支：稳定版（推荐）、测试版和开发版（夜间版）。要安装稳定版的 Microsoft Edge，请运行以下命令：
+现在您可以继续安装 Microsoft Edge 浏览器。目前有三个分支：稳定版（推荐）、测试版和开发版（nightly）。要安装稳定版的 Microsoft Edge，请运行以下命令：
 ```
 sudo apt install microsoft-edge-stable
 ```
 可选：安装 Microsoft Edge 浏览器测试版或开发版
 
-如果您想试用 Microsoft Edge 的测试版或开发版（夜间），可以安装它们而不是稳定版。请注意，不建议日常使用这些版本，尤其是在主桌面或生产服务器上。它们适用于希望探索即将发布的版本或处于最前沿的用户。
+如果您想试用 Microsoft Edge 的测试版或开发版（nightly），可以安装它们而不是稳定版。请注意，不建议日常使用这些版本，尤其是在办公环境或生产服务器上。它们适用于希望探索即将发布的新功能版本或处于技术最前沿的用户。
 这些版本不会取代稳定版，可以单独安装。不过，建议一次只安装一个版本。
 
 要安装 Microsoft Edge 测试版，请运行以下命令：
@@ -84,7 +84,7 @@ sudo apt install microsoft-edge-dev
 
 **命令行启动 Microsoft Edge**
 
-您可以在终端中执行相应的命令来启动 Microsoft Edge。这种方法提供了直接从命令行打开浏览器的快捷方式。请使用与您的安装构建相匹配的命令：
+您可以在终端中执行相应的命令来启动 Microsoft Edge。这种方法提供了直接从命令行打开浏览器的快捷方式。请使用与您的安装的 Edge 版本相匹配的命令：
 ```
 microsoft-edge
 ```
@@ -151,7 +151,7 @@ sudo rm /usr/share/keyrings/microsoft-edge.gpg
 
 **删除冗余 Sources.list 文件**
 
-在 Debian 中，安装不同版本的 Microsoft Edge（稳定版、测试版和开发版）会导致在 /etc/apt/sources.list.d/ 目录中创建单独的sources.list 文件。使用 apt update 命令时，这些单独的文件可能会导致更新冲突，从而可能导致跳过更新。要解决此问题，您需要删除不必要的sources.list 文件。
+在 Debian 中，安装不同版本的 Microsoft Edge（稳定版、测试版和开发版）会导致在 /etc/apt/sources.list.d/ 目录中创建单独的 sources.list 文件。使用 apt update 命令时，这些单独的文件可能会导致更新冲突，从而可能导致跳过更新。要解决此问题，您需要删除不必要的 sources.list 文件。
 
 要单独删除这些文件，请使用以下命令：
 ```
@@ -169,9 +169,10 @@ sudo rm /etc/apt/sources.list.d/microsoft-edge*
 ```
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main' | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
 ```
-此命令专门为 Microsoft Edge 创建一个新的 sources.list 文件，确保从单一来源管理所有版本的更新。
+此命令专门为 Microsoft Edge 创建一个新的 sources.list 文件，确保从单一源管理所有版本的更新。
 
 **更新 APT 软件包缓存**
+
 正确设置了软件源后，最后一步就是刷新系统的软件包列表。这样可以确保系统识别新的版本库配置，并能接收相应的更新。使用以下步骤更新软件包列表：
 ```
 sudo apt update
@@ -180,6 +181,6 @@ sudo apt update
 
 ## 结论
 
-在本教程中，我们探讨了在 Debian Linux 上安装 Microsoft Edge 的细节。从最初的设置到深入定制和方便的技巧，我们已经涵盖了很多内容。我的最终建议？请毫不犹豫地尝试我们讨论的功能和设置。
+在本教程中，我们探讨了在 Debian Linux 上安装 Microsoft Edge 的细节。从最初的设置到深入定制和 Microsoft APT 存储库设置，我们已经涵盖了很多内容。我的最终建议是？请毫不犹豫地尝试我们讨论的功能和设置。
 
 Welcome to our [website](https://blog.tigress.cc/)
