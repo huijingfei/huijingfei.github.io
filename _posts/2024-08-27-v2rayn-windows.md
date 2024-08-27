@@ -61,19 +61,21 @@ v2rayN 安装教程
 
 复制第一步中的订阅链接
 
-1. 双击屏幕右下角托盘中的 v2rayN 图标（蓝色 V），打开应用程序。
+1️⃣. 双击屏幕右下角托盘中的 v2rayN 图标（蓝色 V），打开应用程序。
 
-2. 转到 "订阅分组">"订阅分组设置 "页面
+![你可以在屏幕右下角的托盘中找到 V2rayN](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20icon.webp)
+
+2️⃣. 转到 "订阅分组">"订阅分组设置 "页面
 
 ![在 v2rayN 中添加服务器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20update%20subscriptions.webp)
 
-3. 把第一步中复制的订阅链接粘贴到地址 url 框中
+3️⃣. 把第一步中复制的订阅链接粘贴到地址 url 框中
 
 ![在 v2rayN 中添加](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20import%20subscriptions.webp)
 
-4. 单击“确定”
+4️⃣. 单击“确定”
 
-5. 前往“订阅分组”>“更新全部订阅”
+5️⃣. 前往“订阅分组”>“更新全部订阅”
 
 ![在 v2rayN 中添加服务器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20update%20subscriptions.webp)
 
@@ -106,6 +108,6 @@ v2rayN 安装教程
 
 **其他教程推荐：**
 
-![手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / 白名单规则](https://tigress.cc/2024/03/31/shadowrocket-rules/)
+[手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 / 白名单规则](https://tigress.cc/2024/03/31/shadowrocket-rules/)
 
-![在 Debian/Ubuntu 上安装 v2rayA 并使用 Xray 内核](https://tigress.cc/2023/10/22/V2rayA-Xray/)
+[在 Debian/Ubuntu 上安装 v2rayA 并使用 Xray 内核](https://tigress.cc/2023/10/22/V2rayA-Xray/)
