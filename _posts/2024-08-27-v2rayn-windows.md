@@ -55,6 +55,8 @@ v2rayN 安装教程
 
 如果有弹出窗口，会提示安装微软系统运行库，按照提示下载安装即可。安装完成后，右键点击 "v2rayN " 这个文件（如图所示）➡️ 发送到桌面快捷方式；最后在桌面双击 "v2rayN "快捷方式即可启动软件，你可以在屏幕右下角的托盘中找到 V2rayN。
 
+![安装微软系统运行库](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/install.net.webp)
+
 ![你可以在屏幕右下角的托盘中找到 V2rayN](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20icon.webp)
 
 **在 v2rayN 中添加服务器**
@@ -105,6 +107,37 @@ v2rayN 安装教程
 
 现在，你可以随心所欲地上网冲浪了。
 
+## 其他 v2rayN 设置
+
+**v2rayN 路由设置**
+
+主界面点击 v2rayN 设置 ➡️ 路由设置，路由设置有三种：全局模式，黑名单模式和白名单模式。上国内网站较多用黑名单模式，上国外网站较多用白名单模式，特殊情况使用全局模式。
+
+![v2rayN 路由设置](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20rules.webp)
+
+v2rayN 白名单模式，如果域名不在规则列表中，则使用代理访问，有些国外网站会屏蔽大陆 IP；图中所示规则列表，越靠上优先级越高，可以在靠上的规则中为单独域名设置直连，代理或者屏蔽。
+
+![v2rayN 白名单模式](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20whitelist.webp)
+
+![v2rayN 直连规则](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20direct.webp)
+
+![v2rayN 屏蔽规则](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20block.webp)
+
+direct 为直连规则，proxy 为代理规则，block 为屏蔽规则；域名格式为 domain:ad.sina.com.cn, 其中冒号和逗号都是英文输入下的标点符号。
+
+**v2rayN 参数设置**
+
+主界面点击 v2rayN 设置 ➡️ 参数设置 ➡️ v2rayN 设置，可以将开启启动打开。更新 Core 时忽略 Geo 文件，这个选择也可以打开，Geo 文件不更新也可以正常使用。
+
+![v2rayN 设置 ➡️ 参数设置 ➡️](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20settings.webp)
+
+主界面点击 v2rayN 设置 ➡️ 参数设置 ➡️ CORE 类型设置，可以根据需要选择不同的内核，对于新手来说选择默认的内核即可。
+
+![v2rayN 设置 ➡️ CORE 类型设置 ➡️](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20core%20type.webp)
+
+主界面点击‘检查更新’，可以根据需要更新 v2rayN 软件 以及 更新内核；Geofiles 通常不需要更新。
+
+![更新 v2rayN](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20update.webp)
 
 **其他教程推荐：**
 
