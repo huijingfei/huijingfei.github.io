@@ -102,15 +102,17 @@ Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 [Flash P
 
 Debian 11 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)
 ```
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
-curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
+curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
 sudo apt update
+sudo apt install palemoon
 ```
 Debian 12 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
 ```
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-GTK3/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-GTK3.list
-curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-GTK3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-GTK3.gpg > /dev/null
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
+curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
 sudo apt update
+sudo apt install palemoon
 ```
 ```   
 sudo apt install palemoon
