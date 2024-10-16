@@ -71,6 +71,12 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 
 [![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://52.cola52.site/#/register?code=EIYihGZw)
 
+**小火箭添加订阅方法**
+
+小火箭右上角点击 ➕，类型选择 Subscribe，然后在 URL 处添加订阅链接，最后点击保存即可；订阅链接可以在机场后台首页点击一键订阅，复制订阅地址。
+
+![小火箭添加订阅方法](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/shadowrocket/shadowrocket%20subscribe.webp)
+
 **ShadowRocket GeoLite2 数据库：**
 
 设置页 ➡️ 下拉找到 GeoLite2 数据库 ➡️ 以下两个建议选择 Country-only-cn-private.mmdb ➡️ 复制地址后粘贴到 URL 处，点击更新即可
