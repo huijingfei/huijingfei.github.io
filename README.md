@@ -1,7 +1,11 @@
->这是我Fork FeDemo的利用 GitHub Pages 与 Jekyll 搭建的个人博客。 
->从零开始,手把手教学,请参考<a href="https://github.com/FeDemo/fedemo.github.io" target="view_window">FeDemo项目主页</a>    
->该博客模板来自<a href="https://github.com/huxpro" target="view_window">Hux</a>修改的<a href="https://startbootstrap.com/template-overviews/clean-blog/" target="view_window">Clean Blog</a>   
->添加了搜索及Gitalk评论插件以及按时间归档   
+>这是我Fork FeDemo的利用 GitHub Pages 与 Jekyll 搭建的个人博客。
+>
+>从零开始,手把手教学,请参考原项目主页<a href="https://github.com/FeDemo/fedemo.github.io" target="view_window">FeDemo项目主页</a>
+>
+>该博客模板来自<a href="https://github.com/huxpro" target="view_window">Hux</a>修改的<a href="https://startbootstrap.com/template-overviews/clean-blog/" target="view_window">Clean Blog</a>
+>
+>添加了搜索及Gitalk评论插件以及按时间归档
+>
 >本教程参考自<a href="https://github.com/qiubaiying" target="view_window">BY</a>    
 
 # 补充添加谷歌分析，Google Search Console
@@ -78,10 +82,13 @@ ba_track_id: ef224c004e9c327ca58d50ed4501cb99  #统计账号id(不要用我的`b
   ---
   ```
 按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.  
+
 ![](https://raw.githubusercontent.com/FeDemo/img_gitalk/master/2017-12-08-blog_re0/17.png)  
 
 
 # 为GitHub Pages博客添加Facebook Messenger Chat Plugin聊天插件，支持访客对话。
+
+⚠️：Facebook 已经停用了 Facebook Messenger Chat Plugin聊天插件，请忽略此段教程。
 
 🛑在Meta Business Suite收件箱中点击小齿轮，查看所有设置。
 
@@ -90,3 +97,5 @@ ba_track_id: ef224c004e9c327ca58d50ed4501cb99  #统计账号id(不要用我的`b
 🛑将代码粘贴到_includes文件夹下的head.html文件中，这一步类似谷歌分析GA4代码设置。
 
 ![](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/Images/messenger.webp) 
+
+[Feegle Pet Food](https://feegle.me/)
