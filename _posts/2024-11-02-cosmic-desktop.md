@@ -20,10 +20,10 @@ System76 还将外观定制作为优先事项。它有一个集成的主题系�
 
 ![COSMIC的第一个alpha版本还包括新的文件、设置、终端和编辑应用程序](https://github.com/huijingfei/huijingfei.github.io/blob/master/images/cosmic/cosmic-alpha1-edit-terminal-tiled.webp)
 
-COSMIC 的第一个 alpha 版本还包括新的文件、设置、终端和编辑应用程序，以及一个旨在取代当前版本 Pop!_OS 中使用的 Pop!_Shop 的应用程序商店。System76 为 COSMIC 应用程序定制了一个基于 Rust 的工具包，名为libcosmic，除 Linux 外，最终还将支持 Window s和 macOS。
+COSMIC 的第一个 alpha 版本还包括新的文件、设置、终端和编辑应用程序，以及一个旨在取代当前版本 Pop!_OS 中使用的 Pop!_Shop 的应用程序商店。System76 为 COSMIC 应用程序定制了一个基于 Rust 的工具包，名为libcosmic，除 Linux 外，最终还将支持 Windows 和 macOS。
 
 ![](https://github.com/huijingfei/huijingfei.github.io/blob/master/images/cosmic/cosmic-alpha1-files-settings-light-mode.webp)
 
-System76计划在下一个alpha版本中重点关注对触摸屏的支持，路线图的其余部分包括无障碍功能、磨砂玻璃设计元素和更完整的设置应用。这是第一个公开的 alpha 版本，因此仍有许多功能缺失。
+System76 计划在下一个 alpha 版本中重点关注对触摸屏的支持，路线图的其余部分包括无障碍功能、磨砂玻璃设计元素和更完整的设置应用。这是第一个公开的 alpha 版本，因此仍有许多功能缺失。
 
 您可以从 System76 网站下载 [COSMIC alpha ISO](https://system76.com/cosmic)。
