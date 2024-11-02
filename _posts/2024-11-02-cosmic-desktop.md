@@ -8,7 +8,7 @@ tags:
 
 多年来，System76 一直在开发自己的 Linux 桌面环境，名为 COSMIC Desktop。首个公开 alpha 版本现已发布，让你有机会体验该公司对未来桌面生产力和定制化的愿景。
 
-System76发布了[COSMIC的第一个公开alpha版本](https://system76.com/cosmic)，这是它的新桌面环境，旨在替代GNOME Shell、KDE Plasma、Cinnamon和其他类似项目。COSMIC 已开发多年，主要用于替代 [Pop!_OS Linux](https://pop.system76.com/) 中使用的定制 GNOME Shell。不过，COSMIC 桌面可以在许多 Linux 桌面发行版中使用，而且为 COSMIC 创建的应用程序也不会仅限于 Linux。
+System76发布了[COSMIC的第一个公开alpha版本](https://system76.com/cosmic)，这是它的新桌面环境，旨在替代 GNOME Shell、KDE Plasma、Cinnamon 和其他类似项目。COSMIC 已开发多年，主要用于替代 [Pop!_OS Linux](https://pop.system76.com/) 中使用的定制 GNOME Shell。不过，COSMIC 桌面可以在许多 Linux 桌面发行版中使用，而且为 COSMIC 创建的应用程序也不会仅限于 Linux。
 
 对于使用过 GNOME Shell，尤其是 Pop!_OS 和 Ubuntu 中使用的修改版的人来说，COSMIC 桌面可能并不陌生。不过，COSMIC 是用 Rust 编程语言从头开始编写的，System76 希望它能提高性能，减少死机现象。它有垂直或水平工作区选项、集成的平铺系统，以及可定制的 dock 和顶栏面板。
 
