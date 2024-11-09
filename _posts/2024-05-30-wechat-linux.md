@@ -16,7 +16,7 @@ wechat-beta版本微信-绕过登录检测：[wechat_for_linux](https://github.c
 sudo dpkg -i  wechat-beta_1.0.0.145_amd64.fixed.deb 
 ```
 
-另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)，这个版本更新一些，有 .AppImage 和 .tar.xz 两种格式；并且有 x86 和 aarch64 两种架构，我们一般选择 x86 版本的即可。
+另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)，这个版本更新一些，更新及时；有 .AppImage 和 .tar.xz 两种格式；并且有 x86 和 aarch64 两种架构，我们一般选择 x86 版本的即可。
 
 ![微信客户端 AppImage 版](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/linux%20wechat%20version.webp)
 
@@ -44,7 +44,7 @@ rm -r /opt/wechat-beta
 ```
 然后再把 .tar.xz 压缩包解压后的目录改名为 wechat-beta，并移动或复制到 /opt 目录下
 ```
-mv -r wechat-beta /opt/
+cp -r wechat-beta /opt/
 ```
 此时，到微信关于可以看到是最新版的， dpkg -l 命令其实还是老版本，这个不影响使用。如果有强迫症，可以修改以下文件中的 wechat-beta 版本信息。
 ```
