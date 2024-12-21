@@ -20,8 +20,6 @@ sudo dpkg -i  wechat-beta_1.0.0.145_amd64.fixed.deb
 
 [微信 Linux 版官方版下载地址](https://linux.weixin.qq.com/)，直接下载 X86 AppImage 版本，使用AppImage 版需要自己设置绕登录检测。
 
-![微信客户端 AppImage 版](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/linux%20wechat%20version.webp)
-
 ![微信 Linux 版官方版](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/wechat-linux/WeChat%20AppImage.webp)
 
 最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，
@@ -58,6 +56,11 @@ cp -r wechat-beta /opt/
 /var/lib/dpkg/status
 ```
 ![linux 微信](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/wechat%20linux.webp)
+
+⚠️：一定要把图标文件夹备份并复制到 /opt/wechat-beta/ 目录下。
+```
+cp -r icons /opt/wechat-beta
+```
 
 ## 原生版微信支持的功能
 
