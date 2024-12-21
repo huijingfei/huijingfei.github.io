@@ -16,18 +16,23 @@ wechat-beta版本微信-绕过登录检测：[wechat_for_linux](https://github.c
 sudo dpkg -i  wechat-beta_1.0.0.145_amd64.fixed.deb 
 ```
 
-另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)，这个版本更新一些，更新及时；有 .AppImage 和 .tar.xz 两种格式；并且有 x86 和 aarch64 两种架构，我们一般选择 x86 版本的即可。
+另推荐微信客户端 AppImage 版：[WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage)，这个版本更新一些，更新及时；有 .AppImage 和 .tar.xz 两种格式；并且有 x86 和 aarch64 两种架构，我们一般选择 x86 版本的即可。（⚠️ 微信团队已发布官方版AppImage, 此仓库不再维护）
+
+[微信 Linux 版官方版下载地址](https://linux.weixin.qq.com/)，直接下载 X86 AppImage 版本，使用AppImage 版需要自己设置绕登录检测。
 
 ![微信客户端 AppImage 版](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/linux%20wechat%20version.webp)
 
-微信微信客户端 AppImage 版本较新，同时拥有 x64 和 aarch64 版；但是AppImage 版需要自己设置绕登录检测：
+![微信 Linux 版官方版](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/wechat-linux/WeChat%20AppImage.webp)
 
 最简单的使用较新版本的方法，先安装 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb，
 
-然后下载 [WeChat-AppImage ](https://github.com/zydou/WeChat-AppImage) 版的 .tar.xz 压缩包，解压后更改文件夹名称为 wechat-beta 然后复制整个目录到 [wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux).deb 的安装目录。
+然后下载 [WeChat-AppImage ](https://linux.weixin.qq.com/) 版的 X86 AppImage 包，然后右键选择 properties 属性，打开 Executable as program。使用以下命令解压 AppImage 包。
+
 ```
-cp -r wechat-beta /opt/
+./WeChatLinux_x86_64.AppImage --appimage-extract
 ```
+解压后得到一个 squashfs-root 文件夹，在 /squashfs-root/opt/ 目录下有一个 wechat 文件夹，把这个文件夹复制到 Downloads 下并改名为 wechat-beta。
+
 这样做是为了通过安装 deb 包在系统中配置好绕登录检测，然后替换微信安装后的文件达到手动更新版本的目的。
 
 **注意：先对比一下 Deb 安装完成后的目录与 .tar.xz 压缩包解压后的目录的区别：**
@@ -38,11 +43,13 @@ cp -r wechat-beta /opt/
 
 可以看到 wechat-beta for Linux 目录下有个 icons 文件夹，这个是显示微信图标用的；而 .tar.xz 压缩包解压后的目录有个 licence 文件夹，这个手动设置绕登录检测用的，这个不用管，因为安装 Deb 包的时候已经设置好绕登录检测了。
 
-为了保险起见，把 icons 文件夹先复制到 .tar.xz 压缩包解压后的目录，然后删除 /opt 下 wechat-beta 的目录：
+⚠️：实测解压后的文件直接替换即可。
+
+先删除 /opt 下 wechat-beta 的目录：
 ```
 rm -r /opt/wechat-beta
 ```
-然后再把 .tar.xz 压缩包解压后的目录改名为 wechat-beta，并移动或复制到 /opt 目录下
+然后再把 AppImage 包解压后的的到的 wechat 文件夹改名为 wechat-beta，并移动或复制到 /opt 目录下
 ```
 cp -r wechat-beta /opt/
 ```
