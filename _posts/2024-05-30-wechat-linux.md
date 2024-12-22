@@ -9,7 +9,7 @@ tags:
 ## wechat_for_linux；weixin_for_linux；wechat-beta；微信；Linux 原生版微信支持看一看，搜一搜，朋友圈，小程序，视频号等功能
 
 **⚠️注意** [微信 Linux 版官方版](https://linux.weixin.qq.com/)已经可以直接安装使用，本篇文章仅作为备份。使用以下任意命令直接安装即可，Debian 测试可用， Ubuntu 未测试。
-``
+```
 sudo dpkg -i WeChatLinux_x86_64.deb
 sudo apt install WeChatLinux_x86_64.deb
 ```
