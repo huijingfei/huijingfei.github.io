@@ -113,7 +113,7 @@ sudo ./tweaks.sh -f         (Firefox 主题)
 
 分别复制到如下路径：
 ```
-cp wechat.png /opt/wechat-beta/icons/
+cp wechat.png /usr/share/icons/hicolor/256x256/apps/
 
 cp qq.png /usr/share/icons/hicolor/512x512/apps/
 
