@@ -97,6 +97,8 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 
 ![手动维护的 iOS 小火箭 Shadowrocket 规则](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/Shadowrocket%20rules.webp)
 
+初次使用去广告规则，部分 APP 因为广告缓存的原因还会出现少量开屏广告，大部分 APP 可以通过清除缓存实现去广告，微博 APP 清除缓存无法清除开屏广告，可以重装或者等几天广告过期后即可。
+
 ### 部分 APP 无法使用代理访问解决方法
 
 将相关域名加入跳过代理，建行生活有效，其他未测试。网络环境变化需开关代理一次（例如从 WIFI 换成数据网络），否则仍将提示无法使用代理访问。
