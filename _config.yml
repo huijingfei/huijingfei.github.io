@@ -157,5 +157,8 @@ friends: [
     },{
         title: "Affinity Photo",
         href: "https://store.serif.com/en-us/update/windows/photo/1/"
+    },{
+        title: "进口原研药目录",
+        href: "https://medicine.lvwzhen.com/"
     }
 ]
