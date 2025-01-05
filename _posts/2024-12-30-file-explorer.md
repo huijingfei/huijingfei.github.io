@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  在 Windows 11 中重启文件资源管理器的 4 种方法
-subtitle: 任务管理器未响应怎么解决？
+subtitle: Windows 资源管理器未响应解决方案
 tags:
     - Windows
 ---
