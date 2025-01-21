@@ -62,7 +62,7 @@ Flash Player 目前有两个开源解决方案：
 
 [archive.org](https://archive.org/) 上面保留了支持 Flash Player 的最后一个版本的 Firefox 和 Chrome，有需要的可以从这里下载：[下载链接](https://archive.org/download/Firefox_Chrome_Adobe_Flash)
 
-该网站在中国大陆地区无法正常访问，需要翻墙，如果暂时无法翻墙的话可以从我的共享云盘中下载：[下载链接](https://drive.sainnhe.dev/Flash/Windows/)
+该网站在中国大陆地区无法正常访问，需要翻墙。
 
 下载的版本是便携版，无需安装，解压后双击 “FirefoxPortable.exe” 即可使用。
 
@@ -120,8 +120,6 @@ sudo apt install palemoon
 Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon) 添加对应的源。
 
 接下来下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，选 Linux 版 64 位 NPAPI：[下载链接](https://github.com/darktohka/clean-flash-builds/releases/tag/v1.7)
-
-也可以从我的共享云盘中下载：[下载链接](https://pan.huang1111.cn/s/EBmqSb)
 
 把解压后得到的 libflashplayer.so 放到 ~/.moonchild productions/pale moon/yourown.default/plugins 目录下。
 
