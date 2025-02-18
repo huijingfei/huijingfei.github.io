@@ -69,7 +69,7 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
  
 购买链接：[https://52.cola52.site/#/register?code=EIYihGZw](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
 
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/shadowrocket/cola.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
 
 **小火箭添加订阅方法**
 
