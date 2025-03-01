@@ -264,17 +264,17 @@ sudo unzip latest.zip -d /data/wwwroot/site1/
 
 可以使用以下命令完成此操作：
 ```
-sudo chown -R www-data:www-data /var/www/html/wordpress/
+sudo chown -R www-data:www-data /data/wwwroot/site1/wordpress/
 ```
 设置目录所有者权限后，必须使用以下命令为 WordPress 文件夹和文件设置正确的权限：
 
 对于文件夹
 ```
-sudo find /var/www/html/wordpress -type d -exec chmod 755 {} \;
+sudo find /data/wwwroot/site1/wordpress -type d -exec chmod 755 {} \;
 ```
 对于文件
 ```
-sudo find /var/www/html/wordpress -type f -exec chmod 644 {} \;
+sudo find /data/wwwroot/site1/wordpress -type f -exec chmod 644 {} \;
 ```
 设置正确的文件夹和文件权限可确保 WordPress 安装安全并正常运行。
 
@@ -310,7 +310,7 @@ EXIT;
 
 使用以下命令导航到 WordPress 目录：
 ```
-cd /var/www/html/wordpress/
+cd /data/wwwroot/site1/wordpress/
 ```
 使用以下命令将 wp-config-sample.php 复制到 wp-config.php：
 ```
@@ -371,7 +371,7 @@ define('WP_MEMORY_LIMIT', '256M');
 
 要将新生成的安全盐密钥嵌入 wp-config.php 文件，请在文本编辑器中打开该文件：
 ```
-sudo nano /var/www/html/wordpress/wp-config.php
+sudo nano /data/wwwroot/site1/wordpress/wp-config.php
 ```
 现在，找出 wp-config.php 文件中与样本密钥相对应的行。找到后，用新生成的密钥替换 wp-config.php 文件中的每个示例密钥。完成必要的替换后，确保保存并关闭文件。
 如果使用的是 nano 编辑器，请按 "CTRL+X"，然后按 "Y "保存。
@@ -667,6 +667,8 @@ sudo certbot --nginx --agree-tos --redirect --hsts --staple-ocsp --email you@exa
 在此过程中，Certbot 会提示你输入电子邮件和域名。您还可以选择接收来自 EFF 的电子邮件。根据您的偏好决定是否选择加入。
 
 安装证书后，您网站的 URL 将从 HTTP 切换到 HTTPS。任何试图访问旧 HTTP URL 的访客都会自动重定向到新的 HTTPS URL。此配置可确保 HTTPS 301 重定向、Strict-Transport-Security（严格传输安全）标头和 OCSP Stapling（OCSP 封装），以实现顶级安全性。
+
+[如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx](https://tigress.cc/2024/07/02/nginx-https/)
 
 ***设置证书自动更新***
 
