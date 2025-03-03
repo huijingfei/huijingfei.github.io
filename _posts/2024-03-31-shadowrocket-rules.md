@@ -32,10 +32,11 @@ tags:
 https://doh.360.cn
 dot.360.cn
 ```
-Yeti DNS
+阿里 DNS
 ```
-https://dns.ipv6dns.com/dns-query
-dns.ipv6dns.com
+https://dns.alidns.com/dns-query
+https://223.5.5.5/dns-query
+dns.alidns.com
 ```
 OneDNS
 ```
@@ -43,6 +44,12 @@ https://doh-pure.onedns.net/dns-query
 dot-pure.onedns.net
 ```
 ------------------------------------------------------
+
+**免费公共 DNS 服务器推荐**
+
+[免费公共 DNS 服务器大全](https://tigress.cc/2025/03/03/dns-list/)
+
+[免费公共 IPv4/IPv6/DoT/DoH DNS 服务器大全](https://dns.icoa.cn/)
 
 **自用小火箭规则：**
 ```
