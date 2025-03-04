@@ -32,12 +32,6 @@ tags:
 https://doh.360.cn
 dot.360.cn
 ```
-阿里 DNS
-```
-https://dns.alidns.com/dns-query
-https://223.5.5.5/dns-query
-dns.alidns.com
-```
 OneDNS
 ```
 https://doh-pure.onedns.net/dns-query
@@ -177,13 +171,15 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 Domain Query Servers
 ```
 202.99.160.68->direct
-180.184.1.1->direct
-223.5.5.5->direct
+52.80.52.52->direct
 123.125.81.6->direct
+https://doh.360.cn:443/dns-query->direct
+https://doh-pure.onedns.net:443/dns-query->direct
 ```
 External Domain Query Servers
 ```
 https://cloudflare-dns.com:443/dns-query->proxy
 https://dns.google:443/dns-query->proxy
 https://hk-hkg.doh.sb:443/dns-query->proxy
+https://doh.opendns.com:443/dns-query->proxy
 ```
