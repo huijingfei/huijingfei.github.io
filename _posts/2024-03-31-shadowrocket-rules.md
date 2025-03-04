@@ -51,6 +51,8 @@ dot-pure.onedns.net
 
 [免费公共 IPv4/IPv6/DoT/DoH DNS 服务器大全](https://dns.icoa.cn/)
 
+[全球公共DNS服务器地址汇总（包含DoT/DoH）](https://www.luyouwang.com/dns-dot-doh)
+
 **自用小火箭规则：**
 ```
 https://raw.githubusercontent.com/huijingfei/Shadowrocket-Rules/main/sr_app_ad.conf
@@ -171,9 +173,17 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)可代替 V2Ray 官方 geoip.dat 和 geosite.dat。
 
 ### v2rayA 防止 DNS 污染 ➡️ 自定义高级设置
+
+Domain Query Servers
 ```
-tcp://dns.opendns.com:5353 -> proxy
+202.99.160.68->direct
+180.184.1.1->direct
+223.5.5.5->direct
+123.125.81.6->direct
+```
+External Domain Query Servers
+```
 https://cloudflare-dns.com:443/dns-query->proxy
 https://dns.google:443/dns-query->proxy
-https://doh.pub:443/dns-query->direct
+https://hk-hkg.doh.sb:443/dns-query->proxy
 ```
