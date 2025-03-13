@@ -25,9 +25,11 @@ OneNote 由 Microsoft 开发，主要针对 Windows 和 macOS 设计。不过，
 
 ## 安装 OneNote
 
-**1.使用 AppImage 或者 Flatpak**
+**1.使用 AppImage, Deb, rpm 或者 Flatpak**
 
-无论您使用哪个发行版，都可以从此 GitHub 存储库的发行版部分下载最新版本的 p3x OneNote。
+无论您使用哪个发行版，都可以从此 [GitHub 存储库](https://github.com/patrikx3/onenote)的发行版部分下载最新版本的 p3x OneNote。
+
+P3X OneNote 📚 Linux Electron Onenote - A Linux compatible version of OneNote.
 
 ![p3x OneNote Linux](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/onenote/install%20p3x%20onenote%20using%20flatpak.webp)
 
@@ -45,6 +47,11 @@ chmod +x $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage
 $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage &
 ```
 ![运行 OneNote 应用程序](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/onenote/run%20the%20OneNote%20application.webp)
+
+如果是下载的 deb 包，直接安装即可：
+```
+apt install  p3x-onenote_2025.4.124_amd64.deb
+```
 
 **2. 在 WINE 上使用 PlayOnLinux**
 
