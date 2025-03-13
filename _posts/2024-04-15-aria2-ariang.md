@@ -5,17 +5,7 @@ subtitle: 在基于 Debian 的 Linux 发行版中安装使用 Aria2+AriaNG
 tags:
     - Debian
 ---
-注意⚠️：由于 aria 已经删库，建议使用其他下载工具替代；相关资讯请查看[开源下载工具 Aria 被诈骗份子使用，开发者无奈清空代码仓库](https://www.oschina.net/news/307530)
 
-**下载工具推荐：**
-
-[AXEL - Lightweight CLI download accelerator](https://github.com/axel-download-accelerator/axel)
-
-[Transmission is a fast, easy, and free BitTorrent client.](https://github.com/transmission/transmission)
-
-[Motrix](https://github.com/agalwood/Motrix)
-
-[Free Download Manager](https://www.freedownloadmanager.org/)
 
 ## 安装 aria2
 
