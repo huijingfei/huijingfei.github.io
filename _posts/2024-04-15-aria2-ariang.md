@@ -6,7 +6,6 @@ tags:
     - Debian
 ---
 
-
 ## 安装 aria2
 
 在 Debian/Ubuntu 中可以直接通过软件源安装：
@@ -72,6 +71,18 @@ sudo systemctl start aria2
 
 密钥则为 aria2.conf 配置文件中 rpc-secret='' 修改的链接密钥。
 
+## 下载脚本
+```
+cd /etc/aria2
+      
+wget https://github.com/P3TERX/aria2.conf/raw/master/script.conf
+
+wget https://github.com/P3TERX/aria2.conf/raw/master/core
+
+wget https://github.com/P3TERX/aria2.conf/raw/master/clean.sh
+
+wget https://github.com/P3TERX/aria2.conf/raw/master/delete.sh
+``` 
 ## 更新 tracker 列表
 
 在 Aria2 配置文件 (aria2.conf) 所在目录执行以下命令即可获取最新 tracker 列表并自动添加到配置文件中。
@@ -86,18 +97,7 @@ cd /root/.cache/aria2
 
 wget https://github.com/P3TERX/aria2.conf/raw/master/dht.dat
 ```
-## 下载脚本
-```
-cd /etc/aria2
-      
-wget https://github.com/P3TERX/aria2.conf/raw/master/script.conf
-
-wget https://github.com/P3TERX/aria2.conf/raw/master/core
-
-wget https://github.com/P3TERX/aria2.conf/raw/master/clean.sh
-
-wget https://github.com/P3TERX/aria2.conf/raw/master/delete.sh
-```      
+     
 ### 本文参考了以下配置
 
 [aira2.conf](https://github.com/P3TERX/aria2.conf)
@@ -117,5 +117,15 @@ wget https://github.com/P3TERX/aria2.conf/raw/master/delete.sh
 [火狐 aria2 插件 Aria2 Download Manager Integration](https://addons.mozilla.org/en-US/firefox/addon/aria2-integration/)
 
 [Aria2-Explorer for Chrome](https://chromewebstore.google.com/detail/aria2-explorer/mpkodccbngfoacfalldjimigbofkhgjn?hl=en-US&utm_source=ext_sidebar)
+
+## 通过 uget 调用 aria2 下载
+```
+apt install uget
+```
+在 uget 设置 → 插件，配置 aria2；其中 aria2 URL 默认的不需要改，密钥则填写配置文件中自己设定的密钥。
+
+![通过 uget 调用 aria2 下载](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/uget%20aria2.webp)
+
+通过 uget 调用 aira2 的好处是无需配置 aria2 服务文件，可以通过 uget 来启动或者退出 aria2，如果已经在上文配置好了 aria2 开机启动，那么这里的选项可以取消勾选。
 
 Welcome to our [website](https://blog.tigress.cc/)
