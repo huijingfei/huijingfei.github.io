@@ -5,6 +5,7 @@ subtitle: 在基于 Debian 的 Linux 发行版中安装使用 Aria2+AriaNG
 tags:
     - Debian
 ---
+[通过 uget 配置 aria2 插件下载](https://tigress.cc/2024/04/15/aria2-ariang/#%E9%80%9A%E8%BF%87-uget-%E8%B0%83%E7%94%A8-aria2-%E4%B8%8B%E8%BD%BD)
 
 ## 安装 aria2
 
@@ -91,12 +92,13 @@ bash <(curl -fsSL git.io/tracker.sh)
 ```
 ## 下载 DHT 文件
 ```
-mkdir /root/.cache/aria2
+mkdir $HOME/.aria2/
 
-cd /root/.cache/aria2
+cd $HOME/.aria2/
 
 wget https://github.com/P3TERX/aria2.conf/raw/master/dht.dat
 ```
+DHT 网络节点数据文件。提升 BT 下载率和下载速度的关键之一。相关科普：[《解决 Aria2 无法下载磁力链接、BT种子和速度慢的问题》](https://p3terx.com/archives/solved-aria2-cant-download-magnetic-link-bt-seed-and-slow-speed.html)
      
 ### 本文参考了以下配置
 
@@ -127,5 +129,10 @@ apt install uget
 ![通过 uget 调用 aria2 下载](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/uget%20aria2.webp)
 
 通过 uget 调用 aira2 的好处是无需配置 aria2 服务文件，可以通过 uget 来启动或者退出 aria2，如果已经在上文配置好了 aria2 开机启动，那么这里的选项可以取消勾选。
+
+Arguments:
+```
+--enable-rpc=true -D --disable-ipv6 --check-certificate=false --conf-path=/etc/aria2/aria2.conf
+```
 
 Welcome to our [website](https://blog.tigress.cc/)
