@@ -391,19 +391,6 @@ sudo nano /etc/nginx/sites-available/example.com.conf
 server {
   listen 80;
   listen [::]:80;
-  listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /usr/local/nginx/conf/ssl/www.example.com.crt;
-  ssl_certificate_key /usr/local/nginx/conf/ssl/www.example.com.key;
-  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-  ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
-  ssl_prefer_server_ciphers on;
-  ssl_session_timeout 10m;
-  ssl_session_cache builtin:1000 shared:SSL:10m;
-  ssl_buffer_size 1400;
-  add_header Strict-Transport-Security max-age=15768000;
-  ssl_stapling on;
-  ssl_stapling_verify on;
   server_name www.example.com example.com;
   root /var/www/html/wordpress;
   index index.php index.html index.htm index.nginx-debian.html;
@@ -453,7 +440,7 @@ server {
   }
 }
 ```
-注意⚠️：/usr/local/nginx/conf/ssl/目录下没有 www.example.com.key www.example.com.crt 这两个文件，Nginx 会测试不通过，这两个文件在阿里云 WordPress 映像下有（或者到我的网盘下载[谷歌网盘](https://drive.google.com/drive/folders/1W7hvxRmSSPpSx9g6Gb6nz13_dODqFRSj)），可以复制该文件中的内容，然后使用 Cloudflare 证书认证。另可以参考这篇文章在 Debian 服务器上设置 HTTPS 认证：[如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx](https://tigress.cc/2024/07/02/nginx-https/)
+**在 Debian 服务器上设置 HTTPS 认证：[如何在 Debian 12、11 或 10 上用 Let's Encrypt 加密 Nginx](https://tigress.cc/2024/07/02/nginx-https/)**
 
 记住，如果你安装了不同的 PHP 或 PHP-FPM 版本，或者你的 Debian 版本默认使用另一个 PHP 版本，请相应调整 Nginx 配置文件。
 
