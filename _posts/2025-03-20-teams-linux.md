@@ -16,14 +16,6 @@ tags:
 
 ---
 
-[![Gitter chat](https://badges.gitter.im/ismaelmartinez/teams-for-linux.png)](https://gitter.im/teams-for-linux/community "Gitter chat")
-![](https://img.shields.io/github/release/IsmaelMartinez/teams-for-linux.svg?style=flat)
-![](https://img.shields.io/github/downloads/IsmaelMartinez/teams-for-linux/total.svg?style=flat)
-![Build & Release](https://github.com/IsmaelMartinez/teams-for-linux/workflows/Build%20&%20Release/badge.svg)
-![](https://img.shields.io/librariesio/github/IsmaelMartinez/teams-for-linux)
-[![Known Vulnerabilities](https://snyk.io//test/github/IsmaelMartinez/teams-for-linux/badge.svg?targetFile=package.json)](https://snyk.io//test/github/IsmaelMartinez/teams-for-linux?targetFile=package.json)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IsmaelMartinez_teams-for-linux&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=IsmaelMartinez_teams-for-linux)
-
 基于 [`Electron`](https://electronjs.org/) 的 Linux 版非官方 Microsoft Teams 客户端 。
 
 ## 下载
@@ -69,7 +61,7 @@ yum install teams-for-linux
 
 ## 配置和启动参数
 
-请在 config 文件夹的 [`README.md`](app/config/README.md) 中查看启动或配置选项，以启用或禁用某些功能或行为。
+请在 config 文件夹的 [`README.md`](https://github.com/IsmaelMartinez/teams-for-linux/blob/main/app/config/README.md) 中查看启动或配置选项，以启用或禁用某些功能或行为。
 
 ## 在 firejail 中运行 teams-for-linux
 
@@ -77,18 +69,18 @@ yum install teams-for-linux
 
 ## 贡献
 
-请参阅 [`CONTRIBUTING.md`](CONTRIBUTING.md)文件，了解有关如何从源代码运行此应用程序和/或如何贡献的更多信息。
+请参阅 [`CONTRIBUTING.md`](https://github.com/IsmaelMartinez/teams-for-linux/blob/main/CONTRIBUTING.md)文件，了解有关如何从源代码运行此应用程序和/或如何贡献的更多信息。
 
 ## 已知问题
 
-已知问题和解决方法可在 [`KNOWN_ISSUES.md`](KNOWN_ISSUES.md)文件中找到。
+已知问题和解决方法可在 [`KNOWN_ISSUES.md`](https://github.com/IsmaelMartinez/teams-for-linux/blob/main/KNOWN_ISSUES.md)文件中找到。
 
 ## 历史
 
-请在 [`HISTORY.md`](HISTORY.md)文件中阅读本项目的历史。
+请在 [`HISTORY.md`](https://github.com/IsmaelMartinez/teams-for-linux/blob/main/HISTORY.md)文件中阅读本项目的历史。
 
 ## 许可证
 
 部分图标来自 [Icon Duck](https://iconduck.com/sets/hugeicons-essential-free-icons)，采用 `CC BY 4.0` 许可。
 
-License: [`GPLv3`](LICENSE.md)
+License: [`GPLv3`](https://github.com/IsmaelMartinez/teams-for-linux/blob/main/LICENSE.md)
