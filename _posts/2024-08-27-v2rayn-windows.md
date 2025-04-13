@@ -5,7 +5,7 @@ subtitle: v2rayN 使用教程配置从入门到精通
 tags:
     - Windows
 ---
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
 ## 第一步：获取 v2ray 节点信息
 
@@ -17,17 +17,17 @@ tags:
 
 ![获取 v2ray 节点信息](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20subscriptions.webp)
 
-如果您没有可使用的节点，请先购买一个[专线节点](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)来上网冲浪吧！
+如果您没有可使用的节点，请先购买一个[专线节点](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)来上网冲浪吧！
 
 **付费机场推荐**
 
 “可乐云”机场，成立于2020年，是一款快速、稳定的网络加速器。本产品特点支持主流电脑端一键app加速，可免去第三方客户端的复杂配置问题, 并支持 Clash、v2ray、Shadowrocket 小火箭等第三方客户端。游戏、软件全时段享用、流媒体当地全解锁，畅游网络世界。“可乐云”机场稳定经营，持续更新，致力于创造更好的云机场服务。
  
-注册链接：[https://52.cola52.site/#/register?code=EIYihGZw](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)，注册成功登录，然后点击购买订阅。
+注册链接：[https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)，注册成功登录，然后点击购买订阅。
 
 “可乐云”专线机场提供小杯、中杯、大杯三种不同的套餐，个人购买小杯即可，外贸公司团队可购买中杯或者大杯。
 
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
 ## 第二步：下载 v2rayN 软件客户端
 
