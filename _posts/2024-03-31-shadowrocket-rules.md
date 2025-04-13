@@ -5,7 +5,7 @@ subtitle: 小火箭去开屏广告配置文件规则，https 解密规则；Shad
 tags:
     - Shadowrocket
 ---
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
 ## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 Geolite2 数据库 (白名单规则) / 去广告规则
 
@@ -70,9 +70,9 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 
 “可乐云”专线机场提供小杯、中杯、大杯三种不同的套餐，个人购买小杯即可，外贸公司团队可购买中杯或者大杯。
  
-购买链接：[https://52.cola52.site/#/register?code=EIYihGZw](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+购买链接：[https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://ccola.xn--vuqr2hh88bion.xn--io0a7i/#/register?code=EIYihGZw)
+[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
 **小火箭添加订阅方法**
 
