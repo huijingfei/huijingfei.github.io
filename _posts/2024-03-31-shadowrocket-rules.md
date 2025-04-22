@@ -82,13 +82,13 @@ https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_l
 
 **ShadowRocket GeoLite2 数据库：**
 
-设置页 ➡️ 下拉找到 GeoLite2 数据库 ➡️ 以下两个建议选择 Country-only-cn-private.mmdb ➡️ 复制地址后粘贴到 URL 处，点击更新即可
+设置页 ➡️ 下拉找到 GeoLite2 数据库 ➡️  复制地址后粘贴到 URL 处，点击更新即可。（GeoLite2的数据库分为：国家(Country)，城市(City)和ASN三个数据库。）
 
-[https://git.io/GeoLite2-Country.mmdb](https://git.io/GeoLite2-Country.mmdb) 数据比较全，文件较大。
+[https://git.io/GeoLite2-Country.mmdb](https://git.io/GeoLite2-Country.mmdb) 
 
-[Country-only-cn-private.mmdb](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) 文件较小，只包含 GEOIP,CN 和 GEOIP,PRIVATE。
+[https://git.io/GeoLite2-ASN.mmdb](https://git.io/GeoLite2-ASN.mmdb) 
 
-如果没有特殊需求，使用 [Country-only-cn-private.mmdb](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) 即可。
+ASN（Autonomous System Number）是为每个大型网络分配的编号，该编号全球唯一。通过查询IP地址隶属的ASN编号，可以了解该IP地址隶属的网络运营商，以及大致的地址位置。
 
 **规则使用方法**
 
