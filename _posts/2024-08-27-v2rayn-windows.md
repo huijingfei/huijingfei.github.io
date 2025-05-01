@@ -29,6 +29,14 @@ tags:
 
 [![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/cola.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
+**平价机场**
+
+永久官网(需挂梯子访问)：[sub.ssrsub.com](https://sub.ssrsub.com/#/register?code=PnpWSPpi)
+
+支持各大平台各种客户端：ClashX Meta，Hiddify Next，sing-box，Shadowrocket，Stash。
+
+![平价机场](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/ssrsub.webp)
+
 ## 第二步：下载 v2rayN 软件客户端
 
 Windows 平台上有许多软件可供选择，建议使用 v2rayN 作为软件客户端。
