@@ -8,22 +8,22 @@ tags:
 
 ![OpenWrt 屏蔽域名方法](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/OpenWrt%20Wireless%20Freedom.webp)
 
-## ​​🚧 OpenWrt 屏蔽特定域名的方法​​
+**​​🚧 OpenWrt 屏蔽特定域名的方法​​**
 
 在 OpenWrt 路由器上屏蔽特定域名（如广告、恶意网站），可以通过 ​​DNS过滤​​、​​防火墙规则​​ 或 ​​Hosts文件​​ 实现。以下是几种常用方法：
 
-##​​ 📌 方法1：使用 dnsmasq 屏蔽域名（推荐）​​
+## 📌 方法1：使用 dnsmasq 屏蔽域名（推荐）​​
 
 ​​适用场景​​：简单、高效，适用于所有连接该路由器的设备。
 
 ​​**1. 登录 OpenWrt SSH​​**
-
-`ssh root@192.168.1.1`
-
+```
+ssh root@192.168.1.1
+```
 ​​**2. 编辑 dnsmasq 配置文件​​​​**
-
-`vi /etc/dnsmasq.conf`
-
+```
+vi /etc/dnsmasq.conf
+```
 添加以下内容（将 example.com 替换为要屏蔽的域名）：
 ```
 address=/example.com/0.0.0.0
@@ -48,7 +48,7 @@ nslookup example.com
 ```
 如果返回 0.0.0.0，说明屏蔽成功。
 
-##​​ 📌 方法2：修改 Hosts 文件​​
+## 📌 方法2：修改 Hosts 文件​​
 
 ​​适用场景​​：适合少量域名屏蔽，兼容性高。
 
@@ -65,7 +65,7 @@ vi /etc/hosts
 ```
 /etc/init.d/network restart
 ```
-##​​ 📌 方法3：使用 iptables 防火墙屏蔽（高级）​​
+## 📌 方法3：使用 iptables 防火墙屏蔽（高级）​​
 ​​
 适用场景​​：彻底阻止访问，即使DNS解析正常也无法连接。
 
