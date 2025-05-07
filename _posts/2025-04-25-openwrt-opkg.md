@@ -44,6 +44,13 @@ opkg install luci-app-adblock --force-upgrade
 ```
 opkg clean
 ```
+```
+opkg update
+opkg upgrade luci 
+opkg list-upgradable | grep luci- | cut -f 1 -d ' ' | xargs opkg upgrade
+```
+在ssh下，先“opkg update”，获取更新。之后再更新“ luci-” 开头的包。如果 要全部无条件更新，就去掉过滤“ grep luci- |”
+
 ## ​​📌 安装/卸载软件​​
 
 ​​安装新软件​​（如 tcpdump）：
