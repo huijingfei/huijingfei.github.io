@@ -2,7 +2,7 @@
 >
 >从零开始,手把手教学,请参考原项目主页<a href="https://github.com/FeDemo/fedemo.github.io" target="view_window">FeDemo项目主页</a>
 >
->该博客模板来自<a href="https://github.com/huxpro" target="view_window">Hux</a>修改的<a href="https://startbootstrap.com/template-overviews/clean-blog/" target="view_window">Clean Blog</a>
+>该博客模板来自<a href="https://github.com/huxpro" target="view_window">Hux</a>修改的<a href="https://github.com/Huxpro/huxpro.github.io" target="view_window">Clean Blog</a>
 >
 >添加了搜索及Gitalk评论插件以及按时间归档
 >
