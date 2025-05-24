@@ -102,23 +102,18 @@ Pale Moon 没有内置 Flash Player，所以安装完后还需要安装 [Flash P
 
 Debian 11 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml)
 ```
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
-curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
+echo 'deb http://download.opensuse.org/repositories/home:/mx-packaging/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:mx-packaging.list
+curl -fsSL https://download.opensuse.org/repositories/home:mx-packaging/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_mx-packaging.gpg > /dev/null
 sudo apt update
 sudo apt install palemoon
 ```
 Debian 12 稳定版用户可以使用以下源安装[Pale Moon](https://www.palemoon.org/download.shtml) 
 ```
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/palemoon-mx_linux/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser:palemoon-mx_linux.list
-curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser:palemoon-mx_linux/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_stevenpusser_palemoon-mx_linux.gpg > /dev/null
+echo 'deb http://download.opensuse.org/repositories/home:/mx-packaging/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/home:mx-packaging.list
+curl -fsSL https://download.opensuse.org/repositories/home:mx-packaging/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_mx-packaging.gpg > /dev/null
 sudo apt update
 sudo apt install palemoon
 ```
-```   
-sudo apt install palemoon
-```
-Debian 和 Ubuntu 其他版本用户可以在 [software.opensuse.org](https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon) 添加对应的源。
-
 接下来下载 [darktohka/clean-flash-builds](https://github.com/darktohka/clean-flash-builds)，选 Linux 版 64 位 NPAPI：[下载链接](https://github.com/darktohka/clean-flash-builds/releases/tag/v1.7)
 
 把解压后得到的 libflashplayer.so 放到 ~/.moonchild productions/pale moon/yourown.default/plugins 目录下。
