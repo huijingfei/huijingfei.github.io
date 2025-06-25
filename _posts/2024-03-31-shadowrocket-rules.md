@@ -5,7 +5,7 @@ subtitle: 小火箭去开屏广告配置文件规则，https 解密规则；Shad
 tags:
     - Shadowrocket
 ---
-[![可乐云专线机场免费试用](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/shadowrocket/free%20shadowrocket.webp)](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
+[![平价机场](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/ssrsub.webp)](https://sub.ssrsub.com/#/register?code=PnpWSPpi)
 
 ## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 Geolite2 数据库 (白名单规则) / 去广告规则
 
@@ -63,14 +63,6 @@ https://raw.githubusercontent.com/huijingfei/Shadowrocket-Rules/main/sr_app_ad.c
 https://raw.githubusercontent.com/GMOogway/shadowrocket-rules/master/sr_reject_list.module
 ```
 ------------------------------------------------------
-
-**付费机场推荐**
-
-“可乐云”机场，成立于2020年，是一款快速、稳定的网络加速器。本产品特点支持主流电脑端一键app加速，可免去第三方客户端的复杂配置问题, 并支持 Clash、v2ray、Shadowrocket 小火箭等第三方客户端。游戏、软件全时段享用、流媒体当地全解锁，畅游网络世界。“可乐云”机场稳定经营，持续更新，致力于创造更好的云机场服务。
-
-“可乐云”专线机场提供小杯、中杯、大杯三种不同的套餐，个人购买小杯即可，外贸公司团队可购买中杯或者大杯。
- 
-购买链接：[https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)
 
 **平价机场**
 
