@@ -18,7 +18,7 @@ tags:
 
 ![获取 v2ray 节点信息](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/master/images/v2rayn/v2rayn%20subscriptions.webp)
 
-如果您没有可使用的节点，请先购买一个[平价机场](https://sub.ssrsub.com/#/register?code=PnpWSPpi)来上网冲浪吧！
+如果您没有可使用的节点，请先购买一个[平价机场](https://sub.ssrsub.com/#/register?code=PnpWSPpi)，[专线机场](https://cyy.xn--bwwx30f.top/#/register?code=EIYihGZw)来上网冲浪吧！
 
 **平价机场**
 
