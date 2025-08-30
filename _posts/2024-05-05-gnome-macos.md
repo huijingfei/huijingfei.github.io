@@ -53,16 +53,25 @@ git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
       
 cd WhiteSur-gtk-theme/
       
-./install.sh --shell -i apple -t blue -l --round --darker --silent-mode (也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置)
+./install.sh --shell -i apple -t blue --round --darker --silent-mode #也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置
+
+./install.sh -l                # Default is the normal dark theme
+
+./install.sh -l -c light       # install light theme for libadwaita
+
+sudo ./tweaks.sh -g       # GDM 主题
       
-sudo ./tweaks.sh -g        (GDM 主题)
-      
-sudo ./tweaks.sh -f         (Firefox 主题)
+sudo ./tweaks.sh -f       # Firefox 主题
 ```
 更多用法可以使用以下命令查看帮助
 ```      
 ./install.sh --help
 ```
+
+**其他 gtk 主题**
+
+[MacTahoe-gtk-theme](https://github.com/vinceliuice/MacTahoe-gtk-theme)
+
 ## 打开 Extension Manager 安装插件
       
 个人使用的是基于 Debian 的发行版 [Spiral Linux](https://spirallinux.github.io/)，这个发行版内置了大部分插件 [Gnome Extensions](https://extensions.gnome.org/)。
@@ -97,7 +106,9 @@ sudo ./tweaks.sh -f         (Firefox 主题)
 
 上文提到了下载图标包到 .icons 文件夹的方法，以及使用 flatpak 安装 dynamic wallpaper 来设置桌面背景；对于不愿意使用 flatpak 或者 snap 包的可以采用以下方法：
 
-[WhiteSur-icon-theme ](https://github.com/vinceliuice/WhiteSur-icon-theme) （图标主题）
+[WhiteSur-icon-theme ](https://github.com/vinceliuice/WhiteSur-icon-theme) （WhiteSur 图标主题）
+
+[MacTahoe-icon-theme](https://github.com/vinceliuice/MacTahoe-icon-theme) （MacOS Tahoe icon theme）
 
 [WhiteSur-wallpapers ](https://github.com/vinceliuice/WhiteSur-wallpapers) （桌面背景）
 
@@ -120,6 +131,8 @@ cp qq.png /usr/share/icons/hicolor/512x512/apps/
 cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
 ```
 ### Debian/Ubuntu 如何安装 WeChat for Linux 微信 Linux 原生版本
+
+**⚠️注意** [微信 Linux 版官方版](https://linux.weixin.qq.com/)已经可以直接安装使用
       
 其中微信使用的是绕过登录检测的 deb 安装包：[wechat_for_linux](https://github.com/lovechoudoufu/wechat_for_linux)
 
