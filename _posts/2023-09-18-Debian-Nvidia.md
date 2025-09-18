@@ -24,7 +24,7 @@ deb https://mirrors.ustc.edu.cn/debian/ bookworm-backports main contrib non-free
 deb https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
 #deb-src https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
 ```
-清华大学镜像源地址[https://mirrors.tuna.tsinghua.edu.cn/help/debian/](https://mirrors.tuna.tsinghua.edu.cn/help/debian/)
+[Debian 软件仓库镜像使用帮助](https://help.mirrors.cernet.edu.cn/debian/)
 
 ***2. 更新下系统***
 ```
