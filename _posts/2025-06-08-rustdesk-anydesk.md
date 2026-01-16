@@ -76,12 +76,18 @@ RustDesk 通过自托管功能来锦上添花。这意味着我不必依赖 Rust
   <tr>
     <td align="center">
       <a href="https://anydesk.com/zhs">
-        <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/Remoteapp/AnyDesk.avif" alt="AnyDesk">
+        <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/Remoteapp/AnyDesk.avif" 
+             alt="AnyDesk" 
+             width="200" 
+             height="200">
       </a>
     </td>
     <td align="center">
       <a href="https://rustdesk.com/zh-cn/">
-        <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/Remoteapp/RustDesk.avif" alt="RustDesk">
+        <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/Remoteapp/RustDesk.avif" 
+             alt="RustDesk" 
+             width="200" 
+             height="200">
       </a>
     </td>
   </tr>
