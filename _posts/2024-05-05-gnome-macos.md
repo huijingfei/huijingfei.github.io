@@ -82,6 +82,24 @@ sudo ./tweaks.sh -f       # Firefox 主题
 
 打开 Dash to Dock 设置选项，点击 Behavior 选项卡，Click action 选择 minimize or show previews；
 
+在 Debian 13 下，我的硬件是 i5-8250u，mx150，未安装英伟达私有驱动，Dash to Dock 可能会导致待机死机，目前使用 DOCK!NG 代替；缺点：没有自定义功能，无法通过点击图标最小化窗口；点击任意窗口菜单，Dock 会自动隐藏。
+
+**下一代 Dock (DOCK!NG)**
+
+这是一款为 GNOME Shell 打造的轻量级非固定式 Dock 支持插件，利用原生 Dash 并具备简单且自适应的智能隐藏功能。
+
+轻量级且与原生 Dash 无缝集成
+
+简单的智能隐藏功能，可根据当前焦点应用进行自适应
+
+流畅、原生风格的显示与隐藏动画
+
+支持多显示器及自适应显示器堆叠（缺乏测试 —— 可能会有意外表现）
+
+[DOCK!NG GitHub](https://github.com/ochi12/dock-ng/), 点击[这里](https://extensions.gnome.org/extension/8682/dockng/)安装 DOCK!NG。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lTFNYp8C8I8?si=i6ZCb6SuBV1DjzMB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 打开 Tweaks 设置主题外观
 
 在 Appearance 选项卡中依次更改 Icons，Shell，Lagacy Applications 的主题；在 Window Titlebars 选项卡中更改按钮选项；在 Window 选项卡中启用 Center New Windows。
