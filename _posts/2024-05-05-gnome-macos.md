@@ -136,6 +136,32 @@ sudo ./tweaks.sh -f       # Firefox 主题
 
 安装方法同 gtk 主题的安装，其中背景图分为 whitesur/monterey/ventura 几个主题，默认为安装所有主题背景。
 
+## 开机动画
+
+Debian 系统先编辑 grub 配置文件。
+```
+sudo nano /etc/default/grub
+```
+添加以下配置。减少系统启动日志输出，改为启动动画。强制启用 ACPI， 解决某些笔记本解决关机、重启失败、风扇狂转、电池不识别等硬件兼容问题。
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=force"
+```
+更新 Grub
+```
+sudo update-grub
+```
+点这里 [darwin-plymouth](https://github.com/libredeb/darwin-plymouth) 到 release 下载压缩包解压；复制到 plymouth 主题文件夹。
+```
+cp -R darwin/ /usr/share/plymouth/themes/
+```
+设置 Mac 启动动画，以下命令对 Debian 13 gnome 桌面有效，其他发行版请自行 Google。
+```
+sudo /usr/sbin/plymouth-set-default-theme -R darwin
+```
+或者设置为笔记本厂家启动动画。
+```
+sudo /usr/sbin/plymouth-set-default-theme -R bgrt
+```
 ## 钉钉微信 QQ 图标
 
 下载我制作好的图标 [QQ 微信钉钉图标](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/main/icon.zip)，图标均提取自 WhiteSur 图标包，这几个图标需要单独设置。
