@@ -32,7 +32,7 @@ apt update && apt upgrade
 ```
 ***3. 安装 Nvidia 驱动***
 ```
-apt install nvidia-driver nvidia-smi
+apt install linux-headers-amd64 nvidia-driver nvidia-smi nvidia-kernel-dkms
 ```
 一般来说安装 nvidia-driver 这个包就可以。 如果不确定，可以安装使用 nvidia-detect 命令识别 GPU 来确认推荐的驱动程序包。
    
@@ -59,6 +59,8 @@ reboot
    ![nvidia-smi](https://github.com/huijingfei/Blog_Gitalk/raw/main/Images/nvidia-smi.webp)
    
 ***5. 禁用开源驱动***
+
+一般来说安装 NVIDIA 专有驱动会自动禁用 Nouveau 驱动，首先 通过命令 ls /etc/modprobe.d/ 查看是否有类似 blacklist-nvidia-nouveau.conf 这样的文件，如果没有通过以下命令添加：
 ```
 sudo echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 sudo update-initramfs -u
