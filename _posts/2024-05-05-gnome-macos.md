@@ -174,6 +174,11 @@ cp qq.png /usr/share/icons/hicolor/512x512/apps/
 
 cp logo.ico /opt/apps/com.alibabainc.dingtalk/files/
 ```
+
+安装 flatpak 版本 QQ 微信，使用最新的图标包，无需手动更换图标文件。
+```
+flatpak install flathub com.dingtalk.DingTalk com.tencent.WeChat com.qq.QQ
+```
 ### Debian/Ubuntu 如何安装 WeChat for Linux 微信 Linux 原生版本
 
 **⚠️注意** [微信 Linux 版官方版](https://linux.weixin.qq.com/)已经可以直接安装使用
