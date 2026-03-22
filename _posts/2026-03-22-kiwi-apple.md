@@ -45,9 +45,10 @@ tags:
 
 ![Kiwi is not Apple](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple.webp)
 
-在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur My Shell 以及 Dock!ng（一款适用于 GNOME Shell 的轻量级非固定式任务栏支架，采用原生 Dash 界面，并具备简单但自适应的智能隐藏功能）。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
+在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur My Shell 以及 Dock!ng（一款适用于 GNOME Shell 的轻量级智能隐藏式 Dock，采用原生 Dash 界面）。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
 
-<details> <summary> <H2>Flatpak 主题</H2> <b>(click to open)</b> </summary>
+### Flatpak 主题
+
 分别运行以下四条命令以覆盖 xdg-config 设置，并为 Flatpak 应用启用窗口控制按钮的主题样式：
 
 ```sh
@@ -74,7 +75,7 @@ flatpak override --user --filesystem=$HOME/.local/share/gnome-shell/extensions/k
 |-r,--remove,-u,--uninstall | 卸载（删除）图标主题
 |-h, --help           | 显示此帮助信息
 
-[WhiteSur-鼠标指针](github.com/vinceliuice/WhiteSur-cursors)
+[WhiteSur-鼠标指针](https://github.com/vinceliuice/WhiteSur-cursors)
 
 **安装提示**
 
@@ -104,7 +105,7 @@ sudo ./install.sh
 - 卸载 Firefox 主题: `./tweaks.sh -f -r`
 - 卸载 Flatpak Gtk 主题: `./tweaks.sh -F -r`
 
-这里不建议卸载 GDM 主题，主要是更改用户登录界面背景，如果不小心卸载，或者新安装，下载 WhiteSur-gtk-theme 主题压缩包后解压，去所在目录下右键打开 console 或者 terminal命令行终端，运行以下命令安装 GDM 主题：
+这里不建议卸载 GDM 主题，主要是更改用户登录界面背景，如果不小心卸载，或者新安装，下载 WhiteSur-gtk-theme 主题压缩包后解压，去所在目录下右键打开 console 或者 terminal 命令行终端，运行以下命令安装 GDM 主题：
 
 ![WhiteSur-gtk-theme zip](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/WhiteSur-gtk-theme%20zip.webp)
 
