@@ -41,6 +41,8 @@ tags:
 
 除了以上插件外，还可以安装常用的 Blur My Shell 扩展，不要使用 apt 命令安装源里的 gnome-shell-extension-blur-my-shell，去 Gnome 插件网站下载 [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)，Debian 13 版本源自带的 Blur My Shell 不稳定，尚不清楚何时会修复，也许要等到 Debian 14 仓库更新软件版本；在安装了 Blur My Shell 扩展的情况下，Kiwi is not Apple 就无需开启 Overview Wallpaper Blur。
 
+第一个选项 Move Window to New Workspace 建议关掉，否则全屏播放视频和退出全屏时，屏幕会左右滑动一下。
+
 ![Kiwi is not Apple](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple.webp)
 
 在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur My Shell 以及 Dock!ng（一款适用于 GNOME Shell 的轻量级非固定式任务栏支架，采用原生 Dash 界面，并具备简单但自适应的智能隐藏功能）。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
