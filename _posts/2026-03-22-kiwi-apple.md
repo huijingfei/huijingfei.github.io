@@ -45,9 +45,9 @@ tags:
 - **[Light Style](https://extensions.gnome.org/extension/6198/)** by fmuellner
 - **[Weather or Not](https://extensions.gnome.org/extension/5660/)** by somepaulo
 
-除了以上插件外，还可以安装常用的 Blur my Shell 扩展，不建议使用 apt 命令安装源里的 gnome-shell-extension-blur-my-shell，优先去 Gnome 插件网站下载 [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)，Debian 13 版本源自带的 Blur my Shell 不如在线安装的稳定，尚不清楚何时会修复，也许要等到 Debian 14 仓库更新软件版本；在安装了 Blur my Shell 扩展的情况下，Kiwi is not Apple 就无需开启 Overview Wallpaper Blur。
+除了以上插件外，还可以安装常用的 Blur my Shell 扩展，不建议使用 apt 命令安装源里的 gnome-shell-extension-blur-my-shell，优先去 Gnome 插件网站下载 [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)，在线安装的插件可以随时去网站更新，而在 Debian 源仓库安装的则要随着系统大版本更新；在安装了 Blur my Shell 扩展的情况下，Kiwi is not Apple 就无需开启 Overview Wallpaper Blur。
 
-在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur my Shell 以及 Dock!ng（一款适用于 GNOME Shell 的轻量级智能隐藏式 Dock，采用原生 Dash 界面）。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
+在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur my Shell 以及 Dash to Dock。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
 
 对于像 Blur my Shell 这样功能复杂的插件，关闭不需要的选项也可以间接地提高稳定性。
 
@@ -83,11 +83,11 @@ flatpak override --user --filesystem=$HOME/.local/share/gnome-shell/extensions/k
 |-r,--remove,-u,--uninstall | 卸载（删除）图标主题
 |-h, --help           | 显示此帮助信息
 
-[WhiteSur-鼠标指针](https://github.com/vinceliuice/WhiteSur-cursors)
+在安装了 MacTahoe 图标的同时会安装 MacTahoe 鼠标主题，当然也可以安装[WhiteSur-鼠标指针](https://github.com/vinceliuice/WhiteSur-cursors)
 
 **安装提示**
 
-只需将编译后的主题复制到图标目录即可安装光标主题。
+只需将下载后的主题解压，右键用终端打开，运行以下命令即可安装光标主题。
 
 当前用户本地安装：
 
