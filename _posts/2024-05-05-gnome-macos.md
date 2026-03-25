@@ -152,9 +152,9 @@ Debian 系统先编辑 grub 配置文件。
 ```
 sudo nano /etc/default/grub
 ```
-添加以下配置。减少系统启动日志输出，改为启动动画。强制启用 ACPI， 解决某些笔记本解决关机、重启失败、风扇狂转、电池不识别等硬件兼容问题。
+添加以下配置。减少系统启动日志输出，改为启动动画。
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi=force"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 ```
 更新 Grub
 ```
