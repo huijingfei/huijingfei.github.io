@@ -30,9 +30,11 @@ tags:
 
 简单的说 Kiwi is not Apple 并不是通过添加新的主题而是通过微调默认的 Adwaita 主题来模拟 Mac OS 风格，这样最大程度的降低了第三方主题的兼容性问题以及由此造成的桌面环境不稳定性。由于不需要安装第三方主题，也就不需要安装 User Themes - GNOME Shell Extensions 这个扩展；
 
-第一个选项 Move Window to New Workspace 建议关掉，否则全屏播放视频和退出全屏时，屏幕会左右滑动一下。
+第一个选项 Move Window to New Workspace 建议关掉，否则全屏播放视频和退出全屏时，屏幕会左右滑动一下；从 Kiwi is not Apple 的 github 更新频率来说是非常快的，2025 年 6月 28 日发布了第一个测试版 v0.1-beta，不到一年的时间，已经更新到了 v1.5.5，但是目前贡献者只有三个人，和 Gnome 甚至是 WhiteSur GTK Theme 相比，差距还是很多。其他的一些不重要的选项也可以关掉， Kiwi is not Apple 会稳定很多，虽然不一定会引起桌面崩溃死机，少干活就一定少出错，尽量减少不稳定性让桌面作为工作的工具而不是玩具才是最重要的。
 
-![Kiwi is not Apple](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple.webp)
+| <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple%20%20version.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple%20Options.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Kiwi%20is%20not%20Apple%20Extras.avif" width="300"> |
+| :---: | :---: | :---: |
+| Kiwi is not Apple version | Kiwi is not Apple Options | Kiwi is not Apple Extras |
 
 ### 与 Kiwi is not Apple 搭配的插件推荐
 
@@ -49,7 +51,7 @@ tags:
 
 在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur my Shell 以及 Dash to Dock。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
 
-对于像 Blur my Shell 这样功能复杂的插件，关闭不需要的选项也可以间接地提高稳定性。
+对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能。
 
 | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Panel.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Applications.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Other.avif" width="300"> |
 | :---: | :---: | :---: |
