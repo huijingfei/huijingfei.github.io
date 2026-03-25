@@ -19,7 +19,7 @@ apt install timeshift
       
 dnf install timeshift
 ```
-## 安装 gnome-tweaks git 等工具
+## 安装 GNOME Tweaks， git 等工具
 
 然后我们需要安装一些工具来定制我们的 gnome 桌面。这些工具众所周知，它使我们能够调整 gnome 的外观。
 ```
@@ -41,15 +41,15 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ```
 flatpak install extensionmanager dynamicwallpaper
 ```
-部分发行版软件源包含以上软件，个人使用的是 Debian 12，如果不安装 flatpak，可以在不安装 dynamicwallpaper 包的情况下安装桌面背景，方法见本文最后；以上可根据发行版自行选择。
+部分发行版软件源包含以上软件，Debian 13 无需安装 dynamicwallpaper，使用 GNOME Tweaks 即可设置浅色和深色壁纸，并随着亮暗主题切换自动更换壁纸。
 
 ## 下载图标主题
 
-[WhiteSur icon theme](https://www.gnome-look.org/s/Gnome/p/1405756/)
+[WhiteSur-icon-theme ](https://github.com/vinceliuice/WhiteSur-icon-theme) （WhiteSur 图标主题）
 
-[Cupertino iCons](https://www.pling.com/p/1102582/)
+[MacTahoe-icon-theme](https://github.com/vinceliuice/MacTahoe-icon-theme) （MacOS Tahoe icon theme）
 
-在 Home 路径下新建 .icons 文件夹，把下载好的图标包移动到 .icons 文件夹内，此步骤为可选项，亦可选择文末的方法安装图标主题。
+安装 MacTahoe 图标主题会自动安装鼠标主题，安装 WhiteSur 图标主题则需要另外单独安装鼠标主题。
 
 ## 下载安装 gtk 主题
 
@@ -59,7 +59,7 @@ git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
       
 cd WhiteSur-gtk-theme/
       
-./install.sh --shell -i apple -t blue --round --darker --silent-mode #也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置
+sudo ./install.sh --shell -i apple -t blue --round --darker --silent-mode #也可以不配置任何参数，直接使用 ./install.sh 命令安装默认配置
 
 ./install.sh -l                # Default is the normal dark theme
 
