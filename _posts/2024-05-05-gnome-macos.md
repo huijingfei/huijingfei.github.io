@@ -88,7 +88,11 @@ sudo ./tweaks.sh -f       # Firefox 主题
 
 打开 Dash to Dock 设置选项，点击 Behavior 选项卡，Click action 选择 minimize or show previews；
 
-在 Debian 13 下，我的硬件是 i5-8250u，mx150，未安装英伟达私有驱动，Dash to Dock 可能会导致待机死机，目前使用 DOCK!NG 代替；缺点：没有自定义功能，无法通过点击图标最小化窗口；点击任意窗口菜单，Dock 会自动隐藏。根据我的使用经验，不要安装源里的gnome-shell-extension-blur-my-shell，到 GNOME 插件网站下载 [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)。如果桌面环境遇到死机等问题，使用命令 journalctl -b -1 -e 检查上一次死机前的最后记录，一般都是由插件或者主题导致，可尝试更新插件主题，或者使用替代品。
+对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能。
+
+| <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Panel.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Applications.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Other.avif" width="300"> |
+| :---: | :---: | :---: |
+| Blur my Shell Panel | Blur my Shell Applications | Blur my Shell Other |
 
 **下一代 Dock (DOCK!NG)**
 
