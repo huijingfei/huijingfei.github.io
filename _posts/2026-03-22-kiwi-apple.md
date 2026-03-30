@@ -49,7 +49,7 @@ tags:
 
 除了以上插件外，还可以安装常用的 Blur my Shell 扩展，不建议使用 apt 命令安装源里的 gnome-shell-extension-blur-my-shell，优先去 Gnome 插件网站下载 [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)，在线安装的插件可以随时去网站更新，而在 Debian 源仓库安装的则要随着系统大版本更新；在安装了 Blur my Shell 扩展的情况下，Kiwi is not Apple 就无需开启 Overview Wallpaper Blur。
 
-在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 Compiz alike magic lamp effect、Weather or Not、Blur my Shell 以及 Dash to Dock。在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
+在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 [Compiz alike magic lamp effect](https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/)、[Weather or Not](https://extensions.gnome.org/extension/5660/weather-or-not/)、[Weather O'Clock](https://extensions.gnome.org/extension/5470/weather-oclock/)、Blur my Shell 以及 Dash to Dock，[Weather or Not](https://extensions.gnome.org/extension/5660/weather-or-not/)、[Weather O'Clock](https://extensions.gnome.org/extension/5470/weather-oclock/) 二选一即可；在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
 
 对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能。
 
@@ -104,6 +104,33 @@ sudo ./install.sh
 ```
 
 然后通过 Gnome Tweaks 选择图标和鼠标指针主题即可。
+
+### 开机动画
+
+Debian 系统先编辑 grub 配置文件。
+```
+sudo nano /etc/default/grub
+```
+添加以下配置。减少系统启动日志输出，改为启动动画。
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+更新 Grub
+```
+sudo update-grub
+```
+点这里 [darwin-plymouth](https://github.com/libredeb/darwin-plymouth) 到 release 下载压缩包解压；复制到 plymouth 主题文件夹。
+```
+cp -R darwin/ /usr/share/plymouth/themes/
+```
+设置 Mac 启动动画，以下命令对 Debian 13 gnome 桌面有效，其他发行版请自行 Google。
+```
+sudo /usr/sbin/plymouth-set-default-theme -R darwin
+```
+或者设置为笔记本厂家启动动画。
+```
+sudo /usr/sbin/plymouth-set-default-theme -R bgrt
+```
 
 ### 从 WhiteSur-gtk-theme 迁移注意事项
 
