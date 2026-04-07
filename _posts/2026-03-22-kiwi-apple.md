@@ -51,6 +51,8 @@ tags:
 
 在保证桌面环境顺手的情况下，安装的插件越少越好，以上的插件我只安装了 [Compiz alike magic lamp effect](https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/)、[Weather or Not](https://extensions.gnome.org/extension/5660/weather-or-not/)、[Weather O'Clock](https://extensions.gnome.org/extension/5470/weather-oclock/)、Blur my Shell 以及 Dash to Dock，[Weather or Not](https://extensions.gnome.org/extension/5660/weather-or-not/)、[Weather O'Clock](https://extensions.gnome.org/extension/5470/weather-oclock/) 二选一即可；在我使用第三方主题以及插件的过程中经常会遇到各种小问题，如果遇到系统死机， 通过命令 journalctl -b -1 -e 检查上一次死机前的最后记录，尝试更新主题和插件或者寻求替代产品。
 
+Tips: 在我删除了 ~/.config/dconf/ 目录下的 user 文件后，系统重新生成配置，我的电脑再也没死机，gnome 桌面设置以及插件设置都保存在这个文件里，我是从 Debian 11 一路升级到 Debian 13 从来没有重置过，可能由于版本的更迭，会造成桌面的不稳定。
+
 对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能。
 
 | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Panel.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Applications.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Other.avif" width="300"> |
