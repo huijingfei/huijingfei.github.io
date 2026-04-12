@@ -5,7 +5,7 @@ subtitle: 无需安装插件为 GNOME Calendar 添加农历
 tags:
     - Linux
 ---
-**中华人民共和国节日、纪念日、法定节假日调休补班、二十四节气、天干地支农历日历**
+**法定节假日调休补班**
 
 [https://yangh9.github.io/ChinaCalendar/cal_holiday.ics](https://yangh9.github.io/ChinaCalendar/cal_holiday.ics)
 
