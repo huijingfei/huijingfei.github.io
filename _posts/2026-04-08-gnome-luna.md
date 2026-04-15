@@ -21,6 +21,12 @@ tags:
 
 [https://lwlsw.github.io/Chinese-Lunar-Calendar-ics/chinese_lunar_my.ics](https://lwlsw.github.io/Chinese-Lunar-Calendar-ics/chinese_lunar_my.ics)
 
+**不包含法定节假日**
+
+一般性节日 | [订阅链接](https://raw.githubusercontent.com/oooldtoy/chinese_calender/main/festival.ics) |如重阳节、圣诞节等（不包含法定节假日）|
+
+其他节日  |  [订阅链接](https://raw.githubusercontent.com/oooldtoy/chinese_calender/main/festival_other.ics)|如地球日、护士节等|
+
 ## 为 GNOME Calendar 添加农历方法
 
 打开 GNOME Calendar，点击日历>管理日历
