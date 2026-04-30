@@ -27,6 +27,7 @@ deb https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib 
 [Debian 软件仓库镜像使用帮助](https://help.mirrors.cernet.edu.cn/debian/)
 
 DEB822 格式编辑这个文件（/etc/apt/sources.list.d/debian.sources）
+
 Debian 13
 ```
 Types: deb
