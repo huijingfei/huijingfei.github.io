@@ -117,10 +117,7 @@ cp *.TTF /usr/share/fonts/win_fonts
 ```
 最后更新字体缓存
 ```
-cd /usr/share/fonts/win_fonts
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache
+sudo fc-cache -fv
 ```
 
 ## 最终总结
