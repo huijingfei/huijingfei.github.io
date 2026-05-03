@@ -5,7 +5,6 @@ subtitle: 小火箭去开屏广告配置文件规则，https 解密规则；Shad
 tags:
     - Shadowrocket
 ---
-[![平价机场](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/ssrsub.webp)](https://sub.ssrsub.com/#/register?code=PnpWSPpi)
 
 ## 手动维护的 iOS 小火箭 Shadowrocket Rules 分流规则 Geolite2 数据库 (白名单规则) / 去广告规则
 
@@ -25,18 +24,6 @@ tags:
 
 🛑 添加常用 SSL 证书域名。
 
-**注意⚠️：局域网无法使用国际大厂 DNS，如果你的网络较好或者能够忍受较高的网络延迟，请使用 Google 和 Cloudflare DNS，否则请使用以下 DNS备用**
-
-360 DNS
-```
-https://doh.360.cn
-dot.360.cn
-```
-OneDNS
-```
-https://doh-pure.onedns.net/dns-query
-dot-pure.onedns.net
-```
 ------------------------------------------------------
 
 **免费公共 DNS 服务器推荐**
