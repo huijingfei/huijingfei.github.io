@@ -7,6 +7,12 @@ tags:
 ---
 [![平价机场](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/ssrsub.webp)](https://sub.ssrsub.com/#/register?code=PnpWSPpi)
 
+**平价机场**
+
+永久官网(需挂梯子访问)：[sub.ssrsub.com](https://sub.ssrsub.com/#/register?code=PnpWSPpi)
+
+支持各大平台各种客户端：ClashX Meta，Hiddify Next，sing-box，Shadowrocket，Stash。
+
 ## 为什么由配置文件升级为模块
 
 小火箭使用的 Geolite2 数据库只包含 ip 数据，不同于 v2ray 同时包含 geosite 和  geoip，如果网站域名不在规则文件列表内，那么先由 DNS 解析为 ip，再根据 ip 位置判断这个域名应该直连还是走代理。
