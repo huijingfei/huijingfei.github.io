@@ -51,7 +51,7 @@ tags:
 安装 Google Chrome 浏览器的后续步骤包括合并 Google Chrome 存储库。首先要导入用于数字签名的 GPG 密钥。
 执行以下命令即可实现：
       
-    curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+    wget -O- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg > /dev/null
 
 该命令确保成功导入 GPG 密钥，这是安装过程的前提条件。缺少这一步骤会导致安装不完整。
 
@@ -80,7 +80,7 @@ tags:
 
 成功导入 GPG 密钥后，执行以下命令导入 Google Chrome 浏览器软件源：
 
-    echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
  
  要完成 Google Chrome 浏览器软件源的整合，必须使用 apt update 命令更新软件源列表。此步骤使用新添加的 Google Chrome 代码库更新 apt 源列表。
  
