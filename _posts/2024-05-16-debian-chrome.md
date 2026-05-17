@@ -79,9 +79,19 @@ tags:
     ff02::2    ip6-allrouters
 
 成功导入 GPG 密钥后，执行以下命令导入 Google Chrome 浏览器软件源：
-
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
- 
+```
+bash -c 'cat <<EOF > /etc/apt/sources.list.d/google-chrome.sources
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# Changes to this file will not be preserved.
+# This file will not be recreated if removed.
+X-Repolib-Name: Google Chrome
+Types: deb
+URIs: https://dl.google.com/linux/chrome-stable/deb/
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/google-chrome.gpg
+EOF'
+```
  要完成 Google Chrome 浏览器软件源的整合，必须使用 apt update 命令更新软件源列表。此步骤使用新添加的 Google Chrome 代码库更新 apt 源列表。
  
 执行以下命令更新版本库列表：
@@ -212,7 +222,7 @@ Google Chrome 浏览器的开发人员会定期发布更新，以提高浏览器
 
 卸载浏览器后，请考虑删除安装过程中导入的谷歌 Chrome 浏览器软件源。执行以下操作即可：
 
-    rm /etc/apt/sources.list.d/google-chrome.list
+    rm /etc/apt/sources.list.d/google-chrome.sources
 
 该命令会从sources.list.d 目录中删除Google Chrome 列表文件，确保该存储库不再用于软件包更新。
 
@@ -242,7 +252,19 @@ Google Chrome 浏览器的开发人员会定期发布更新，以提高浏览器
 
   删除所有 Google Chrome 浏览器软件源，然后重新添加初始的正确软件源。请使用以下命令完成此操作：
   
-    echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+```
+bash -c 'cat <<EOF > /etc/apt/sources.list.d/google-chrome.sources
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# Changes to this file will not be preserved.
+# This file will not be recreated if removed.
+X-Repolib-Name: Google Chrome
+Types: deb
+URIs: https://dl.google.com/linux/chrome-stable/deb/
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/google-chrome.gpg
+EOF'
+```
 
 此命令将重新创建 Google Chrome 浏览器源代码列表文件，并指向稳定版。最佳做法是运行 APT 更新，以确保系统能识别新添加的软件源：
 
@@ -250,7 +272,7 @@ Google Chrome 浏览器的开发人员会定期发布更新，以提高浏览器
 
 通过仔细管理源代码列表文件，你可以解决不同 Google Chrome 浏览器版本之间的冲突。这样，系统就能不受干扰地继续接收所有已安装浏览器版本的更新。
 
-## 结论
+## 总结
       
 总之，要在 Debian Linux 发行版上成功安装和管理 Google Chrome 浏览器，就必须注意细节并熟练掌握命令行。本指南系统地介绍了每个必要步骤，包括安装各种版本的 Google Chrome 浏览器、启动过程、定期更新，甚至在必要时卸载。此外，我们还探讨了如何排除常见问题，例如多个源列表文件引起的冲突。
       
