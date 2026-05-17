@@ -62,7 +62,7 @@ ca-certificates：包含包验证所需的 CA 证书。
 
 在导入 Opera 软件源之前，你需要导入 GPG 密钥，以验证已安装软件包的真实性。这将确保你安装的是来自官方源的正版软件包。使用以下命令导入 GPG 密钥：
 ```
-curl -fSsL https://deb.opera.com/archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/opera.gpg > /dev/null
+curl -fsSL https://deb.opera.com/archive.key | sudo gpg --dearmor -o /usr/share/keyrings/opera.gpg
 ```
 该命令使用 curl 下载 GPG 密钥，使用 gpg --dearmor 对其进行处理，并将其保存到 /usr/share/keyrings/opera.gpg 文件中。
 接下来，使用以下命令导入 Opera 软件源：
