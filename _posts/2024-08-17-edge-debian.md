@@ -49,7 +49,7 @@ sudo apt install software-properties-common apt-transport-https ca-certificates 
 
 在此步骤中，您将导入验证 Microsoft Edge 软件包真实性所需的 GPG 密钥。这将确保你下载的软件包是真实的，可以安全安装。要下载并导入 GPG 密钥，请执行以下命令：
 ```
-curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft-edge.gpg > /dev/null
 ```
 接下来，运行以下命令将 Microsoft Edge 资源库添加到系统的源列表中：
 ```
