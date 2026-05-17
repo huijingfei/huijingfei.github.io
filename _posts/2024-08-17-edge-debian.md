@@ -53,7 +53,18 @@ curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | s
 ```
 接下来，运行以下命令将 Microsoft Edge 资源库添加到系统的源列表中：
 ```
-echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main' | sudo tee /etc/apt/sources.list.d/microsoft-edge-stable.list > /dev/null
+bash -c 'cat <<EOF > /etc/apt/sources.list.d/microsoft-edge.sources
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# Changes to this file will not be preserved.
+# This file will not be recreated if removed.
+X-Repolib-Name: Microsoft Edge
+Types: deb
+URIs: https://packages.microsoft.com/repos/edge-stable
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /usr/share/keyrings/microsoft-edge.gpg
+EOF'
 ```
 ## APT 存储库导入后更新包列表
 
@@ -141,7 +152,7 @@ sudo apt remove microsoft-edge-stable-dev
 ```
 要从系统中删除 Microsoft Edge 存储库，请运行以下命令：
 ```
-sudo rm /etc/apt/sources.list.d/microsoft-edge.list
+sudo rm /etc/apt/sources.list.d/microsoft-edge.sources
 ```
 最后，删除在安装过程中导入的 GPG 密钥：
 ```
@@ -167,7 +178,18 @@ sudo rm /etc/apt/sources.list.d/microsoft-edge*
 
 清理冗余文件后，下一步是添加单个存储库来管理所有 Microsoft Edge 版本的更新。这种方法简化了更新过程并避免了潜在的冲突。要添加存储库，请执行以下命令：
 ```
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main' | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
+bash -c 'cat <<EOF > /etc/apt/sources.list.d/microsoft-edge.sources
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# Changes to this file will not be preserved.
+# This file will not be recreated if removed.
+X-Repolib-Name: Microsoft Edge
+Types: deb
+URIs: https://packages.microsoft.com/repos/edge-stable
+Suites: stable
+Components: main
+Architectures: amd64
+Signed-By: /usr/share/keyrings/microsoft-edge.gpg
+EOF'
 ```
 此命令专门为 Microsoft Edge 创建一个新的 sources.list 文件，确保从单一源管理所有版本的更新。
 
