@@ -117,7 +117,7 @@ cp *.TTF /usr/share/fonts/win_fonts
 ```
 安装源自带的一些字体，并更新字体缓存。
 ```
-sudo apt update && sudo fonts-inter fonts-roboto fonts-noto-cjk fonts-noto-cjk-extra fonts-font-awesome fonts-lato fonts-open-sans fonts-montserrat fonts-wqy-microhei fonts-wqy-zenhei -y && fc-cache -fv
+sudo apt update && sudo fonts-adobe-sourcesans3 fonts-firacode fonts-inter fonts-cascadia-code fonts-roboto fonts-noto-cjk fonts-noto-cjk-extra fonts-font-awesome fonts-lato fonts-open-sans fonts-montserrat fonts-wqy-microhei fonts-wqy-zenhei -y && fc-cache -fv
 ```
 
 ## 最终总结
