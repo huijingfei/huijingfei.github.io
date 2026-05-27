@@ -9,7 +9,7 @@ tags:
 
 如果你还没有对 Gnome 桌面美化，可以看一下这篇文章 [WhiteSur-gtk-theme 替代品](https://tigress.cc/2026/03/22/kiwi-apple/)，Kiwi is not Apple 通过对 Gnome Shell 和 GTK/Adwaita 应用进行极简的样式微调来模仿 Mac OS风格，而无需安装第三方主题，非常推荐这个方案。
 
-当然你也可以按照以下步骤安装第三方主题，但要注意某些扩展和主题可能造成待机死机，需要手动排查问题，更新主题和插件或者使用替代方案。
+当然你也可以按照以下步骤安装第三方主题，如 WhiteSur-gtk-theme 和 MacTahoe-gtk-theme。
 
 ## 安装 Timeshift
 
