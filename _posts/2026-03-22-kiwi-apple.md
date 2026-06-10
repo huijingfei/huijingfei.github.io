@@ -53,9 +53,9 @@ tags:
 
 Tips: 在我删除了 ~/.config/dconf/ 目录下的 user 文件后，系统重新生成配置，我的电脑再也没死机，gnome 桌面设置以及插件设置都保存在这个文件里，我是从 Debian 11 一路升级到 Debian 13 从来没有重置过，可能由于版本的更迭，会造成桌面的不稳定。
 
-对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能。
+对于像 Blur my Shell 这样功能丰富的插件，关闭不需要的选项也可以极大地提高稳定性和性能，在这里我只启用了 Overview Background blur。
 
-| <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Panel.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Applications.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20My%20Shell%20Other.avif" width="300"> |
+| <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20my%20Shell%20Panel.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20my%20Shell%20Applications.avif" width="300"> | <img src="https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/kiwi/Blur%20my%20Shell%20Other.avif" width="300"> |
 | :---: | :---: | :---: |
 | Blur my Shell Panel | Blur my Shell Applications | Blur my Shell Other |
 
