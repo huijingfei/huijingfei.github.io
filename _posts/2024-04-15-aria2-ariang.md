@@ -132,7 +132,6 @@ apt install uget
 
 Arguments:
 ```
---enable-rpc=true -D --disable-ipv6 --check-certificate=false --conf-path=/etc/aria2/aria2.conf
+--enable-rpc=true -D --disable-ipv6 --check-certificate=false --max-connection-per-server=16 --split=16 --min-split-size=10M --max-concurrent-downloads=5 --disk-cache=32M
 ```
-
-Welcome to our [website](https://blog.tigress.cc/)
+这里配置最大下载线程 16，也可以设置的保守一些，比如 3 或者 6，线程和分片最好设置一致。
