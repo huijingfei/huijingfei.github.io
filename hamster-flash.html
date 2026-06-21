@@ -10,6 +10,10 @@ head_padding: "55px"
   <title>可以喂食和跑轮的仓鼠 Hamster Flash 动画小游戏</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="robots" content="index" />
+  
+  <!-- 引入外部 CSS 文件放在这里 -->
+  <link rel="stylesheet" href="css/style.css">
+
   <style type="text/css">
     #synckey { font-size: 150% }
     footer { font-size: 70% }
@@ -29,7 +33,40 @@ head_padding: "55px"
 
 	<p> <a href="https://ruffle.rs/">Ruffle</a> 是一个用 Rust 编写的 Flash Player 模拟器， 支持Windows /macOS/ Linux 桌面系统， 支持Chrome / Firefox / Edge / Safari 等主流浏览器扩展。 </p>
 	
-<p><a href="https://addons.mozilla.org/en-US/firefox/addon/ruffle_rs/">Ruffle 火狐扩展插件</a>，  <a href="https://chromewebstore.google.com/detail/ruffle-flash-emulator/donbcfbmhbcapadipfkeojnmajbakjdc?hl=zh-CN">Ruffle Chrome 扩展插件</a>， <a href="https://microsoftedge.microsoft.com/addons/detail/ruffle-flash-emulator/pipjjbgofgieknlpefmcckdmgaaegban">Ruffle Edge 扩展插件</a></p>
+  <div class="download-container">
+    <div class="download-wrapper">
+      
+      <!-- Chrome 按钮 -->
+      <a href="https://chromewebstore.google.com/detail/ruffle-flash-emulator/donbcfbmhbcapadipfkeojnmajbakjdc" target="_blank" class="download-btn">
+        <!-- 这里的图片地址可以替换为您本地的图标路径 -->
+        <img src="https://img.icons8.com/color/48/chrome.png" alt="Chrome" class="btn-icon">
+        <div class="btn-text">
+          <span class="text-top">Available in the</span>
+          <span class="text-bottom">Chrome Web Store</span>
+        </div>
+      </a>
+
+      <!-- Firefox 按钮 -->
+      <a href="https://addons.mozilla.org/firefox/addon/ruffle_rs" target="_blank" class="download-btn">
+        <img src="https://img.icons8.com/color/48/firefox-browser.png" alt="Firefox" class="btn-icon">
+        <div class="btn-text">
+          <span class="text-top">GET THE</span>
+          <span class="text-bottom emphasis">ADD-ON</span>
+        </div>
+      </a>
+
+      <!-- Microsoft Edge 按钮 -->
+      <a href="https://microsoftedge.microsoft.com/addons/detail/ruffle/pipjjbgofgieknlpefmcckdmgaaegban" target="_blank" class="download-btn">
+        <img src="https://img.icons8.com/color/48/microsoft.png" alt="Microsoft" class="btn-icon">
+        <div class="btn-text">
+          <span class="text-top">Get it from</span>
+          <span class="text-bottom font-microsoft">Microsoft</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
 
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
         width="600" 
