@@ -17,6 +17,8 @@ tags:
 
 这台 TANTIV4 路由器到我手里就已经刷好了 Breed，所以可以很方便刷各种固件，不担心变砖；需要注意的是， RESET 按钮不是位于路由器前方，这台路由器设计很奇怪，如果说天线的位置算后边的话，它的网口，电源接口都在前边，电源接口旁边还有个和 RESET 按钮一样的孔，但是不是，RESET 按钮位于左边的散热孔里。
 
+![TANTIV4 NSAC1200RZ 路由器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/openwrt/TANTIV4%20NSAC1200RZ.webp)
+
 ## 懒人版自带插件的 OpenWRT 衍生版： Kwrt
 
 [YouHua WR1200JS Kwrt 固件在线下载](https://openwrt.ai/?target=ramips%2Fmt7621&id=youhua_wr1200js)
