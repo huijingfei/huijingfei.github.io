@@ -343,12 +343,16 @@ done
 ```
 wget https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-cn.srs
 ```
-
+如果说因为网络原因路由器无法下载这些文件，电脑有科学网络的情况下，先下载到电脑上然后传到路由器；光猫地址基本都是 192.168.1.1，你的路由器地址要改为 192.168.1.2 等其他地址。
+```
+scp -O *.srs root@192.168.1.2:/etc/sing-box/
+```
 检查一下配置文件是否有错误，配置正确没有任何输出，如果输出错误，请自行  Google 或者问 ai。
 
 ```
 sing-box check -c /etc/sing-box/config.json
 ```
+## 编辑脚本文件
 
 写完配置文件不要急着启动 sing-box，OpenWRT 源自带的启动脚本有问题，编辑以下文件更换为官方的脚本。
 ```
