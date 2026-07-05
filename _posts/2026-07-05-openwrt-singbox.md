@@ -298,6 +298,52 @@ vi /etc/sing-box/config.json
 
 这里使用的是 Anytls 模板，需要使用其他类型节点，请自行配置。国内网站直连，DNS 使用光猫的 192.168.1.1，国外网站走代理，解析用的是 cloudflare 的 h3 DNS。
 
+# 规则文件下载
+
+首先确保当前目录是 /etc/sing-box/
+```
+cd /etc/sing-box/
+```
+然后使用以下命令下载需要的规则文件
+```
+for file in \
+geosite-adguard.srs \
+geosite-adobe.srs \
+geosite-akamai.srs \
+geosite-alibaba.srs \
+geosite-amazon.srs \
+geosite-apple.srs \
+geosite-baidu.srs \
+geosite-bilibili.srs \
+geosite-bytedance.srs \
+geosite-category-ads.srs \
+geosite-category-games.srs \
+geosite-cloudflare.srs \
+geosite-cn.srs \
+geosite-debian.srs \
+geosite-fastly.srs \
+geosite-github.srs \
+geosite-google.srs \
+geosite-jsdelivr.srs \
+geosite-linkedin.srs \
+geosite-meta.srs \
+geosite-microsoft.srs \
+geosite-mozilla.srs \
+geosite-tiktok.srs \
+geosite-vk.srs \
+geosite-yandex.srs; do
+    wget "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/$file"
+done
+```
+以上内容是从 sing-box 官方仓库下载的规则文件，geosite-cn.srs 大概有 50kb 左右。这里建议以上命令中去掉 geosite-cn.srs \这一行，下载增强版的规则文件。
+
+**下载增强版 geosite-cn 文件**
+
+增强版 geosite-cn 文件大概有500kb。
+```
+wget https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-cn.srs
+```
+
 检查一下配置文件是否有错误，配置正确没有任何输出，如果输出错误，请自行  Google 或者问 ai。
 
 ```
@@ -360,51 +406,7 @@ EOF
 ```
 chmod +x /etc/init.d/sing-box
 ```
-# 规则文件下载
 
-首先确保当前目录是 /etc/sing-box/
-```
-cd /etc/sing-box/
-```
-然后使用以下命令下载需要的规则文件
-```
-for file in \
-geosite-adguard.srs \
-geosite-adobe.srs \
-geosite-akamai.srs \
-geosite-alibaba.srs \
-geosite-amazon.srs \
-geosite-apple.srs \
-geosite-baidu.srs \
-geosite-bilibili.srs \
-geosite-bytedance.srs \
-geosite-category-ads.srs \
-geosite-category-games.srs \
-geosite-cloudflare.srs \
-geosite-cn.srs \
-geosite-debian.srs \
-geosite-fastly.srs \
-geosite-github.srs \
-geosite-google.srs \
-geosite-jsdelivr.srs \
-geosite-linkedin.srs \
-geosite-meta.srs \
-geosite-microsoft.srs \
-geosite-mozilla.srs \
-geosite-tiktok.srs \
-geosite-vk.srs \
-geosite-yandex.srs; do
-    wget "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/$file"
-done
-```
-以上内容是从 sing-box 官方仓库下载的规则文件，geosite-cn.srs 大概有 50kb 左右。这里建议以上命令中去掉 geosite-cn.srs \这一行，下载增强版的规则文件。
-
-**下载增强版 geosite-cn 文件**
-
-增强版 geosite-cn 文件大概有500kb。
-```
-wget https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-cn.srs
-```
 最后启动 sing-box 内核，电脑打开浏览器测试。
 ```
 /etc/init.d/sing-box restart
