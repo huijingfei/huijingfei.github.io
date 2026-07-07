@@ -129,7 +129,15 @@ vi /etc/sing-box/config.json
         "server": "dns-remote"
       },
       {
-        "rule_set": ["geosite-cn"],
+        "rule_set": [
+          "geosite-cn",
+          "geosite-amazon",
+          "geosite-apple",
+          "geosite-fastly",
+          "geosite-jsdelivr",
+          "geosite-microsoft",
+          "geosite-mozilla"
+        ],
         "server": "dns-direct"
       }
     ],
