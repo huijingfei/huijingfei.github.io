@@ -427,6 +427,24 @@ chmod +x /etc/init.d/sing-box
 ```
 /etc/init.d/sing-box restart
 ```
+
+**升级保留配置**
+
+OpenWRT 升级保留配置默认不包括自定义脚本，可以编辑如下文件：
+```
+vi /etc/sysupgrade.conf
+```
+```
+## This file contains files and directories that should
+## be preserved during an upgrade.
+## 该文件包含在升级过程中应予以保留的文件和目录
+
+# /etc/example.conf
+# /etc/openvpn/
+/etc/init.d/sing-box
+```
+如上在文件末尾添加一行：/etc/init.d/sing-box 即可。
+
 ## OpenWRT 后台优化
 
 选择 网络》防火墙，开启 Hardware flow offloading ▾；如果你的网络支持 ipv6，那么可以在接口》分别修改 lan 口和 wan6 口为 ipv6 中继模式。以上配置为 Tun 模式，配置简单，已经可以满足大部分需求，Youtube 1080p 视频也可以正常观看。没有更高的要求，配置到这里就完成了。
