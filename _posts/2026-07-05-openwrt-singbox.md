@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 16M 闪存（Flash）MT7621A 芯片路由器安装 sing-box 透明代理
+title: 16M 小闪存（Flash）MT7621A 芯片路由器安装 sing-box 透明代理
 subtitle: 老型号低配置路由器安装使用科学上网插件
 tags:
     - OpenWRT
@@ -215,12 +215,17 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "ip.sb",
           "accuweather.com",
+          "aviationweather.gov",
+          "edu.kg",
           "hdcdn.online",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
           "meixi-mgo.com",
+          "met.no",
+          "openweathermap.org",
           "rustdesk.com",
+          "vivaldi.net",
           "tigress.cc",
           "xzmgo.com",
           "bjxuejing.cn",
@@ -230,7 +235,7 @@ vi /etc/sing-box/config.json
         ],
         "domain_keyword": [
           "douyin",
-          "byteimg"
+          "byte"
         ],
         "outbound": "direct-out"
       },
