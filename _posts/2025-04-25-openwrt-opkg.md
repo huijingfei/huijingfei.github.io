@@ -3,23 +3,10 @@ layout: post
 title:  OpenWRT 常用命令整理
 subtitle: 📡 ​​OpenWRT 软件管理命令大全​​
 tags:
-    - Linux
+    - OpenWRT
 ---
 
 ![📡 ​​OpenWRT 软件管理命令大全​​](https://raw.githubusercontent.com/huijingfei/Blog_Gitalk/refs/heads/main/Images/openwrt.webp)
-
-# OpenWrt 路由器配置指南
-
-## 目录
-1. [LAN 口配置](#lan-口配置)
-2. [无线网络配置](#无线网络配置)
-3. [IPv6 配置](#ipv6-配置)
-4. [系统升级](#系统升级)
-5. [流量分载配置](#流量分载配置)
-
----
-
-## LAN 口配置
 
 ### 设置 LAN 口 IP 地址
 
@@ -29,8 +16,6 @@ uci commit network
 ```
 
 ---
-
-## 无线网络配置
 
 ### 查看无线接口信息
 
@@ -86,8 +71,6 @@ uci commit wireless
 
 ---
 
-## IPv6 配置
-
 ### 设置 IPv6 中继模式
 
 ```bash
@@ -126,31 +109,29 @@ wifi reload
 
 ## 系统升级
 
-### 上传固件
+**上传固件**
 
 ```bash
 scp /path/to/your/firmware-sysupgrade.bin root@192.168.1.3:/tmp/sysupgrade.bin
 ```
 
-### 查看可用升级包
+**查看可用升级包**
 
 ```bash
 sysupgrade -l
 ```
 
-### 执行系统升级
+**执行系统升级**
 
 ```bash
 sysupgrade -v /tmp/sysupgrade.bin
 ```
 
-### 保留自定义配置
+**保留自定义配置**
 
 如果您想保留放在 `/root/` 或 `/usr/bin/` 下的脚本，可以将其路径写入 `/etc/sysupgrade.conf` 文件中。
 
 ---
-
-## 流量分载配置
 
 ### 启用软件和硬件流量分载
 
