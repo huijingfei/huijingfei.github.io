@@ -355,6 +355,13 @@ done
 ```
 wget https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-cn.srs
 ```
+
+**下载 geoip 文件**
+
+```
+for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/$file"; done
+```
+
 如果说因为网络原因路由器无法下载这些文件，电脑有科学网络的情况下，先下载到电脑上然后传到路由器；光猫地址基本都是 192.168.1.1，你的路由器地址要改为 192.168.1.2 等其他地址。
 ```
 scp -O *.srs root@192.168.1.2:/etc/sing-box/
