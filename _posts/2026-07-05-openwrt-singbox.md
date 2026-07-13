@@ -133,6 +133,7 @@ vi /etc/sing-box/config.json
           "geosite-cn",
           "geosite-amazon",
           "geosite-apple",
+          "geosite-bytedance",
           "geosite-fastly",
           "geosite-jsdelivr",
           "geosite-microsoft",
@@ -258,10 +259,8 @@ vi /etc/sing-box/config.json
           "geosite-cn",
           "geosite-bytedance",
           "geosite-cloudflare",
-          "geosite-debian",
           "geosite-vk",
           "geosite-yandex",
-          "geosite-adguard",
           "geosite-akamai",
           "geosite-amazon",
           "geosite-apple",
@@ -296,10 +295,8 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cn.srs"},
       {"tag": "geosite-bytedance", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-bytedance.srs"},
       {"tag": "geosite-cloudflare", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cloudflare.srs"},
-      {"tag": "geosite-debian", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-debian.srs"},
       {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
       {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
-      {"tag": "geosite-adguard", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-adguard.srs"},
       {"tag": "geosite-akamai", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-akamai.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
@@ -328,7 +325,6 @@ cd /etc/sing-box/
 然后使用以下命令下载需要的规则文件
 ```
 for file in \
-geosite-adguard.srs \
 geosite-akamai.srs \
 geosite-amazon.srs \
 geosite-apple.srs \
@@ -337,7 +333,6 @@ geosite-category-ads.srs \
 geosite-category-games.srs \
 geosite-cloudflare.srs \
 geosite-cn.srs \
-geosite-debian.srs \
 geosite-fastly.srs \
 geosite-github.srs \
 geosite-google.srs \
