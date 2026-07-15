@@ -95,11 +95,15 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "ip.sb",
           "accuweather.com",
+          "aviationweather.gov",
+          "edu.kg",
           "hdcdn.online",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
           "meixi-mgo.com",
+          "met.no",
+          "openweathermap.org",
           "rustdesk.com",
           "tigress.cc",
           "xzmgo.com",
@@ -110,13 +114,27 @@ vi /etc/sing-box/config.json
         ],
         "domain_keyword": [
           "douyin",
-          "byteimg"
+          "byte"
         ],
         "server": "dns-direct"
       },
       {
         "rule_set": ["geosite-category-ads"],
         "action": "reject"
+      },
+      {
+        "domain_keyword": ["pangolin", "pglstatp"],
+        "domain_suffix": [
+          "ad.10010.com",
+          "ads.cup.com.cn",
+          "boot.biz.weibo.com",
+          "bootpreload.uve.weibo.com",
+          "bootrealtime.uve.weibo.com",
+          "brandvideo.biz.weibo.com",
+          "dsp-ad.yy.com",
+          "splash.yy.com"
+        ],
+        "server": "reject"
       },
       {
         "rule_set": [
@@ -242,6 +260,24 @@ vi /etc/sing-box/config.json
       },
       {
         "rule_set": ["geosite-category-ads"],
+        "action": "reject"
+      },
+      {
+        "domain_keyword": [
+          "pangolin",
+          "pglstatp"
+        ],
+        "domain_suffix": [
+          "ad.10010.com",
+          "ads.cup.com.cn",
+          "boot.biz.weibo.com",
+          "bootpreload.uve.weibo.com",
+          "bootrealtime.uve.weibo.com",
+          "brandvideo.biz.weibo.com",
+          "dsp-ad.yy.com",
+          "smartad.10010.com",
+          "splash.yy.com"
+        ],
         "action": "reject"
       },
       {
