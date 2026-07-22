@@ -405,7 +405,14 @@ apk info --depends wireguard
 apk update
 ```
 
-**升级所有可更新的软件：**
+**⚠️升级所有可更新的软件：**
+
+禁止使用 apk upgrade !
+
+将会导致设备变砖。当前多个软件包存在缺失的冲突声明、不完整的依赖关系，或其它配置错误 (例如hostapd-*, wpad-*, ucode-mod-*, 各种库文件等)。
+
+正确方式是使用 ASU 客户端: LuCI Attended Sysupgrade、 owut 或 Firmware Selector。
+
 ```bash
 apk upgrade
 ```
