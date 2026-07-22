@@ -10,19 +10,22 @@ tags:
 
 ***1. 使用 vi/nano 或者其他文本编辑器编辑 /etc/apt/sources.list 这个文件，替换为以下镜像或者国内其他的镜像站点。***
 
-中科大镜像站
+校园网联合镜像站
 ```
-deb https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
-#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.cernet.edu.cn/debian/ trixie main contrib non-free non-free-firmware
+# deb-src https://mirrors.cernet.edu.cn/debian/ trixie main contrib non-free non-free-firmware
 
-deb https://mirrors.ustc.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
-#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb https://mirrors.cernet.edu.cn/debian/ trixie-updates main contrib non-free non-free-firmware
+# deb-src https://mirrors.cernet.edu.cn/debian/ trixie-updates main contrib non-free non-free-firmware
 
-deb https://mirrors.ustc.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
-#deb-src https://mirrors.ustc.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+deb https://mirrors.cernet.edu.cn/debian/ trixie-backports main contrib non-free non-free-firmware
+# deb-src https://mirrors.cernet.edu.cn/debian/ trixie-backports main contrib non-free non-free-firmware
 
-deb https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
-#deb-src https://mirrors.ustc.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware
+# 以下安全更新软件源为镜像站配置
+deb https://mirrors.cernet.edu.cn/debian-security trixie-security main contrib non-free non-free-firmware
+# deb-src https://mirrors.cernet.edu.cn/debian-security trixie-security main contrib non-free non-free-firmware
+
 ```
 [Debian 软件仓库镜像使用帮助](https://help.mirrors.cernet.edu.cn/debian/)
 
@@ -31,13 +34,14 @@ DEB822 格式编辑这个文件（/etc/apt/sources.list.d/debian.sources）
 Debian 13
 ```
 Types: deb
-URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+URIs: https://mirrors.cernet.edu.cn/debian
 Suites: trixie trixie-updates trixie-backports
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
+# 以下安全更新软件源为镜像站配置
 Types: deb
-URIs: https://mirrors.tuna.tsinghua.edu.cn/debian-security
+URIs: https://mirrors.cernet.edu.cn/debian-security
 Suites: trixie-security
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
@@ -45,13 +49,14 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 Debian 12
 ```
 Types: deb
-URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+URIs: https://mirrors.cernet.edu.cn/debian
 Suites: bookworm bookworm-updates bookworm-backports
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
+# 以下安全更新软件源为镜像站配置
 Types: deb
-URIs: https://mirrors.tuna.tsinghua.edu.cn/debian-security
+URIs: https://mirrors.cernet.edu.cn/debian-security
 Suites: bookworm-security
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
