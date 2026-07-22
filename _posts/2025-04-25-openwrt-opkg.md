@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  OpenWRT 常用命令整理
-subtitle: 📡 ​​OpenWRT 软件管理命令大全​​
+title:  OpenWRT 25.12 命令行完整配置指南
+subtitle: 📡 OpenWRT 从刷机到上网的全流程命令大全
 tags:
     - OpenWRT
 ---
@@ -38,6 +38,60 @@ uci commit network
 
 ---
 
+## 备份和恢复配置（重要！建议先做）
+
+都说"常在河边走，哪有不湿鞋"。所以在开始配置之前，先学会备份。万一后面配置出了问题，备份可以救你一命！
+
+### 在路由器上直接备份
+
+最简单的方法，直接在路由器上打包备份：
+
+```bash
+sysupgrade -b /tmp/backup-OpenWrt-$(date +%Y-%m-%d).tar.gz
+```
+
+这个命令会在 `/tmp` 目录下生成一个日期命名的备份文件（比如 `backup-OpenWrt-2026-07-23.tar.gz`）。
+
+### 下载备份文件到电脑
+
+**方法一：用 scp 下载**
+
+```bash
+scp -O root@192.168.1.3:/tmp/backup-OpenWrt-*.tar.gz ~/Downloads/
+```
+
+**方法二：管道直接下载（推荐）**
+
+这个方法最直接，直接备份并下载，一条命令搞定：
+
+```bash
+ssh root@192.168.1.3 "sysupgrade -b -" > ~/Downloads/backup-OpenWrt-$(date +%Y-%m-%d).tar.gz
+```
+
+> **💡 提示：** 把这个文件妥善保存。建议放在云盘里备份，真的救过急！
+
+### 恢复配置
+
+如果出问题了，或者想把配置复制到另一台路由器，用恢复命令：
+
+**第一步：上传备份文件到路由器**
+
+```bash
+scp -O ~/Downloads/backup-OpenWrt-2026-07-23.tar.gz root@192.168.1.3:/tmp/
+```
+
+**第二步：恢复配置**
+
+```bash
+sysupgrade -r /tmp/backup-OpenWrt-2026-07-23.tar.gz
+```
+
+恢复完成后，路由器会自动重启。等个30秒就能用新IP重新连接了。
+
+> **⚠️ 警告：** 恢复配置会覆盖现在的设置，如果不确定，先做好当前配置的备份！
+
+---
+
 ## 第二步：检查和配置无线硬件
 
 ### 查看无线接口信息
@@ -63,21 +117,29 @@ uci show wireless | grep hwmode
 
 ```bash
 apk update
-apk add wpad-openssl
+apk add wpad-basic-mbedtls
 ```
 
-> **ℹ️ 说明：** OpenWRT 25.12 改用 `apk` 包管理器（来自 Alpine Linux）。推荐使用 `wpad-openssl` 或 `wpad-wolfssl`，比旧版本的 `wpad-basic` 更稳定。
+> **ℹ️ WiFi 驱动选择指南：**
+> 
+> OpenWRT 25.12 的默认推荐是 **`wpad-basic-mbedtls`**，它在低配置和中配置路由器上表现最好，占用资源少。
+>
+> 如果你的路由器硬件配置比较好（比如有足够的内存和 CPU），可以用功能更多的版本：
+> - **`wpad-openssl`** - 加密库使用 OpenSSL，支持更多高级功能
+> - **`wpad-wolfssl`** - 加密库使用 WolfSSL，性能和功能介于两者之间
+>
+> **怎么选？** 保险起见，先用默认的 `wpad-basic-mbedtls`。如果你的硬件足够好且需要高级功能，再换成 `wpad-openssl`。
 
 ---
 
 ## 第三步：配置WiFi网络
 
-好了，硬件确认没问题。现在该配置WiFi了。我们分别设置2.4G和5G两个频段。
+好了，硬件确认没问题。现在该配置WiFi了。我们分别设置2.4G和5G两个频段。为了效率，先把所有配置都设置好，最后一次性重启WiFi服务。
 
 ### 配置 2.4G WiFi
 
 ```bash
-# 首先启用 2.4G 射频
+# 启用 2.4G 射频
 uci set wireless.radio0.disabled='0'
 
 # 设置 SSID（WiFi名称）和加密方式
@@ -86,15 +148,14 @@ uci set wireless.default_radio0.ssid='YourSSID-2G'
 uci set wireless.default_radio0.encryption='psk2'
 uci set wireless.default_radio0.key='你的WiFi密码'
 
-# 如果你想用更安全的 WPA3（OpenWRT 25.12 推荐），用 sae 模式：
-# uci set wireless.default_radio0.encryption='sae'
+# 设置WiFi信道（2.4G通常用1-13，信道11是中国常用）
+uci set wireless.radio0.channel='11'
 
-# 提交配置
-uci commit wireless
-
-# 重启WiFi服务使配置生效
-wifi reload
+# 设置频宽为 40MHz（2.4G 最多就这样了）
+uci set wireless.radio0.htmode='HT40'
 ```
+
+> **💡 2.4G 信道选择：** 中国常用信道是 1、6、11（互不干扰）。干扰多的话可以试试 13。
 
 ### 配置 5G WiFi
 
@@ -110,25 +171,43 @@ uci set wireless.default_radio1.ssid='YourSSID-5G'
 uci set wireless.default_radio1.encryption='sae'
 uci set wireless.default_radio1.key='你的WiFi密码'
 
-# 如果设备不支持 WPA3，也可以用 WPA2：
-# uci set wireless.default_radio1.encryption='psk2'
+# 设置5G信道
+# 中国允许的5G信道：36, 40, 44, 48, 149, 153, 157, 161, 165
+# 建议用 36、44、149、157、165（这些信道干扰最少）
+uci set wireless.radio1.channel='36'
 
-# 提交配置
+# 设置频宽（VHT80 是 80MHz，能跑满 WiFi 5 速度；VHT160 是 160MHz，更快但可能不稳定）
+uci set wireless.radio1.htmode='VHT80'
+```
+
+> **💡 5G 信道和频宽选择：** 
+> - 信道 36-48 和 149-165 互不干扰，建议选其中之一
+> - VHT80（80MHz）最稳定，也能发挥 WiFi 5 的性能
+> - VHT160（160MHz）最快，但需要硬件支持且干扰敏感
+
+### 一次性应用所有WiFi配置
+
+所有WiFi配置都设置好了，现在统一提交并重启：
+
+```bash
+# 提交所有无线配置
 uci commit wireless
 
-# 重启WiFi服务
+# 一次性重启WiFi服务
 wifi reload
 ```
 
-> **✨ 新手友好提示：** 2G和5G用同一个密码会方便得多，设备可以自动选择最佳频段。
+> **✨ 配置技巧：** 这样做的好处是所有配置都集中在一起，只需要重启一次WiFi，速度快！
 
 ---
 
-## 第四步：高级网络配置
+## 第四步：高级网络配置（可选）
 
 ### 配置 IPv6 中继模式
 
-如果你的上游网络已经分配了IPv6地址，可以让OpenWRT把IPv6中继到LAN口。这样局域网内的设备就能直接获得公网IPv6地址了。
+如果你的上游网络（上面的运营商）已经分配了IPv6地址，可以让OpenWRT把IPv6中继到LAN口。这样局域网内的设备就能直接获得公网IPv6地址了。如果不需要IPv6，这步可以跳过。
+
+**设置IPv6中继的所有配置：**
 
 ```bash
 # 设置 LAN 口的 IPv6 中继模式
@@ -136,7 +215,7 @@ uci set dhcp.lan.dhcpv6='relay'
 uci set dhcp.lan.ra='relay'
 uci set dhcp.lan.ndp='relay'
 
-# 创建或修改 WAN6 接口的中继配置（以 wan6 为主）
+# 创建或修改 WAN6 接口的中继配置（以 wan6 为主接口）
 uci set dhcp.wan6=dhcp
 uci set dhcp.wan6.interface='wan6'
 uci set dhcp.wan6.dhcpv6='relay'
@@ -144,30 +223,29 @@ uci set dhcp.wan6.ra='relay'
 uci set dhcp.wan6.ndp='relay'
 uci set dhcp.wan6.master='1'
 
-# 提交 DHCP 配置
+# 提交所有 DHCP 配置
 uci commit dhcp
-
-# 重启 DHCP 服务
-/etc/init.d/odhcpd restart
-```
-
-### 应用所有网络配置
-
-好的，网络配置都设置好了。现在一起应用这些配置：
-
-```bash
-# 重启网络服务
-# ⚠️ 注意：这会断开SSH连接，用新IP重新连接即可
-/etc/init.d/network restart
 
 # 重启 DHCP/IPv6 服务
 /etc/init.d/odhcpd restart
-
-# 重新加载无线配置
-wifi reload
 ```
 
-等30秒左右，用新的IP地址重新连接。如果一切顺利，你应该能看到WiFi已经可用了。
+### 统一应用所有网络配置
+
+现在把所有配置统一应用。这一步会重启网络和DHCP服务，SSH可能会短暂断线：
+
+```bash
+# 重启网络服务（会断开SSH连接）
+/etc/init.d/network restart
+
+# 等待30秒左右再用新IP重新连接...
+```
+
+> **⏱️ 时间线：**
+> 1. 执行 `network restart` 后，SSH 连接会断开
+> 2. 等待 20-30 秒
+> 3. 用新 IP 地址（比如 192.168.1.3）重新 SSH 连接
+> 4. WiFi 应该已经可用了
 
 ---
 
@@ -177,17 +255,19 @@ wifi reload
 
 想让路由跑得更快？启用流量分载可以大幅提升吞吐量。特别是在有线网络速度很高的情况下，这个功能特别有用。
 
+**配置流量分载的所有设置：**
+
 ```bash
-# 1. 先启用软件流量分载（这是必要前提）
+# 1. 启用软件流量分载（这是必要前提）
 uci set firewall.@defaults[0].flow_offloading='1'
 
-# 2. 再启用硬件流量分载（CPU支持的话会更快）
+# 2. 启用硬件流量分载（如果CPU支持会更快）
 uci set firewall.@defaults[0].flow_offloading_hw='1'
 
 # 3. 提交防火墙配置
 uci commit firewall
 
-# 4. 重启防火墙服务使其生效
+# 4. 一次性重启防火墙服务
 /etc/init.d/firewall restart
 ```
 
@@ -211,6 +291,8 @@ nft list flowtables
 ```
 
 有输出内容（通常包含 `flowtable ft`）就说明分载机制已经在内核层生效了。性能妥妥的提升！
+
+> **💡 什么是流量分载？** 简单说就是把数据转发的工作从 CPU 卸载到网卡或其他硬件，这样 CPU 可以处理其他任务，网络速度自然更快。特别是对于千兆宽带很有帮助。
 
 ---
 
@@ -288,13 +370,6 @@ vi /etc/sysupgrade.conf
 | 查看已装 | `opkg list-installed` | `apk info` |
 | 查看详情 | `opkg info pkg` | `apk info -a pkg` |
 | 清理缓存 | `opkg clean` | `apk cache clean` |
-
-***⚠️禁止使用 apk upgrade !***
-
-将会导致设备变砖。当前多个软件包存在缺失的冲突声明、不完整的依赖关系，或其它配置错误 (例如hostapd-*, wpad-*, ucode-mod-*, 各种库文件等)。
-
-正确方式是使用 ASU 客户端: LuCI Attended Sysupgrade、 owut 或 Firmware Selector。
-
 
 ### 🔍 查找软件包
 
