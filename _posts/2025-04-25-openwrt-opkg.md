@@ -14,7 +14,9 @@ tags:
 
 ---
 
-## 第一步：网络基础配置
+## 第一步：系统和网络基础配置
+
+刚刷好系统，首先要配置一些最基本的东西：网络 IP、主机名、时区。这些都是系统运行的基础，必须先设置好。
 
 ### 设置 LAN 口 IP 地址
 
@@ -35,6 +37,55 @@ uci commit network
 ```
 
 > **💡 提示：** 执行 `network restart` 后，你的SSH连接会短暂断开，记得用新IP地址重新连接。等个10秒左右就能重新登陆了。
+
+### 设置系统信息（时区、主机名等）
+
+网络配置好了，顺便把系统的基本信息也设置一下。包括主机名和时区，这样日志和系统时间才能正确显示。
+
+**设置主机名、时区和时区名称：**
+
+```bash
+# 设置路由器的主机名（显示在网络中和管理界面）
+uci set system.@system[0].hostname='OpenWrt'
+
+# 设置时区为 CST-8（中国标准时间）
+uci set system.@system[0].timezone='CST-8'
+
+# 设置时区数据库（Asia/Taipei 是中国时区的标准值）
+uci set system.@system[0].zonename='Asia/Taipei'
+```
+
+**保存配置：**
+
+```bash
+uci commit system
+```
+
+**让设置立即生效（重启系统服务）：**
+
+```bash
+/etc/init.d/system reload
+```
+
+> **💡 时区说明：**
+> - `CST-8` 是时区偏移量（中国在 UTC+8）
+> - `Asia/Taipei` 是标准的时区数据库名称
+> - 这样设置后，系统时间和日志都会正确显示中国时间
+
+**其他常见时区设置参考：**
+
+| 地区 | timezone | zonename |
+|-----|----------|----------|
+| 中国 | `CST-8` | `Asia/Shanghai` 或 `Asia/Taipei` |
+| 香港 | `HKT-8` | `Asia/Hong_Kong` |
+| 台湾 | `CST-8` | `Asia/Taipei` |
+| 新加坡 | `SGT-8` | `Asia/Singapore` |
+| 日本 | `JST-9` | `Asia/Tokyo` |
+| 泰国 | `ICT-7` | `Asia/Bangkok` |
+| 美国（东部） | `EST5EDT` | `America/New_York` |
+| 欧洲（西部） | `WET0WEST` | `Europe/London` |
+
+> **提示：** 使用 `zonename` 的标准值更准确（会自动处理夏令时等），推荐优先使用。
 
 ---
 
@@ -99,17 +150,24 @@ sysupgrade -r /tmp/backup-OpenWrt-2026-07-23.tar.gz
 现在我们来看看这个路由的无线硬件。OpenWRT会把各个频段（2.4G、5G等）识别为不同的射频芯片，我们需要先确认一下硬件配置。
 
 ```bash
-uci show wireless | grep hwmode
+uci show wireless
 ```
 
-**硬件模式对照表：**
+这个命令会显示所有的无线配置信息。你会看到类似这样的输出结构：
+```
+wireless.radio0=wifi-device
+wireless.radio0.type='mac80211'
+wireless.radio0.hwmode='11g'
+wireless.radio0.disabled='1'
+...
+wireless.default_radio0=wifi-iface
+wireless.default_radio0.device='radio0'
+wireless.default_radio0.network='lan'
+wireless.default_radio0.disabled='0'
+...
+```
 
-| 硬件模式 | 频率 | 说明 |
-|---------|-----|------|
-| `11g` 或包含 `2g/ax` | 2.4GHz | 2.4G 接口（需要启用） |
-| `11a` 或包含 `5g/ac/ax` | 5GHz | 5G 接口（需要启用） |
-
-如果你的输出中包含 `radio0` 和 `radio1`，说明有两个射频，那就是既有2.4G又有5G。
+**关键要点：** 如果输出中有 `radio0` 和 `radio1`，说明有两个射频，既有2.4G又有5G。
 
 ### 安装 WiFi 驱动（如果需要）
 
@@ -139,16 +197,20 @@ apk add wpad-basic-mbedtls
 ### 配置 2.4G WiFi
 
 ```bash
-# 启用 2.4G 射频
-uci set wireless.radio0.disabled='0'
+# 启用 2.4G WiFi 接口
+uci set wireless.default_radio0.disabled='0'
 
-# 设置 SSID（WiFi名称）和加密方式
-# psk2 是 WPA2-PSK，比较稳定，大多数设备都支持
+# 设置 SSID（WiFi名称）
 uci set wireless.default_radio0.ssid='YourSSID-2G'
-uci set wireless.default_radio0.encryption='psk2'
-uci set wireless.default_radio0.key='你的WiFi密码'
 
-# 设置WiFi信道（2.4G通常用1-13，信道11是中国常用）
+# 设置加密方式
+# psk2 是 WPA2-PSK，比较稳定，大多数设备都支持
+uci set wireless.default_radio0.encryption='psk2'
+
+# 设置 WiFi 密码（至少 8 个字符）
+uci set wireless.default_radio0.key='YourPassword123'
+
+# 设WiFi信道（2.4G通常用1-13，信道11是中国常用）
 uci set wireless.radio0.channel='11'
 
 # 设置频宽为 40MHz（2.4G 最多就这样了）
@@ -162,14 +224,18 @@ uci set wireless.radio0.htmode='HT40'
 接下来配置5G。5G的优势是速度快、干扰少，适合视频或大文件传输。
 
 ```bash
-# 启用 5G 射频
-uci set wireless.radio1.disabled='0'
+# 启用 5G WiFi 接口
+uci set wireless.default_radio1.disabled='0'
 
-# 设置 SSID 和加密方式
-# 5G 可以用更安全的 WPA3-SAE（sae）
+# 设置 SSID（WiFi名称）
 uci set wireless.default_radio1.ssid='YourSSID-5G'
+
+# 设置加密方式
+# 5G 可以用更安全的 WPA3-SAE（sae）
 uci set wireless.default_radio1.encryption='sae'
-uci set wireless.default_radio1.key='你的WiFi密码'
+
+# 设置 WiFi 密码（至少 8 个字符）
+uci set wireless.default_radio1.key='YourPassword123'
 
 # 设置5G信道
 # 中国允许的5G信道：36, 40, 44, 48, 149, 153, 157, 161, 165
@@ -198,6 +264,70 @@ wifi reload
 ```
 
 > **✨ 配置技巧：** 这样做的好处是所有配置都集中在一起，只需要重启一次WiFi，速度快！
+
+---
+
+### WiFi 密码管理
+
+#### 修改 WiFi 密码
+
+如果想更改某个 WiFi 的密码，用这些命令：
+
+**修改 2.4G WiFi 密码：**
+```bash
+uci set wireless.default_radio0.key='NewPassword123'
+uci commit wireless
+wifi reload
+```
+
+**修改 5G WiFi 密码：**
+```bash
+uci set wireless.default_radio1.key='NewPassword123'
+uci commit wireless
+wifi reload
+```
+
+> **⚠️ 注意：** 密码必须至少 8 个字符，不要设置太短的密码。
+
+#### 查看当前 WiFi 密码
+
+如果忘记了 WiFi 密码，可以用这些命令查询：
+
+**查看 2.4G WiFi 密码：**
+```bash
+uci get wireless.default_radio0.key
+```
+
+**查看 5G WiFi 密码：**
+```bash
+uci get wireless.default_radio1.key
+```
+
+**查看所有 WiFi 配置（包括密码）：**
+```bash
+uci show wireless | grep key
+```
+
+这样就能看到所有 WiFi 接口的密码了。
+
+#### 查看 WiFi SSID（WiFi 名称）
+
+如果想查看当前的 WiFi 名称：
+
+**查看 2.4G WiFi 名称：**
+```bash
+uci get wireless.default_radio0.ssid
+```
+
+**查看 5G WiFi 名称：**
+```bash
+uci get wireless.default_radio1.ssid
+```
+
+**查看所有 WiFi 配置（包括SSID）：**
+```bash
+uci show wireless | grep ssid
+```
 
 ---
 
@@ -296,50 +426,131 @@ nft list flowtables
 
 ---
 
-## 第六步：固件升级
+## 第六步：系统升级
 
-过一段时间，OpenWRT 官方会发布新版本和安全补丁。这里教你怎么升级。
+系统升级（从一个版本升到另一个版本）和简单的软件包更新是两回事。OpenWRT 推荐使用官方的 ASU 服务来升级系统。
 
-### 上传新固件
+### 方式一：LuCI Attended Sysupgrade（推荐 - 最简单）
 
-从你的电脑上传固件文件到路由器的 `/tmp` 目录：
+如果你安装了 LuCI（网页管理界面），这是最简单的升级方式。
 
-```bash
-scp /path/to/your/firmware-sysupgrade.bin root@192.168.1.3:/tmp/sysupgrade.bin
-```
+1. **打开 LuCI 网页界面**
+   ```
+   http://192.168.1.3/
+   ```
 
-### 查看升级选项
+2. **找到升级菜单**
+   - 系统 → 备份/升级
+   - 或者 System → Backup/Flash Firmware
 
-```bash
-sysupgrade -l
-```
+3. **点击"检查升级"按钮**
+   - LuCI 会自动连接 ASU 服务器
+   - 检查是否有新版本可用
+   - 如果有，直接下载并升级
 
-### 执行系统升级
+4. **等待升级完成**
+   - 通常需要 3-5 分钟
+   - 不要断电！
+   - 升级完成后会自动重启
 
-**保留配置升级：**
-```bash
-sysupgrade -v /tmp/sysupgrade.bin
-```
+> **💡 优点：** 最安全、最方便。所有依赖关系由 ASU 服务器处理，不会导致变砖。
 
-**从头开始升级（清空所有设置）：**
-```bash
-sysupgrade -n -v /tmp/sysupgrade.bin
-```
+### 方式二：owut 工具（命令行）
 
-> **📌 重要提示：** 升级过程中不要断电！通常需要2-5分钟，耐心等待。
-
-### 保留自定义脚本和文件
-
-如果你在 `/root/` 或 `/usr/bin/` 下放了自定义脚本，升级时可以自动保留。只需要把这些路径写入 `/etc/sysupgrade.conf` 文件：
+如果你更喜欢命令行，可以用 `owut` 工具：
 
 ```bash
-# 编辑备份列表
-vi /etc/sysupgrade.conf
+# 首先安装 owut
+apk add owut
 
-# 添加你要保留的路径，比如：
-# /root/my_script.sh
-# /usr/bin/custom_tool
+# 检查升级
+owut check
+
+# 如果有新版本，执行升级
+owut upgrade
 ```
+
+> **💡 owut 会自动处理所有依赖问题，和 LuCI 一样安全。**
+
+### 方式三：OpenWrt Firmware Selector（在线生成）
+
+如果想要完全自定义的固件（包含特定的软件包），可以用官方的 Firmware Selector：
+
+1. **访问官方工具**
+   ```
+   https://firmware-selector.openwrt.org/
+   ```
+
+2. **选择你的设备**
+   - 搜索你的路由器型号
+   - 比如 "TP-Link Archer AX21"
+
+3. **选择 OpenWRT 版本**
+   - 建议选最新的稳定版（比如 25.12）
+
+4. **可选：添加预装软件包**
+   - 搜索并勾选你需要的软件包
+   - 比如 luci, adblock, ddns 等
+   - Firmware Selector 会自动解决依赖
+
+5. **生成固件**
+   - 点击"REQUEST BUILD"
+   - 等待生成完成（通常几分钟）
+   - 下载固件文件
+
+6. **上传并升级**
+   ```bash
+   scp -O /path/to/firmware-sysupgrade.bin root@192.168.1.3:/tmp/
+   ssh root@192.168.1.3 "sysupgrade -v /tmp/firmware-sysupgrade.bin"
+   ```
+
+> **💡 Firmware Selector 最灵活，特别适合要做定制化的用户。**
+
+### 升级前的准备清单
+
+无论用哪种方式升级，都要做好准备：
+
+```bash
+# 1. 备份当前配置（最重要！）
+ssh root@192.168.1.3 "sysupgrade -b -" > ~/Downloads/backup-OpenWrt-$(date +%Y-%m-%d).tar.gz
+
+# 2. 检查可用空间（要有足够空间放临时文件）
+ssh root@192.168.1.3 "df -h"
+
+# 3. 确保网络连接稳定
+# 建议用有线连接，不要用 WiFi 升级
+```
+
+### 升级成功标志
+
+升级完成后：
+
+```bash
+# 1. 路由器会自动重启（等待 3-5 分钟）
+# 2. 用新 IP 重新连接
+ssh root@192.168.1.3
+
+# 3. 检查 OpenWRT 版本
+cat /etc/os-release | grep VERSION
+
+# 4. 如果能看到新的版本号，就说明升级成功了
+```
+
+### 如果升级失败怎么办？
+
+如果升级出了问题（很少发生，特别是用 LuCI 或 owut 时）：
+
+1. **设备还能启动：** 用备份文件恢复配置
+   ```bash
+   scp -O ~/Downloads/backup-OpenWrt-*.tar.gz root@192.168.1.3:/tmp/
+   ssh root@192.168.1.3 "sysupgrade -r /tmp/backup-OpenWrt-*.tar.gz"
+   ```
+
+2. **设备无法启动：** 只能通过救砖工具（Uboot、TFTP等）恢复
+   - 这种情况极其罕见（特别是用官方推荐方式时）
+   - 每种设备的救砖方法都不同，建议查阅官方文档或社区论坛
+
+> **✨ 最好的预防方式就是用 LuCI 或 owut，完全避免手动操作的风险。**
 
 ---
 
@@ -358,6 +569,50 @@ vi /etc/sysupgrade.conf
 
 如果你是从旧版本升级过来的，记得用 `apk` 替代以前的 `opkg` 命令。
 
+### ⚠️ 严格警告：禁止使用 `apk upgrade`！
+
+**为什么官方禁止使用 `apk upgrade`？**
+
+根据 OpenWRT 官方声明，当前版本的 apk 软件包存在以下问题：
+
+```
+❌ 多个软件包存在缺失的冲突声明
+❌ 不完整的依赖关系
+❌ 配置错误（hostapd-*, wpad-*, ucode-mod-* 等）
+❌ 直接使用 apk upgrade 会导致设备变砖！
+```
+
+**受影响的软件包包括：**
+- `hostapd-*` - WiFi 接入点软件
+- `wpad-*` - WiFi 驱动套件  
+- `ucode-mod-*` - 微码模块
+- 各种核心库文件
+
+**错误示例：**
+```bash
+# ❌ 不要这样做！会变砖！
+apk upgrade
+
+# ❌ 这样也不行
+apk upgrade luci
+
+# ❌ 即使指定版本也不安全
+apk upgrade wpad-basic-mbedtls
+```
+
+**正确做法：系统升级（见第六步）**
+
+想要升级软件包或 OpenWRT 版本，使用官方推荐的方式：
+
+| 升级方式 | 安全性 | 便利性 | 推荐指数 |
+|--------|--------|--------|--------|
+| LuCI Attended Sysupgrade | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| owut 工具 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Firmware Selector | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
+| 手动 apk upgrade | ❌❌❌ | ❌ | ❌❌❌ |
+
+**记住：** 只用 `apk add` 安装新软件包，从不使用 `apk upgrade`！
+
 **快速命令对比（从 opkg 到 apk）：**
 
 | 功能 | opkg（旧） | apk（新） |
@@ -366,10 +621,11 @@ vi /etc/sysupgrade.conf
 | 搜索软件 | `opkg list \| grep name` | `apk search name` |
 | 安装软件 | `opkg install pkg` | `apk add pkg` |
 | 卸载软件 | `opkg remove pkg` | `apk del pkg` |
-| 升级所有 | `opkg upgrade` | `apk upgrade` |
+| ❌ 升级软件 | ~~`opkg upgrade`~~ | ~~`apk upgrade`~~ |
 | 查看已装 | `opkg list-installed` | `apk info` |
 | 查看详情 | `opkg info pkg` | `apk info -a pkg` |
 | 清理缓存 | `opkg clean` | `apk cache clean` |
+| ✅ **系统升级** | ~~`opkg upgrade`~~ | **使用 LuCI / owut / Firmware Selector** |
 
 ### 🔍 查找软件包
 
@@ -398,31 +654,26 @@ apk info <package>
 apk info --depends wireguard
 ```
 
-### 🔄 更新和升级软件
+### 🔄 更新软件源（仅此而已！）
 
-**首先更新软件源列表（必须先执行）：**
+**更新软件源列表（仅用于查询新软件）：**
 ```bash
 apk update
 ```
 
-**⚠️升级所有可更新的软件：**
+> **⚠️ 严重警告：禁止使用 `apk upgrade`！**
+>
+> **为什么不能用 `apk upgrade`？**
+> 
+> OpenWRT 官方已明确声明：**禁止使用 `apk upgrade`**，因为：
+> - 多个软件包存在缺失的冲突声明
+> - 不完整的依赖关系
+> - 其他配置错误（如 `hostapd-*`, `wpad-*`, `ucode-mod-*` 等）
+> - 直接使用 `apk upgrade` **会导致设备变砖**！
+>
+> **正确的升级方式见下面的"系统升级"章节。**
 
-禁止使用 apk upgrade !
-
-将会导致设备变砖。当前多个软件包存在缺失的冲突声明、不完整的依赖关系，或其它配置错误 (例如hostapd-*, wpad-*, ucode-mod-*, 各种库文件等)。
-
-正确方式是使用 ASU 客户端: LuCI Attended Sysupgrade、 owut 或 Firmware Selector。
-
-```bash
-apk upgrade
-```
-
-**只升级特定软件（比如 luci）：**
-```bash
-apk upgrade luci
-```
-
-**清除缓存释放空间：**
+**清除缓存释放空间（安全的）：**
 ```bash
 apk cache clean
 ```
@@ -500,6 +751,45 @@ apk add --simulate <package>
 
 ---
 
+### 📶 WiFi 常用命令速查
+
+**检查 WiFi 状态（是否正常运行）：**
+```bash
+iw dev
+```
+
+**查看已连接的 WiFi 客户端（各设备的信号强度）：**
+```bash
+iw dev wlan0 station dump
+```
+
+**重启所有 WiFi：**
+```bash
+wifi reload
+```
+
+**重启某个特定的射频（比如只重启 2.4G）：**
+```bash
+wifi reload radio0
+```
+
+**完全关闭所有 WiFi（临时）：**
+```bash
+wifi down
+```
+
+**重新打开 WiFi：**
+```bash
+wifi up
+```
+
+**查看 WiFi 功率和信道（检查发射功率设置）：**
+```bash
+iw phy phy0 info
+```
+
+---
+
 ## 🔐 维护和备份
 
 ### 操作前备份配置
@@ -525,16 +815,43 @@ tar -czvf /tmp/backup.tar.gz /etc/config/
 - 检查官方仓库中该软件是否支持你的 OpenWRT 版本
 - 可以用 `apk search` 查看可用版本
 
-**WiFi 连接不稳定：**
+**WiFi 连接不稳定或信号弱：**
 - 检查是否有干扰（2.4G 更容易被干扰）
-- 尝试修改信道号
+- 尝试修改信道号（2.4G 用 1、6、11；5G 用 36、149 等）
+- 检查发射功率：`iw phy phy0 info | grep Power`
 - 重启 WiFi 服务：`wifi reload`
 - 查看 WiFi 日志：`logread | grep wireless`
 
-**包管理器出错：**
-- 重新更新索引：`apk update --allow-untrusted`
-- 检查网络连接
-- 清理损坏的缓存：`rm -rf /var/cache/apk/*` 然后 `apk update`
+**WiFi 无法启用或配置不生效：**
+- 检查配置是否提交：`uci commit wireless`
+- 重启 WiFi：`wifi reload`
+- 查看无线配置：`uci show wireless`
+- 查看是否有驱动问题：`dmesg | tail -20`
+
+**忘记 WiFi 密码：**
+- 查看 2.4G 密码：`uci get wireless.default_radio0.key`
+- 查看 5G 密码：`uci get wireless.default_radio1.key`
+- 查看所有密码：`uci show wireless | grep key`
+
+**需要重置 WiFi 配置（恢复默认）：**
+```bash
+# 这会删除所有自定义WiFi配置，恢复到出厂状态
+uci set wireless.default_radio0.disabled='1'
+uci set wireless.default_radio1.disabled='1'
+uci commit wireless
+wifi reload
+# 然后重新按上面的步骤配置WiFi
+```
+
+**系统升级失败：**
+- 不要使用 `apk upgrade`！改用 LuCI Attended Sysupgrade 或 owut
+- 如果升级卡住，可以按 reset 按钮进入恢复模式
+- 恢复配置：`sysupgrade -r /tmp/backup-*.tar.gz`
+
+**软件包冲突：**
+- 只是 `apk add` 单个软件包时冲突，很难自动解决
+- 更好的方式是用 Firmware Selector 预先配置好所有软件包
+- 然后刷新整个固件，这样依赖都是正确的
 
 ---
 
@@ -543,11 +860,58 @@ tar -czvf /tmp/backup.tar.gz /etc/config/
 OK，到这里你的新路由就配置得差不多了。从基础的网络设置，到WiFi配置，再到性能优化，基本覆盖了日常使用的所有方面。
 
 **快速回顾一下核心步骤：**
-1. ✅ 设置 LAN IP 并重启网络
-2. ✅ 检查无线硬件并安装驱动
-3. ✅ 配置2.4G和5G WiFi
-4. ✅ （可选）配置IPv6中继
-5. ✅ （推荐）启用流量分载
-6. ✅ 定期更新固件和软件包
+1. ✅ 设置 LAN IP、主机名和时区
+2. ✅ 备份配置（以防万一）
+3. ✅ 检查无线硬件并安装驱动
+4. ✅ 配置2.4G和5G WiFi（包含信道和频宽）
+5. ✅ （可选）配置IPv6中继
+6. ✅ （推荐）启用流量分载
+7. ✅ 系统升级（用官方推荐方式，不用 apk upgrade）
 
 有什么问题欢迎留言讨论。祝你使用愉快！🎉
+
+---
+
+## 快速命令速查表
+
+### WiFi 密码相关
+
+| 操作 | 命令 |
+|-----|------|
+| 查看 2.4G WiFi 密码 | `uci get wireless.default_radio0.key` |
+| 查看 5G WiFi 密码 | `uci get wireless.default_radio1.key` |
+| 查看所有 WiFi 密码 | `uci show wireless \| grep key` |
+| 修改 2.4G WiFi 密码 | `uci set wireless.default_radio0.key='NewPassword123'` |
+| 修改 5G WiFi 密码 | `uci set wireless.default_radio1.key='NewPassword123'` |
+| 应用密码更改 | `uci commit wireless && wifi reload` |
+
+### WiFi SSID（名称）相关
+
+| 操作 | 命令 |
+|-----|------|
+| 查看 2.4G WiFi 名称 | `uci get wireless.default_radio0.ssid` |
+| 查看 5G WiFi 名称 | `uci get wireless.default_radio1.ssid` |
+| 查看所有 WiFi 名称 | `uci show wireless \| grep ssid` |
+| 修改 2.4G WiFi 名称 | `uci set wireless.default_radio0.ssid='NewName'` |
+| 修改 5G WiFi 名称 | `uci set wireless.default_radio1.ssid='NewName'` |
+| 应用名称更改 | `uci commit wireless && wifi reload` |
+
+### WiFi 启用/禁用
+
+| 操作 | 命令 |
+|-----|------|
+| 启用 2.4G WiFi | `uci set wireless.default_radio0.disabled='0' && uci commit wireless && wifi reload` |
+| 启用 5G WiFi | `uci set wireless.default_radio1.disabled='0' && uci commit wireless && wifi reload` |
+| 禁用 2.4G WiFi | `uci set wireless.default_radio0.disabled='1' && uci commit wireless && wifi reload` |
+| 禁用 5G WiFi | `uci set wireless.default_radio1.disabled='1' && uci commit wireless && wifi reload` |
+| 重启所有 WiFi | `wifi reload` |
+
+### WiFi 状态检查
+
+| 操作 | 命令 |
+|-----|------|
+| 查看所有无线配置 | `uci show wireless` |
+| 查看 WiFi 设备状态 | `iw dev` |
+| 查看已连接客户端 | `iw dev wlan0 station dump` |
+| 查看 WiFi 日志 | `logread \| grep wireless` |
+| 查看物理层信息 | `iw phy phy0 info` |
