@@ -15,7 +15,7 @@ tags:
 
 ![TANTIV4 路由器拆机](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/openwrt/TANTIV4%2001.avif)
 
-这台 TANTIV4 路由器到我手里就已经刷好了 Breed，所以可以很方便刷各种固件，不担心变砖；需要注意的是， RESET 按钮不是位于路由器前方，这台路由器设计很奇怪，如果说天线的位置算后边的话，它的网口，电源接口都在前边，电源接口旁边还有个和 RESET 按钮一样的孔，但是不是，RESET 按钮位于左边的散热孔里。
+这台 TANTIV4 路由器到我手里就已经刷好了 Breed，所以可以很方便刷各种固件，不担心变砖；需要注意的是，刷机 RESET 按钮不是位于路由器前方，这台路由器设计很奇怪，如果说天线的位置算后边的话，它的网口，电源接口都在前边，电源接口旁边还有个和 RESET 按钮一样的孔，刷好友华 YouHua WR1200JS 的固件后，这个按钮是重置功能，刷机 RESET 按钮位于左边的散热孔里。
 
 ![TANTIV4 NSAC1200RZ 路由器](https://raw.githubusercontent.com/huijingfei/huijingfei.github.io/refs/heads/master/images/openwrt/TANTIV4%20NSAC1200RZ.webp)
 
@@ -38,7 +38,7 @@ Kwrt 默认自带 PassWall 插件，但是对于 TANTIV4 这样的配置来说�
 apk-mbedtls base-files ca-bundle dnsmasq dropbear firewall4 fstools kmod-crypto-hw-eip93 kmod-gpio-button-hotplug kmod-leds-gpio kmod-nft-offload libc libgcc libustream-mbedtls logd mtd netifd nftables odhcp6c odhcpd-ipv6only -ppp -ppp-mod-pppoe procd-ujail -uboot-envtools uci uclient-fetch urandom-seed urngd wpad-basic-mbedtls kmod-mt7603 kmod-mt76x2 -kmod-usb3 -kmod-usb-ledtrig-usbport -luci -luci-app-attendedsysupgrade -luci-base -uhttpd sing-box-tiny -rpcd-mod-luci
 ```
 
-然后点击“请求构建”，在线构建可以把 sing-box-tiny 写进只读压缩分区，有足够的空间下载规则文件；同时删除了 luci 界面包，pppoe 拨号相关包（这个配置就不要想光猫桥接了），USB 模块包，留着 luci 界面包也是可以的，会多占用大概 500kb 的空间。最后下载映像，刷机。
+然后点击“请求构建”，在线构建可以把 sing-box-tiny 写进只读压缩分区，有足够的空间下载规则文件；同时删除了 luci 界面包，pppoe 拨号相关包（这个配置就不要想光猫桥接了），USB 模块包，留着 luci 界面包也是可以的，会多占用大概 500kb 的空间。无 luci 界面配置路由器参考这篇文章 [OpenWRT 25.12 命令行完整配置指南](https://tigress.cc/2025/04/25/openwrt-opkg/)。
 
 为什么要使用在线构建可以把 sing-box-tiny 写进只读压缩分区？直接下载原版映像，空间不够安装 sing-box 包，更没有空间下载额外的规则文件。
 
