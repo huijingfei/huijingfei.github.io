@@ -87,6 +87,37 @@ uci commit system
 
 > **提示：** 使用 `zonename` 的标准值更准确（会自动处理夏令时等），推荐优先使用。
 
+### 设置 Root 密码（重要！用于 SSH 登陆）
+
+现在设置管理员密码，这样才能保护你的路由器安全。没有设置密码的话，任何人都能 SSH 连接上来。
+
+**方式一：直接设置密码（最简单）**
+
+```bash
+passwd
+```
+
+执行后会提示输入新密码，输入两次确认即可。
+
+**方式二：用命令设置密码（适合脚本自动化）**
+
+```bash
+# 方式 2a：使用 OpenWrt 内置的加密函数
+echo -e 'YourPassword123\nYourPassword123' | passwd
+
+# 方式 2b：直接设置哈希密码（需要先生成哈希值）
+# 先生成密码哈希
+HASH=$(openssl passwd -crypt 'YourPassword123')
+# 然后设置
+uci set system.@system[0].root_password="$HASH"
+uci commit system
+```
+
+> **⚠️ 重要提示：**
+> - 密码最好设置为 12 位以上，包含大小写字母、数字和符号
+> - 不要使用简单密码，否则容易被暴力破解
+> - 设置好后记住密码，忘记了找回会很麻烦
+
 ---
 
 ## 备份和恢复配置（重要！建议先做）
@@ -250,6 +281,58 @@ uci set wireless.radio1.htmode='VHT80'
 > - 信道 36-48 和 149-165 互不干扰，建议选其中之一
 > - VHT80（80MHz）最稳定，也能发挥 WiFi 5 的性能
 > - VHT160（160MHz）最快，但需要硬件支持且干扰敏感
+
+### WiFi 6（802.11ax）频宽设置
+
+如果你的路由器支持 WiFi 6，可以用下面的命令配置更高的频宽。WiFi 6 使用 `HE` 模式：
+
+```bash
+# WiFi 6 - 80MHz 频宽（推荐）
+uci set wireless.radio1.htmode='HE80'
+
+# WiFi 6 - 160MHz 频宽（更快但需要硬件支持）
+uci set wireless.radio1.htmode='HE160'
+
+# 应用配置
+uci commit wireless
+wifi reload
+```
+
+> **💡 WiFi 6 频宽说明：**
+> - `HE80` - 80MHz，最稳定，大多数 WiFi 6 设备都支持
+> - `HE160` - 160MHz，理论速度更快，但需要高端硬件和好的环境
+
+### WiFi 7（802.11be）频宽设置
+
+如果你有最新的支持 WiFi 7 的路由器，可以用下面的命令配置。WiFi 7 使用 `EHT` 模式：
+
+```bash
+# WiFi 7 - 80MHz 频宽
+uci set wireless.radio1.htmode='EHT80'
+
+# WiFi 7 - 160MHz 频宽（推荐）
+uci set wireless.radio1.htmode='EHT160'
+
+# WiFi 7 - 320MHz 频宽（最快！但需要最新硬件和好的环境）
+uci set wireless.radio1.htmode='EHT320'
+
+# 应用配置
+uci commit wireless
+wifi reload
+```
+
+> **💡 WiFi 7 频宽说明：**
+> - `EHT80` - 80MHz，最稳定
+> - `EHT160` - 160MHz，性能和稳定性的平衡点
+> - `EHT320` - 320MHz，最快，理论速度可达 46Gbps，但需要极好的环境和最新的设备支持
+
+**WiFi 标准频宽对比表：**
+
+| WiFi 标准 | 模式代码 | 80MHz | 160MHz | 320MHz |
+|---------|--------|-------|--------|--------|
+| WiFi 5 (802.11ac) | `VHT` | ✅ VHT80 | ✅ VHT160 | ❌ 不支持 |
+| WiFi 6 (802.11ax) | `HE` | ✅ HE80 | ✅ HE160 | ❌ 不支持 |
+| WiFi 7 (802.11be) | `EHT` | ✅ EHT80 | ✅ EHT160 | ✅ EHT320 |
 
 ### 一次性应用所有WiFi配置
 
@@ -802,6 +885,144 @@ tar -czvf /tmp/backup.tar.gz /etc/config/
 
 然后把备份文件下载到你的电脑上保存。
 
+---
+
+## 🔐 忘记 Root 密码的找回方法
+
+如果不幸忘记了 root 密码，别急，有办法找回。下面介绍几种常见的恢复方法。
+
+### 方法一：Failsafe Mode（推荐 - 最简单）
+
+Failsafe Mode 是 OpenWRT 的安全模式，在这个模式下可以不需要密码重置配置。
+
+**步骤：**
+
+1. **进入 Failsafe Mode**
+   - 开启路由器
+   - 在启动过程中（通常前 3-5 秒），按住重置按钮（Reset）
+   - 看到 LED 灯闪烁或变色（通常是绿色/红色交替闪烁），说明进入了 Failsafe Mode
+   - 释放按钮
+
+2. **连接到路由器**
+   ```bash
+   # 路由器会启用 TFTP 和 telnet 服务
+   # Failsafe Mode 下 root 没有密码，可以直接登陆
+   telnet 192.168.1.1
+   ```
+
+3. **重置密码**
+   ```bash
+   # 在 Failsafe Mode 中执行重置
+   passwd root
+   ```
+
+4. **重启路由器**
+   ```bash
+   reboot
+   ```
+
+5. **用新密码登陆**
+   ```bash
+   ssh root@192.168.1.1
+   ```
+
+> **💡 提示：** 不同的路由器进入 Failsafe 的方法可能不同。有些是长按 Reset，有些是在启动时快速按多次。查阅你的设备文档。
+
+### 方法二：Web 界面重置（如果还能访问 LuCI）
+
+如果你还记得 WiFi 密码但忘记了 SSH 密码，可以试试通过 Web 界面：
+
+1. **打开 LuCI 网页界面**
+   ```
+   http://192.168.1.1/
+   ```
+
+2. **系统 → 管理员密码**
+   - 点击"设置管理员密码"
+   - 输入新密码
+   - 保存
+
+3. **用新密码 SSH 登陆**
+   ```bash
+   ssh root@192.168.1.1
+   ```
+
+### 方法三：Serial Console（需要技术）
+
+如果硬件支持，可以通过 Serial 串口连接重置密码。这需要：
+- USB 转串口适配器
+- 杜邦线
+- 对硬件有基本了解
+
+**步骤（仅供参考）：**
+
+1. 打开路由器外壳，找到 Serial 接口（通常是 4 个孔）
+2. 用 USB 串口线连接到电脑
+3. 用串口终端工具（putty、minicom 等）连接
+   ```bash
+   # Linux/Mac
+   minicom -D /dev/ttyUSB0 -b 115200
+   
+   # Windows 用 PuTTY
+   ```
+4. 重启路由器，进入 U-Boot 菜单
+5. 在 U-Boot 中可以执行命令重置系统
+
+> **⚠️ 警告：** Serial console 方式技术难度大，容易损坏硬件，不建议新手尝试。
+
+### 方法四：刷机恢复
+
+最终手段：重新刷固件。这会清除所有设置但能恢复访问权限。
+
+1. **从官方网站下载固件**
+   ```
+   https://firmware.download.openwrt.org/
+   ```
+
+2. **进入 Failsafe Mode**（参考方法一）
+
+3. **用 TFTP 上传固件**
+   ```bash
+   # Linux/Mac
+   tftp 192.168.1.1
+   > binary
+   > put firmware-sysupgrade.bin
+   > quit
+   ```
+
+4. **等待路由器重启**
+   - 刷机通常需要 3-5 分钟
+   - 完成后用默认密码登陆（通常是无密码或 "admin"）
+
+> **⚠️ 注意：** 刷机会清除所有自定义配置，包括 WiFi 设置等。之后需要重新配置。
+
+### 预防措施
+
+**防止再忘记密码：**
+
+1. **设置强密码并记录**
+   ```bash
+   # 建议用密码管理器（LastPass、1Password 等）保存
+   passwd root
+   ```
+
+2. **定期备份配置**
+   ```bash
+   ssh root@192.168.1.1 "sysupgrade -b -" > backup-$(date +%Y-%m-%d).tar.gz
+   ```
+
+3. **在纸上记录密码并保存在安全地方**
+   - 不要贴在路由器上
+   - 不要存在不安全的地方
+
+4. **启用 SSH 密钥认证（可选）**
+   ```bash
+   # 这样就不用记密码，用密钥登陆
+   ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.1.1
+   ```
+
+---
+
 ### 解决常见问题
 
 **空间不足：**
@@ -915,3 +1136,40 @@ OK，到这里你的新路由就配置得差不多了。从基础的网络设置
 | 查看已连接客户端 | `iw dev wlan0 station dump` |
 | 查看 WiFi 日志 | `logread \| grep wireless` |
 | 查看物理层信息 | `iw phy phy0 info` |
+
+### 频宽设置速查
+
+| WiFi 标准 | 80MHz | 160MHz | 320MHz |
+|---------|-------|--------|--------|
+| WiFi 5 (VHT) | `VHT80` | `VHT160` | ❌ 不支持 |
+| WiFi 6 (HE) | `HE80` | `HE160` | ❌ 不支持 |
+| WiFi 7 (EHT) | `EHT80` | `EHT160` | `EHT320` |
+
+**设置命令示例：**
+```bash
+# WiFi 5
+uci set wireless.radio1.htmode='VHT80'
+
+# WiFi 6
+uci set wireless.radio1.htmode='HE80'
+
+# WiFi 7
+uci set wireless.radio1.htmode='EHT160'
+
+# 应用配置
+uci commit wireless && wifi reload
+```
+
+### Root 密码相关
+
+| 操作 | 命令 |
+|-----|------|
+| 设置 root 密码 | `passwd` |
+| 查看当前用户 | `whoami` |
+| 修改用户信息 | `usermod -c '名称' root` |
+
+**忘记 root 密码的恢复方式：**
+1. ✅ **Failsafe Mode**（最简单）- 按 Reset 进入安全模式
+2. ✅ **Web 界面**（如果能访问 LuCI）- 在网页上重置密码
+3. ⚡ **Serial Console**（技术难度大）- 用串口工具
+4. 🔧 **刷机恢复**（最终手段）- 重新刷固件
