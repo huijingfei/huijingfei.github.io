@@ -96,6 +96,7 @@ vi /etc/sing-box/config.json
           "ip.sb",
           "accuweather.com",
           "aviationweather.gov",
+          "edu.cn",
           "edu.kg",
           "hdcdn.online",
           "localsend.org",
@@ -123,7 +124,7 @@ vi /etc/sing-box/config.json
         "action": "reject"
       },
       {
-        "domain_keyword": ["pangolin", "pglstatp"],
+        "domain_keyword": ["gdtimg", "pangolin", "pglstatp"],
         "domain_suffix": [
           "ad.10010.com",
           "ads.cup.com.cn",
@@ -132,6 +133,8 @@ vi /etc/sing-box/config.json
           "bootrealtime.uve.weibo.com",
           "brandvideo.biz.weibo.com",
           "dsp-ad.yy.com",
+          "e.qq.com",
+          "gdt.qq.com",
           "splash.yy.com"
         ],
         "server": "reject"
@@ -160,7 +163,7 @@ vi /etc/sing-box/config.json
         "server": "dns-direct"
       }
     ],
-    "strategy": "ipv4_only",
+    "strategy": "prefer_ipv6",
     "disable_cache": false,
     "disable_expire": false,
     "independent_cache": true,
@@ -180,7 +183,11 @@ vi /etc/sing-box/config.json
       "strict_route": false,
       "stack": "system",
       "sniff": true,
-      "route_exclude_address": ["127.0.0.1/32"],
+      "route_exclude_address": [
+        "127.0.0.0/8",
+        "::1/128",
+        "fe80::/10"
+      ],
       "exclude_interface": [
         "wan"
       ]
@@ -209,7 +216,8 @@ vi /etc/sing-box/config.json
     }
   ],
   "route": {
-    "auto_detect_interface": true,
+    "auto_detect_interface": false,
+    "default_interface": "wan",
     "default_domain_resolver": "dns-direct",
     "rules": [
       {
@@ -235,6 +243,7 @@ vi /etc/sing-box/config.json
           "ip.sb",
           "accuweather.com",
           "aviationweather.gov",
+          "edu.cn",
           "edu.kg",
           "hdcdn.online",
           "localsend.org",
@@ -264,6 +273,7 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_keyword": [
+          "gdtimg",
           "pangolin",
           "pglstatp"
         ],
@@ -275,6 +285,8 @@ vi /etc/sing-box/config.json
           "bootrealtime.uve.weibo.com",
           "brandvideo.biz.weibo.com",
           "dsp-ad.yy.com",
+          "e.qq.com",
+          "gdt.qq.com",
           "smartad.10010.com",
           "splash.yy.com"
         ],
@@ -293,17 +305,17 @@ vi /etc/sing-box/config.json
       {
         "rule_set": [
           "geosite-cn",
-          "geosite-bytedance",
-          "geosite-cloudflare",
-          "geosite-vk",
-          "geosite-yandex",
           "geosite-akamai",
           "geosite-amazon",
           "geosite-apple",
+          "geosite-bytedance",
+          "geosite-cloudflare",
           "geosite-fastly",
           "geosite-jsdelivr",
           "geosite-microsoft",
           "geosite-mozilla",
+          "geosite-vk",
+          "geosite-yandex",
           "geosite-category-games"
         ],
         "outbound": "direct-out"
@@ -317,12 +329,14 @@ vi /etc/sing-box/config.json
         "outbound": "direct-out"
       },
       {
-        "ip_cidr": ["8.219.1.15/32", "47.245.124.74/32", "129.146.74.49/32"],
+        "ip_cidr": [
+          "8.219.1.15/32",
+          "47.245.124.74/32"
+        ],
         "outbound": "direct-out"
       }
     ],
     "rule_set": [
-      {"tag": "geosite-category-ads", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ads.srs"},
       {"tag": "geosite-github", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-github.srs"},
       {"tag": "geosite-google", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-google.srs"},
       {"tag": "geosite-linkedin", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-linkedin.srs"},
@@ -331,8 +345,6 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cn.srs"},
       {"tag": "geosite-bytedance", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-bytedance.srs"},
       {"tag": "geosite-cloudflare", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cloudflare.srs"},
-      {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
-      {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
       {"tag": "geosite-akamai", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-akamai.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
@@ -340,6 +352,9 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-jsdelivr", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-jsdelivr.srs"},
       {"tag": "geosite-microsoft", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-microsoft.srs"},
       {"tag": "geosite-mozilla", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-mozilla.srs"},
+      {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
+      {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
+      {"tag": "geosite-category-ads", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ads.srs"},
       {"tag": "geosite-category-games", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-games.srs"},
       {"tag": "geoip-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geoip-cn.srs"},
       {"tag": "geoip-hk", "type": "local", "format": "binary", "path": "/etc/sing-box/geoip-hk.srs"},
