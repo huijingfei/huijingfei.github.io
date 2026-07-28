@@ -84,6 +84,7 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "addons.mozilla.org",
           "analytics.google.com",
+          "claude.ai",
           "onedrive.live.com",
           "primevideo.com",
           "steamcommunity.com",
@@ -93,12 +94,15 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
-          "ip.sb",
           "accuweather.com",
+          "amemv.com",
           "aviationweather.gov",
+          "bdurl.net",
+          "ecombdapi.com",
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
+          "ip.sb",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
@@ -106,6 +110,7 @@ vi /etc/sing-box/config.json
           "met.no",
           "openweathermap.org",
           "rustdesk.com",
+          "snssdk.com",
           "tigress.cc",
           "xzmgo.com",
           "bjxuejing.cn",
@@ -152,6 +157,7 @@ vi /etc/sing-box/config.json
       {
         "rule_set": [
           "geosite-cn",
+          "geosite-alibaba",
           "geosite-amazon",
           "geosite-apple",
           "geosite-bytedance",
@@ -201,16 +207,16 @@ vi /etc/sing-box/config.json
     {
       "type": "anytls",
       "tag": "proxy",
-      "server": "服务器ip",
-      "server_port": 端口,
-      "password": "uuid",
+      "server": "129.146.74.49",
+      "server_port": 60062,
+      "password": "695dddfb-8374-4ef5-9eea-2e589a310106",
       "idle_session_check_interval": "30s",
       "idle_session_timeout": "30s",
       "min_idle_session": 0,
       "domain_resolver": "dns-direct",
       "tls": {
         "enabled": true,
-        "server_name": "域名",
+        "server_name": "tv.apple.com",
         "insecure": true
       }
     }
@@ -231,6 +237,7 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "addons.mozilla.org",
           "analytics.google.com",
+          "claude.ai",
           "onedrive.live.com",
           "primevideo.com",
           "steamcommunity.com",
@@ -240,12 +247,15 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
-          "ip.sb",
           "accuweather.com",
+          "amemv.com",
           "aviationweather.gov",
+          "bdurl.net",
+          "ecombdapi.com",
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
+          "ip.sb",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
@@ -253,7 +263,7 @@ vi /etc/sing-box/config.json
           "met.no",
           "openweathermap.org",
           "rustdesk.com",
-          "vivaldi.net",
+          "snssdk.com",
           "tigress.cc",
           "xzmgo.com",
           "bjxuejing.cn",
@@ -306,6 +316,7 @@ vi /etc/sing-box/config.json
         "rule_set": [
           "geosite-cn",
           "geosite-akamai",
+          "geosite-alibaba",
           "geosite-amazon",
           "geosite-apple",
           "geosite-bytedance",
@@ -315,7 +326,6 @@ vi /etc/sing-box/config.json
           "geosite-microsoft",
           "geosite-mozilla",
           "geosite-vk",
-          "geosite-yandex",
           "geosite-category-games"
         ],
         "outbound": "direct-out"
@@ -346,6 +356,7 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-bytedance", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-bytedance.srs"},
       {"tag": "geosite-cloudflare", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cloudflare.srs"},
       {"tag": "geosite-akamai", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-akamai.srs"},
+      {"tag": "geosite-alibaba", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-alibaba.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
       {"tag": "geosite-fastly", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-fastly.srs"},
@@ -353,7 +364,6 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-microsoft", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-microsoft.srs"},
       {"tag": "geosite-mozilla", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-mozilla.srs"},
       {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
-      {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
       {"tag": "geosite-category-ads", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ads.srs"},
       {"tag": "geosite-category-games", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-games.srs"},
       {"tag": "geoip-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geoip-cn.srs"},
@@ -365,7 +375,7 @@ vi /etc/sing-box/config.json
 }
 ```
 
-这里使用的是 Anytls 模板，需要使用其他类型节点，请自行配置。国内网站直连，DNS 使用光猫的 192.168.1.1，国外网站走代理，解析用的是 cloudflare 的 h3 DNS。
+这里使用的是 Anytls 模板，需要使用其他类型节点，请自行配置。国内网站直连，DNS 使用光猫的 192.168.1.1，国外网站走代理，解析用的是 cloudflare 的 h3 DNS。默认上网接口是 wan 口，如果需要旁路由模式，"auto_detect_interface": false, 把这个选项改为 true，删掉这一行 "default_interface": "wan"，或者手动指定 default_interface 为 lan1 等其他口。
 
 # 规则文件下载
 
@@ -377,6 +387,7 @@ cd /etc/sing-box/
 ```
 for file in \
 geosite-akamai.srs \
+geosite-alibaba.srs \
 geosite-amazon.srs \
 geosite-apple.srs \
 geosite-bytedance.srs \
@@ -393,8 +404,7 @@ geosite-meta.srs \
 geosite-microsoft.srs \
 geosite-mozilla.srs \
 geosite-tiktok.srs \
-geosite-vk.srs \
-geosite-yandex.srs; do
+geosite-vk.srs; do
     wget "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/$file"
 done
 ```
