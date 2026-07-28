@@ -422,6 +422,21 @@ wget https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-se
 ```
 for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geoip/$file"; done
 ```
+**或者直接从 lyc8503 仓库下载所有规则文件**
+
+下载 geosite 文件
+```
+for name in akamai alibaba amazon apple bytedance category-ads category-games cloudflare cn fastly github google jsdelivr linkedin meta microsoft mozilla tiktok vk; do
+    wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
+done
+```
+
+下载 geoip 文件
+```
+for name in cn hk private; do
+    wget -O "geoip-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geoip/geoip-$name.srs"
+done
+```
 
 如果说因为网络原因路由器无法下载这些文件，电脑有科学网络的情况下，先下载到电脑上然后传到路由器；光猫地址基本都是 192.168.1.1，你的路由器地址要改为 192.168.1.2 等其他地址。
 ```
