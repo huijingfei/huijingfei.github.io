@@ -207,16 +207,16 @@ vi /etc/sing-box/config.json
     {
       "type": "anytls",
       "tag": "proxy",
-      "server": "129.146.74.49",
-      "server_port": 60062,
-      "password": "695dddfb-8374-4ef5-9eea-2e589a310106",
+      "server": "服务器地址",
+      "server_port": 端口,
+      "password": "uuid",
       "idle_session_check_interval": "30s",
       "idle_session_timeout": "30s",
       "min_idle_session": 0,
       "domain_resolver": "dns-direct",
       "tls": {
         "enabled": true,
-        "server_name": "tv.apple.com",
+        "server_name": "域名",
         "insecure": true
       }
     }
