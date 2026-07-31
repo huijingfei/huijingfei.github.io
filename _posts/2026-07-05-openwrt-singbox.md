@@ -71,7 +71,8 @@ vi /etc/sing-box/config.json
         "server_port": 443,
         "path": "/dns-query",
         "tls": {
-          "enabled": true
+          "enabled": true,
+          "server_name": "cloudflare-dns.com"
         },
         "domain_resolver": {
           "server": "dns-direct"
@@ -84,7 +85,6 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "addons.mozilla.org",
           "analytics.google.com",
-          "claude.ai",
           "onedrive.live.com",
           "primevideo.com",
           "steamcommunity.com",
@@ -102,7 +102,6 @@ vi /etc/sing-box/config.json
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
-          "ip.sb",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
@@ -179,7 +178,6 @@ vi /etc/sing-box/config.json
     "strategy": "prefer_ipv6",
     "disable_cache": false,
     "disable_expire": false,
-    "independent_cache": true,
     "final": "dns-remote"
   },
   "inbounds": [
@@ -244,7 +242,6 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "addons.mozilla.org",
           "analytics.google.com",
-          "claude.ai",
           "onedrive.live.com",
           "primevideo.com",
           "steamcommunity.com",
@@ -262,7 +259,6 @@ vi /etc/sing-box/config.json
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
-          "ip.sb",
           "localsend.org",
           "made-in-china.com",
           "micstatic.com",
@@ -311,6 +307,7 @@ vi /etc/sing-box/config.json
       },
       {
         "rule_set": [
+          "geosite-anthropic",
           "geosite-github",
           "geosite-google",
           "geosite-linkedin",
