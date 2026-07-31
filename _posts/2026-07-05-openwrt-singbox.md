@@ -148,11 +148,18 @@ vi /etc/sing-box/config.json
         "rule_set": [
           "geosite-google",
           "geosite-github",
-          "geosite-linkedin",
           "geosite-meta",
           "geosite-tiktok"
         ],
         "server": "dns-remote"
+      },
+      {
+        "rule_set": [
+          "geosite-linkedin",
+          "geosite-anthropic"
+        ],
+        "server": "dns-remote",
+        "strategy": "ipv4_only"
       },
       {
         "rule_set": [
@@ -358,6 +365,7 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-akamai", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-akamai.srs"},
       {"tag": "geosite-alibaba", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-alibaba.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
+      {"tag": "geosite-anthropic", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-anthropic.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
       {"tag": "geosite-fastly", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-fastly.srs"},
       {"tag": "geosite-jsdelivr", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-jsdelivr.srs"},
@@ -389,6 +397,7 @@ for file in \
 geosite-akamai.srs \
 geosite-alibaba.srs \
 geosite-amazon.srs \
+geosite-anthropic.srs \
 geosite-apple.srs \
 geosite-bytedance.srs \
 geosite-category-ads.srs \
@@ -426,7 +435,7 @@ for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.gi
 
 下载 geosite 文件
 ```
-for name in akamai alibaba amazon apple bytedance category-ads category-games cloudflare cn fastly github google jsdelivr linkedin meta microsoft mozilla tiktok vk; do
+for name in akamai alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn fastly github google jsdelivr linkedin meta microsoft mozilla tiktok vk; do
     wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
 done
 ```
