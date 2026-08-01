@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 16M 小闪存（Flash）MT7621A 芯片路由器安装 sing-box 透明代理
-subtitle: 老型号低配置路由器安装使用科学上网插件
+subtitle: 老型号低配置路由器安装使用科学上网翻墙插件
 tags:
     - OpenWRT
 ---
@@ -94,10 +94,12 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
+          "5idhl.com",
           "accuweather.com",
           "amemv.com",
           "aviationweather.gov",
           "bdurl.net",
+          "cndhl.com",
           "ecombdapi.com",
           "edu.cn",
           "edu.kg",
@@ -163,6 +165,7 @@ vi /etc/sing-box/config.json
       {
         "rule_set": [
           "geosite-cn",
+          "geosite-akamai",
           "geosite-alibaba",
           "geosite-amazon",
           "geosite-apple",
@@ -170,7 +173,8 @@ vi /etc/sing-box/config.json
           "geosite-fastly",
           "geosite-jsdelivr",
           "geosite-microsoft",
-          "geosite-mozilla"
+          "geosite-mozilla",
+          "geosite-vk"
         ],
         "server": "dns-direct"
       }
@@ -178,6 +182,7 @@ vi /etc/sing-box/config.json
     "strategy": "prefer_ipv6",
     "disable_cache": false,
     "disable_expire": false,
+    "cache_capacity": 1000,
     "final": "dns-remote"
   },
   "inbounds": [
@@ -191,7 +196,7 @@ vi /etc/sing-box/config.json
       "mtu": 1500,
       "auto_route": true,
       "auto_redirect": true,
-      "strict_route": false,
+      "strict_route": true,
       "stack": "system",
       "sniff": true,
       "route_exclude_address": [
@@ -212,7 +217,7 @@ vi /etc/sing-box/config.json
     {
       "type": "anytls",
       "tag": "proxy",
-      "server": "服务器地址",
+      "server": "服务器ip",
       "server_port": 端口,
       "password": "uuid",
       "idle_session_check_interval": "30s",
@@ -307,7 +312,6 @@ vi /etc/sing-box/config.json
       },
       {
         "rule_set": [
-          "geosite-anthropic",
           "geosite-github",
           "geosite-google",
           "geosite-linkedin",
