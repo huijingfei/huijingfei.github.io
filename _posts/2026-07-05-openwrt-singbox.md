@@ -393,7 +393,7 @@ cd /etc/sing-box/
 ```
 然后使用以下命令下载需要的规则文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk; do
+for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla sina tiktok vk; do
     wget -O "$name.srs" "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-$name.srs"
 done
 ```
@@ -415,7 +415,7 @@ for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.gi
 
 下载 geosite 文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk; do
+for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla sina tiktok vk; do
     wget -O "$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
 done
 ```
