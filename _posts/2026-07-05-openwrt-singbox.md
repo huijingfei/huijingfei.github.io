@@ -96,11 +96,9 @@ vi /etc/sing-box/config.json
         "domain_suffix": [
           "5idhl.com",
           "accuweather.com",
-          "amemv.com",
           "aviationweather.gov",
           "bdurl.net",
           "cndhl.com",
-          "ecombdapi.com",
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
@@ -122,7 +120,7 @@ vi /etc/sing-box/config.json
         "domain_keyword": [
           "byte",
           "douyin",
-          "jsdelivr"
+          "ecombd"
         ],
         "server": "dns-direct"
       },
@@ -166,14 +164,12 @@ vi /etc/sing-box/config.json
       {
         "rule_set": [
           "geosite-cn",
-          "geosite-alibaba",
           "geosite-amazon",
           "geosite-apple",
-          "geosite-bytedance",
           "geosite-microsoft",
           "geosite-mozilla",
-          "geosite-sina",
           "geosite-vk",
+          "geosite-yandex",
           "geosite-category-cdn-!cn"
         ],
         "server": "dns-direct"
@@ -256,11 +252,11 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
+          "5idhl.com",
           "accuweather.com",
-          "amemv.com",
           "aviationweather.gov",
           "bdurl.net",
-          "ecombdapi.com",
+          "cndhl.com",
           "edu.cn",
           "edu.kg",
           "hdcdn.online",
@@ -282,7 +278,7 @@ vi /etc/sing-box/config.json
         "domain_keyword": [
           "byte",
           "douyin",
-          "jsdelivr"
+          "ecombd"
         ],
         "outbound": "direct-out"
       },
@@ -324,15 +320,13 @@ vi /etc/sing-box/config.json
       {
         "rule_set": [
           "geosite-cn",
-          "geosite-alibaba",
           "geosite-amazon",
           "geosite-apple",
-          "geosite-bytedance",
           "geosite-cloudflare",
           "geosite-microsoft",
           "geosite-mozilla",
-          "geosite-sina",
           "geosite-vk",
+          "geosite-yandex",
           "geosite-category-cdn-!cn",
           "geosite-category-games"
         ],
@@ -361,16 +355,14 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-meta", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-meta.srs"},
       {"tag": "geosite-tiktok", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-tiktok.srs"},
       {"tag": "geosite-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cn.srs"},
-      {"tag": "geosite-bytedance", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-bytedance.srs"},
       {"tag": "geosite-cloudflare", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cloudflare.srs"},
-      {"tag": "geosite-alibaba", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-alibaba.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
       {"tag": "geosite-anthropic", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-anthropic.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
       {"tag": "geosite-microsoft", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-microsoft.srs"},
       {"tag": "geosite-mozilla", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-mozilla.srs"},
-      {"tag": "geosite-sina", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-sina.srs"},
       {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
+      {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
       {"tag": "geosite-category-ads", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ads.srs"},
       {"tag": "geosite-category-cdn-!cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-cdn-!cn.srs"},
       {"tag": "geosite-category-games", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-games.srs"},
@@ -393,8 +385,8 @@ cd /etc/sing-box/
 ```
 然后使用以下命令下载需要的规则文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla sina tiktok vk; do
-    wget -O "$name.srs" "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-$name.srs"
+for name in 'category-cdn-!cn' alibaba amazon anthropic apple category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk yandex; do
+    wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-$name.srs"
 done
 ```
 以上内容是从 sing-box 官方仓库下载的规则文件，geosite-cn.srs 大概有 50kb 左右。这里建议以上命令中去掉 cn 这个文件，下载增强版的规则文件。
@@ -415,8 +407,8 @@ for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.gi
 
 下载 geosite 文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple bytedance category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla sina tiktok vk; do
-    wget -O "$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
+for name in 'category-cdn-!cn' alibaba amazon anthropic apple category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk yandex; do
+    wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
 done
 ```
 
