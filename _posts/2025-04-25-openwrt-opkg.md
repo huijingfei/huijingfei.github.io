@@ -118,6 +118,186 @@ uci commit system
 > - 不要使用简单密码，否则容易被暴力破解
 > - 设置好后记住密码，忘记了找回会很麻烦
 
+### 设置系统日志大小
+
+OpenWRT 的日志**默认写到内存里**，而不是闪存。这样可以避免频繁写入闪存导致硬件磨损。如果你的路由器内存有限，可以限制日志的大小。这里设置日志最多占用 8KB 内存空间：
+
+```bash
+# 设置日志大小为 8KB（8 × 1024 字节，写到内存中）
+uci set system.@system[0].log_size='8'
+
+# 如果想要更大的日志（比如 16KB）
+# uci set system.@system[0].log_size='16'
+
+# 如果想要很小的日志以节省内存（比如 4KB）
+# uci set system.@system[0].log_size='4'
+
+# 提交配置
+uci commit system
+
+# 重启日志服务使配置生效
+/etc/init.d/log restart
+
+# 查看日志内容验证
+logread | head
+```
+
+> **💡 日志大小建议（单位：KB，写到内存）：**
+> - `8` - 默认推荐，占用 8KB 内存，适合大多数路由器
+> - `16` - 占用 16KB 内存，想保留更多日志的选择
+> - `4` - 占用 4KB 内存，内存极其有限的路由器
+> - `32` - 占用 32KB 内存，需要详细日志记录的选择
+>
+> **重要提示：** 日志写到内存中，重启路由器后日志会丢失。这是为了保护闪存不被频繁写入。
+
+**查看当前日志大小设置：**
+```bash
+# 查看日志大小设置
+uci get system.@system[0].log_size
+
+# 查看当前日志内容
+logread
+
+# 只看日志的最后 10 行
+logread | tail -10
+
+# 看日志的最前 10 行
+logread | head -10
+
+# 查看日志文件位置（内存中）
+ls -lh /var/log/
+```
+
+### 设置 NTP 时间服务器
+
+互联网上有很多 NTP 服务器可以为路由器提供准确的时间。设置多个服务器可以提高可靠性（主服务器故障时自动切换到备用）。
+
+**设置 NTP 服务器列表（正确方式）：**
+
+```bash
+# 方式一：删除旧配置后逐个添加（推荐，完全替换）
+# 1. 先删除原有的 NTP 服务器列表
+uci delete system.ntp.server
+
+# 2. 逐个添加新的 NTP 服务器（使用 add_list）
+uci add_list system.ntp.server='0.openwrt.pool.ntp.org'
+uci add_list system.ntp.server='ntp.aliyun.com'
+uci add_list system.ntp.server='time.google.com'
+uci add_list system.ntp.server='time.cloudflare.com'
+
+# 3. 提交配置
+uci commit system
+
+# 4. 重启时间服务
+/etc/init.d/sysntpd restart
+```
+
+> **⚠️ 重要提示：** `uci set` 命令**不支持**在一行中设置多个列表值，必须使用 `uci add_list` 命令逐个添加。
+>
+> **为什么要用 `add_list`？**
+> - `uci set` 只能设置单个值（标量）
+> - `uci add_list` 用于列表类型的配置项（可以有多个值）
+> - NTP 服务器列表就是这样的列表类型
+> - 如果直接用 `set` 传入多个值会报错："Usage: uci..."
+>
+> **三种 UCI 命令的使用场景：**
+> - `uci set` - 设置单个值（如主机名、日志大小等）
+> - `uci add_list` - 添加到列表（如 NTP 服务器列表、防火墙规则等）
+> - `uci delete` - 删除配置（删除单个值或整个列表）
+
+> **💡 NTP 服务器说明：**
+> - `0.openwrt.pool.ntp.org` - OpenWRT 官方推荐，国际通用
+> - `ntp.aliyun.com` - 阿里云 NTP，国内速度快
+> - `time.google.com` - Google 时间服务，可靠性高
+> - `time.cloudflare.com` - Cloudflare 时间服务，也很稳定
+
+**其他常用的 NTP 服务器：**
+
+| 服务商 | 服务器地址 | 区域 |
+|--------|-----------|------|
+| **OpenWRT** | `0.openwrt.pool.ntp.org` 到 `3.openwrt.pool.ntp.org` | 国际 |
+| **中国（阿里云）** | `ntp.aliyun.com` | 国内 |
+| **中国（腾讯云）** | `time1.cloud.tencent.com` | 国内 |
+| **中国（华为云）** | `ntsc1.aliyun.com` | 国内 |
+| **Google** | `time.google.com` | 国际 |
+| **Cloudflare** | `time.cloudflare.com` | 国际 |
+| **NTP Pool（全球）** | `pool.ntp.org` | 国际 |
+| **Apple** | `time.apple.com` | 国际 |
+| **Microsoft** | `time.windows.com` | 国际 |
+
+**只设置单个 NTP 服务器：**
+
+如果你只想使用一个服务器（比如国内的阿里云）：
+
+```bash
+# 1. 先删除原有的 NTP 服务器列表
+uci delete system.ntp.server
+
+# 2. 添加单个 NTP 服务器
+uci add_list system.ntp.server='ntp.aliyun.com'
+
+# 3. 提交配置
+uci commit system
+
+# 4. 重启时间服务
+/etc/init.d/sysntpd restart
+```
+
+**简化写法（如果只有一个服务器，也可以用 set）：**
+
+```bash
+# 这种方式对单个值可行
+uci set system.ntp.server='ntp.aliyun.com'
+uci commit system
+/etc/init.d/sysntpd restart
+```
+
+**查看当前 NTP 配置和系统时间：**
+
+```bash
+# 查看 NTP 服务器设置
+uci get system.ntp.server
+
+# 查看 NTP 服务状态
+/etc/init.d/sysntpd status
+
+# 查看系统当前时间（格式：年月日 时:分:秒）
+date
+
+# 查看更详细的时间信息
+date '+%Y-%m-%d %H:%M:%S %Z'
+
+# 查看时间戳（秒数）
+date +%s
+```
+
+### 手动设置系统时间
+
+如果 NTP 无法同步或你需要临时修改时间，可以手动设置：
+
+```bash
+# 方式一：直接设置时间（格式：YYYY-MM-DD HH:MM:SS）
+date -s "2026-07-23 14:30:00"
+
+# 方式二：设置时间戳（秒数）
+date -s @1689079800
+
+# 方式三：只改变小时和分钟（保持日期不变）
+# 设置为 14:30:00
+date -s "14:30:00"
+```
+
+> **⚠️ 手动设置时间提示：**
+> - 手动设置的时间不会被保存到硬件时钟（RTC），重启后会重置
+> - 设置时间后，让 NTP 自动同步到准确的时间
+> - 建议用 NTP 自动同步而不是手动设置
+
+> **⚠️ NTP 同步提示：**
+> - NTP 同步通常需要 30-60 秒
+> - 如果时间差异很大（超过一小时），NTP 可能无法同步
+> - **解决方案：** 先用 `date -s` 手动设置一个接近的时间，再让 NTP 精确同步
+> - 如果还是无法同步，检查网络连接：`ping time.google.com`
+
 ---
 
 ## 备份和恢复配置（重要！建议先做）
@@ -1064,6 +1244,43 @@ wifi reload
 # 然后重新按上面的步骤配置WiFi
 ```
 
+**系统日志满了或占用过多空间：**
+- 检查日志大小（单位：KB）：`uci get system.@system[0].log_size`
+- 减小日志大小为 4KB：`uci set system.@system[0].log_size='4' && uci commit system && /etc/init.d/log restart`
+- 清除旧日志：`logrotate -f /etc/logrotate.d/logrotate`
+- 查看日志文件位置和大小：`ls -lh /var/log/`
+- 查看当前日志内容：`logread | head -20`
+
+**NTP 时间同步失败或时间不对：**
+- 检查 NTP 服务器设置：`uci get system.ntp.server`
+- 重启 NTP 服务：`/etc/init.d/sysntpd restart`
+- 查看 NTP 状态：`/etc/init.d/sysntpd status`
+- 查看当前时间：`date`
+- 查看更详细时间：`date '+%Y-%m-%d %H:%M:%S %Z'`
+- 手动设置时间（方式一）：`date -s "2026-07-23 14:30:00"`
+- 手动设置时间（方式二）：`date -s @1689079800`
+- 检查网络连接：`ping time.google.com`
+- 查看 NTP 日志：`logread | grep ntp`
+
+**NTP 同步提示和解决方案：**
+- 如果时间差异太大（超过 1 小时），NTP 可能拒绝同步
+- **完整解决方案：**
+  1. 先用 `date -s "2026-07-23 14:30:00"` 手动设置一个接近的时间
+  2. 然后重启 NTP 服务：`/etc/init.d/sysntpd restart`
+  3. 等待 30-60 秒，让 NTP 精确同步
+  4. 用 `date` 验证时间是否已同步
+- NTP 同步通常需要 30-60 秒才能完成
+- 如果设置时间后还是无法同步，检查网络和 NTP 服务器可用性
+
+**系统时间经常重置或不准确：**
+- 路由器重启会丢失时间（因为日志和大多数设置都在内存中）
+- 确保 NTP 服务自动启动：`uci set system.@system[0].ntpenable='1' && uci commit system`
+- 重启后需要等待 NTP 同步（通常 30-60 秒）
+- 检查多个 NTP 服务器是否都可用
+- 可能需要更换可靠的 NTP 服务器
+- 查看启动日志中是否有错误：`logread | grep -i "ntp\|time\|sync"` 
+- **提示：** 如果路由器没有 RTC 电池，重启后时间会重置，这是正常的。需要 NTP 重新同步
+
 **系统升级失败：**
 - 不要使用 `apk upgrade`！改用 LuCI Attended Sysupgrade 或 owut
 - 如果升级卡住，可以按 reset 按钮进入恢复模式
@@ -1081,13 +1298,14 @@ wifi reload
 OK，到这里你的新路由就配置得差不多了。从基础的网络设置，到WiFi配置，再到性能优化，基本覆盖了日常使用的所有方面。
 
 **快速回顾一下核心步骤：**
-1. ✅ 设置 LAN IP、主机名和时区
-2. ✅ 备份配置（以防万一）
-3. ✅ 检查无线硬件并安装驱动
-4. ✅ 配置2.4G和5G WiFi（包含信道和频宽）
-5. ✅ （可选）配置IPv6中继
-6. ✅ （推荐）启用流量分载
-7. ✅ 系统升级（用官方推荐方式，不用 apk upgrade）
+1. ✅ 设置 LAN IP、主机名、时区、root 密码
+2. ✅ 设置日志大小和 NTP 时间服务器
+3. ✅ 备份配置（以防万一）
+4. ✅ 检查无线硬件并安装驱动
+5. ✅ 配置2.4G和5G WiFi（包含信道和频宽）
+6. ✅ （可选）配置IPv6中继
+7. ✅ （推荐）启用流量分载
+8. ✅ 系统升级（用官方推荐方式，不用 apk upgrade）
 
 有什么问题欢迎留言讨论。祝你使用愉快！🎉
 
@@ -1167,6 +1385,70 @@ uci commit wireless && wifi reload
 | 设置 root 密码 | `passwd` |
 | 查看当前用户 | `whoami` |
 | 修改用户信息 | `usermod -c '名称' root` |
+
+### 系统日志和时间配置
+
+| 操作 | 命令 |
+|-----|------|
+| 设置日志大小为 8KB | `uci set system.@system[0].log_size='8'` |
+| 查看当前日志大小 | `uci get system.@system[0].log_size` |
+| 重启日志服务 | `/etc/init.d/log restart` |
+| 查看日志内容 | `logread \| head` 或 `logread \| tail -20` |
+| 设置 NTP 服务器（多个）| `uci delete system.ntp.server` 后用 `uci add_list` 逐个添加 |
+| 设置单个 NTP 服务器 | `uci set system.ntp.server='ntp.aliyun.com'` |
+| 添加 NTP 服务器到列表 | `uci add_list system.ntp.server='0.openwrt.pool.ntp.org'` |
+| 查看 NTP 服务器设置 | `uci get system.ntp.server` |
+| 重启 NTP 服务 | `/etc/init.d/sysntpd restart` |
+| 查看 NTP 服务状态 | `/etc/init.d/sysntpd status` |
+| 查看系统当前时间 | `date` |
+| 查看详细时间信息 | `date '+%Y-%m-%d %H:%M:%S %Z'` |
+| 查看时间戳 | `date +%s` |
+| 手动设置时间 | `date -s "2026-07-23 14:30:00"` |
+| 手动设置时间戳 | `date -s @1689079800` |
+| 应用所有系统配置 | `uci commit system` |
+
+**常用 NTP 服务器速查：**
+
+| 地区 | 服务器地址 |
+|-----|-----------|
+| **国内推荐** | `ntp.aliyun.com` 或 `time1.cloud.tencent.com` |
+| **国际推荐** | `time.google.com` 或 `time.cloudflare.com` |
+| **OpenWRT 官方** | `0.openwrt.pool.ntp.org` 到 `3.openwrt.pool.ntp.org` |
+
+**系统配置一键应用：**
+
+```bash
+# 集中所有系统配置，然后一起提交
+uci set system.@system[0].hostname='OpenWrt'
+uci set system.@system[0].timezone='CST-8'
+uci set system.@system[0].zonename='Asia/Taipei'
+uci set system.@system[0].log_size='8'  # 日志大小为 8KB
+
+# 设置 NTP 服务器（必须先删除再用 add_list）
+uci delete system.ntp.server
+uci add_list system.ntp.server='0.openwrt.pool.ntp.org'
+uci add_list system.ntp.server='ntp.aliyun.com'
+uci add_list system.ntp.server='time.google.com'
+uci add_list system.ntp.server='time.cloudflare.com'
+
+# 一次性提交所有配置
+uci commit system
+
+# 重启系统服务使配置生效
+/etc/init.d/system reload     # 重启系统基础服务
+/etc/init.d/sysntpd restart   # 重启 NTP 时间服务
+/etc/init.d/log restart        # 重启日志服务
+
+# 验证配置是否成功应用
+echo "=== 验证系统配置 ==="
+echo "主机名: $(uci get system.@system[0].hostname)"
+echo "时区: $(uci get system.@system[0].timezone)"
+echo "日志大小: $(uci get system.@system[0].log_size) KB"
+echo "NTP服务器: $(uci get system.ntp.server)"
+echo "当前时间: $(date)"
+echo "=== 查看日志 ==="
+logread | head -10
+```
 
 **忘记 root 密码的恢复方式：**
 1. ✅ **Failsafe Mode**（最简单）- 按 Reset 进入安全模式
