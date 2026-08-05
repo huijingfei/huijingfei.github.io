@@ -94,12 +94,8 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
-          "5idhl.com",
           "accuweather.com",
           "aviationweather.gov",
-          "bdurl.net",
-          "cndhl.com",
-          "edu.cn",
           "edu.kg",
           "hdcdn.online",
           "localsend.org",
@@ -109,13 +105,10 @@ vi /etc/sing-box/config.json
           "met.no",
           "openweathermap.org",
           "rustdesk.com",
-          "snssdk.com",
           "tigress.cc",
           "xzmgo.com",
           "bjxuejing.cn",
-          "tuyoo.com",
-          "wanyiwan.top",
-          "zijieapi.com"
+          "wanyiwan.top"
         ],
         "domain_keyword": [
           "byte",
@@ -168,9 +161,8 @@ vi /etc/sing-box/config.json
           "geosite-apple",
           "geosite-microsoft",
           "geosite-mozilla",
-          "geosite-vk",
-          "geosite-yandex",
-          "geosite-category-cdn-!cn"
+          "geosite-category-cdn-!cn",
+          "geosite-category-ru"
         ],
         "server": "dns-direct"
       }
@@ -252,12 +244,8 @@ vi /etc/sing-box/config.json
       },
       {
         "domain_suffix": [
-          "5idhl.com",
           "accuweather.com",
           "aviationweather.gov",
-          "bdurl.net",
-          "cndhl.com",
-          "edu.cn",
           "edu.kg",
           "hdcdn.online",
           "localsend.org",
@@ -267,13 +255,10 @@ vi /etc/sing-box/config.json
           "met.no",
           "openweathermap.org",
           "rustdesk.com",
-          "snssdk.com",
           "tigress.cc",
           "xzmgo.com",
           "bjxuejing.cn",
-          "tuyoo.com",
-          "wanyiwan.top",
-          "zijieapi.com"
+          "wanyiwan.top"
         ],
         "domain_keyword": [
           "byte",
@@ -322,13 +307,11 @@ vi /etc/sing-box/config.json
           "geosite-cn",
           "geosite-amazon",
           "geosite-apple",
-          "geosite-cloudflare",
           "geosite-microsoft",
           "geosite-mozilla",
-          "geosite-vk",
-          "geosite-yandex",
           "geosite-category-cdn-!cn",
-          "geosite-category-games"
+          "geosite-category-games",
+          "geosite-category-ru"
         ],
         "outbound": "direct-out"
       },
@@ -355,14 +338,12 @@ vi /etc/sing-box/config.json
       {"tag": "geosite-meta", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-meta.srs"},
       {"tag": "geosite-tiktok", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-tiktok.srs"},
       {"tag": "geosite-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cn.srs"},
-      {"tag": "geosite-cloudflare", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-cloudflare.srs"},
       {"tag": "geosite-amazon", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-amazon.srs"},
       {"tag": "geosite-anthropic", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-anthropic.srs"},
       {"tag": "geosite-apple", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-apple.srs"},
       {"tag": "geosite-microsoft", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-microsoft.srs"},
       {"tag": "geosite-mozilla", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-mozilla.srs"},
-      {"tag": "geosite-vk", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-vk.srs"},
-      {"tag": "geosite-yandex", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-yandex.srs"},
+      {"tag": "geosite-category-ru", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ru.srs"},
       {"tag": "geosite-category-ads", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-ads.srs"},
       {"tag": "geosite-category-cdn-!cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-cdn-!cn.srs"},
       {"tag": "geosite-category-games", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-category-games.srs"},
@@ -385,7 +366,7 @@ cd /etc/sing-box/
 ```
 然后使用以下命令下载需要的规则文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk yandex; do
+for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
     wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-$name.srs"
 done
 ```
@@ -407,7 +388,7 @@ for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.gi
 
 下载 geosite 文件
 ```
-for name in 'category-cdn-!cn' alibaba amazon anthropic apple category-ads category-games cloudflare cn github google linkedin meta microsoft mozilla tiktok vk yandex; do
+for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
     wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
 done
 ```
@@ -422,6 +403,19 @@ done
 如果说因为网络原因路由器无法下载这些文件，电脑有科学网络的情况下，先下载到电脑上然后传到路由器；光猫地址基本都是 192.168.1.1，你的路由器地址要改为 192.168.1.2 等其他地址。
 ```
 scp -O *.srs root@192.168.1.2:/etc/sing-box/
+```
+电脑上如果安装了 aria2，那么可以一次性批量下载所有文件
+```
+{
+  for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
+      echo "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
+      echo "  out=geosite-$name.srs"
+  done
+  for name in cn hk private; do
+      echo "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geoip/geoip-$name.srs"
+      echo "  out=geoip-$name.srs"
+  done
+} | aria2c -i - -j 16
 ```
 检查一下配置文件是否有错误，配置正确没有任何输出，如果输出错误，请自行  Google 或者问 ai。
 
