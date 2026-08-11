@@ -5,7 +5,11 @@ subtitle: 在基于 Debian 的 Linux 发行版中安装使用 Aria2+AriaNG
 tags:
     - Debian
 ---
-[通过 uget 配置 aria2 插件下载](https://tigress.cc/2024/04/15/aria2-ariang/#%E9%80%9A%E8%BF%87-uget-%E8%B0%83%E7%94%A8-aria2-%E4%B8%8B%E8%BD%BD)
+替代方案一：[通过 uget 配置 aria2 插件下载](https://tigress.cc/2024/04/15/aria2-ariang/#%E9%80%9A%E8%BF%87-uget-%E8%B0%83%E7%94%A8-aria2-%E4%B8%8B%E8%BD%BD)
+
+替代方案二：[FluxDown](https://github.com/zerx-lab/FluxDown)
+
+Rust 驱动的多协议下载管理器，支持 HTTP/FTP/BitTorrent 磁力链接及 HLS/DASH 流媒体，智能多线程加速与浏览器无缝集成。精美界面，极致性能，永久免费，零广告。
 
 ## 安装 aria2
 
