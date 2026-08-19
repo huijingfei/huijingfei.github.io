@@ -97,6 +97,7 @@ vi /etc/sing-box/config.json
           "accuweather.com",
           "aviationweather.gov",
           "edu.kg",
+          "google.cn",
           "hdcdn.online",
           "localsend.org",
           "made-in-china.com",
@@ -106,6 +107,7 @@ vi /etc/sing-box/config.json
           "openweathermap.org",
           "rustdesk.com",
           "tigress.cc",
+          "vis.ee",
           "xzmgo.com",
           "bjxuejing.cn",
           "wanyiwan.top"
@@ -139,17 +141,23 @@ vi /etc/sing-box/config.json
       },
       {
         "rule_set": [
+          "geosite-google-cn"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "rule_set": [
           "geosite-google",
           "geosite-github",
-          "geosite-meta",
-          "geosite-tiktok"
+          "geosite-meta"
         ],
         "server": "dns-remote"
       },
       {
         "rule_set": [
+          "geosite-anthropic",
           "geosite-linkedin",
-          "geosite-anthropic"
+          "geosite-tiktok"
         ],
         "server": "dns-remote",
         "strategy": "ipv4_only"
@@ -247,6 +255,7 @@ vi /etc/sing-box/config.json
           "accuweather.com",
           "aviationweather.gov",
           "edu.kg",
+          "google.cn",
           "hdcdn.online",
           "localsend.org",
           "made-in-china.com",
@@ -256,6 +265,7 @@ vi /etc/sing-box/config.json
           "openweathermap.org",
           "rustdesk.com",
           "tigress.cc",
+          "vis.ee",
           "xzmgo.com",
           "bjxuejing.cn",
           "wanyiwan.top"
@@ -291,6 +301,12 @@ vi /etc/sing-box/config.json
           "splash.yy.com"
         ],
         "action": "reject"
+      },
+      {
+        "rule_set": [
+          "geosite-google-cn"
+        ],
+        "outbound": "direct-out"
       },
       {
         "rule_set": [
@@ -334,6 +350,7 @@ vi /etc/sing-box/config.json
     "rule_set": [
       {"tag": "geosite-github", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-github.srs"},
       {"tag": "geosite-google", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-google.srs"},
+      {"tag": "geosite-google-cn", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-google-cn.srs"},
       {"tag": "geosite-linkedin", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-linkedin.srs"},
       {"tag": "geosite-meta", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-meta.srs"},
       {"tag": "geosite-tiktok", "type": "local", "format": "binary", "path": "/etc/sing-box/geosite-tiktok.srs"},
@@ -366,7 +383,7 @@ cd /etc/sing-box/
 ```
 然后使用以下命令下载需要的规则文件
 ```
-for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
+for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google google-cn linkedin meta microsoft mozilla tiktok; do
     wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-$name.srs"
 done
 ```
@@ -388,7 +405,7 @@ for file in geoip-cn.srs geoip-hk.srs geoip-private.srs; do wget "https://raw.gi
 
 下载 geosite 文件
 ```
-for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
+for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google google-cn linkedin meta microsoft mozilla tiktok; do
     wget -O "geosite-$name.srs" "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
 done
 ```
@@ -407,7 +424,7 @@ scp -O *.srs root@192.168.1.2:/etc/sing-box/
 电脑上如果安装了 aria2，那么可以一次性批量下载所有文件
 ```
 {
-  for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google linkedin meta microsoft mozilla tiktok; do
+  for name in 'category-cdn-!cn' amazon anthropic apple category-ads category-games category-ru cn github google google-cn linkedin meta microsoft mozilla tiktok; do
       echo "https://raw.githubusercontent.com/lyc8503/sing-box-rules/refs/heads/rule-set-geosite/geosite-$name.srs"
       echo "  out=geosite-$name.srs"
   done
